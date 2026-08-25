@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Daniel Cruze — The Sacred Masculine of Perth. Choose your next chapter: journal, The 33rd House, public social channels, or verified adult destinations." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:title" content="Daniel Cruze — Choose Your Next Chapter" />
+  <meta property="og:description" content="Presence. Precision. Ritual. Explore Daniel Cruze’s public work, The 33rd House, and clearly labeled adult-only destinations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://danielcruze.com/social.html" />
+  <title>Daniel Cruze — Choose Your Next Chapter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #080808;
+      --surface: #141414;
+      --surface-soft: #1a1714;
+      --border: #302b24;
+      --gold: #c9a84c;
+      --gold-dim: #927735;
+      --bone: #e8e0d0;
+      --muted: #9b9283;
+      --white: #f8f4eb;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Space Grotesk", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--black); }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--bone);
+      font-family: var(--sans);
+      background:
+        radial-gradient(ellipse 72% 48% at 50% -5%, rgba(201, 168, 76, 0.11), transparent 67%),
+        radial-gradient(ellipse 55% 25% at 50% 105%, rgba(89, 31, 38, 0.2), transparent 72%),
+        var(--black);
+    }
+
+    main {
+      width: min(100% - 2.5rem, 720px);
+      margin: 0 auto;
+      padding: 4.5rem 0 3rem;
+    }
+
+    .monogram {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 1.4rem;
+      border: 1px solid rgba(201, 168, 76, 0.65);
+      border-radius: 50%;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      letter-spacing: 0.08em;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--gold);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 620px;
+      margin: 1rem auto 0;
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: clamp(2.75rem, 8vw, 4.9rem);
+      font-weight: 400;
+      line-height: 0.95;
+      text-align: center;
+    }
+
+    h1 em { color: var(--gold); font-style: italic; }
+
+    .intro {
+      max-width: 480px;
+      margin: 1.4rem auto 2.7rem;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+      font-style: italic;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 2.2rem 0 0.85rem;
+      color: var(--gold);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .section-label::after {
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, rgba(201, 168, 76, 0.5), transparent);
+      content: "";
+    }
+
+    .link-stack { display: grid; gap: 0.7rem; }
+
+    .link-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      min-height: 76px;
+      padding: 1rem 1.1rem 1rem 1.25rem;
+      border: 1px solid var(--border);
+      background: rgba(20, 20, 20, 0.84);
+      color: var(--bone);
+      text-decoration: none;
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .link-card:hover, .link-card:focus-visible {
+      border-color: rgba(201, 168, 76, 0.8);
+      background: var(--surface-soft);
+      outline: none;
+      transform: translateY(-2px);
+    }
+
+    .link-card strong {
+      display: block;
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .link-card span {
+      display: block;
+      margin-top: 0.26rem;
+      color: var(--muted);
+      font-size: 0.77rem;
+      line-height: 1.4;
+    }
+
+    .arrow {
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .adult-card {
+      border-color: rgba(180, 138, 60, 0.52);
+      background: linear-gradient(135deg, rgba(89, 31, 38, 0.45), rgba(20, 20, 20, 0.96));
+    }
+
+    .adult-note {
+      margin: 0.9rem 0 0;
+      color: var(--muted);
+      font-size: 0.74rem;
+      line-height: 1.55;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.7rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 52px;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      color: var(--bone);
+      font-size: 0.78rem;
+      text-decoration: none;
+      transition: border-color 180ms ease, color 180ms ease;
+    }
+
+    .social-link:hover, .social-link:focus-visible { border-color: var(--gold); color: var(--gold); outline: none; }
+    .social-link small { color: var(--gold-dim); font-size: 0.68rem; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 460px) {
+      main { width: min(100% - 1.5rem, 720px); padding-top: 3rem; }
+      .social-grid { grid-template-columns: 1fr; }
+      .link-card strong { font-size: 1.16rem; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="monogram" aria-hidden="true">DC</div>
+    <p class="eyebrow">The Sacred Masculine of Perth</p>
+    <h1>Choose Your<br /><em>Next Chapter</em></h1>
+    <p class="intro">Presence. Precision. Ritual. Choose the part of the world that called you here.</p>
+
+    <div class="section-label">Public work</div>
+    <div class="link-stack">
+      <a class="link-card" href="https://the33rdhouse.com" target="_blank" rel="noopener noreferrer">
+        <div><strong>Enter The 33rd House</strong><span>Explore the living temple, 12 Gates, and sacred frameworks.</span></div><div class="arrow" aria-hidden="true">→</div>
+      </a>
+      <a class="link-card" href="https://danielcruze.store" target="_blank" rel="noopener noreferrer">
+        <div><strong>Explore the Treasury</strong><span>Books, transmissions, tools, and membership pathways.</span></div><div class="arrow" aria-hidden="true">→</div>
+      </a>
+      <a class="link-card" href="https://scarletblue.com.au/blog/escort-diary/male-escort/mr-daniel-cruze" target="_blank" rel="noopener noreferrer">
+        <div><strong>Read the Journal</strong><span>Notes on presence, connection, and a life lived deliberately.</span></div><div class="arrow" aria-hidden="true">→</div>
+      </a>
+    </div>
+
+    <div class="section-label">Follow the ritual</div>
+    <div class="social-grid">
+      <a class="social-link" href="https://instagram.com/danielcruzelife" target="_blank" rel="noopener noreferrer">Instagram <small>@danielcruzelife</small></a>
+      <a class="social-link" href="https://facebook.com/danielcruzelife" target="_blank" rel="noopener noreferrer">Facebook <small>Daniel Cruze</small></a>
+      <a class="social-link" href="https://x.com/DanielCruzeAU" target="_blank" rel="noopener noreferrer">X <small>18+</small></a>
+      <a class="social-link" href="https://bsky.app/profile/danielcruze" target="_blank" rel="noopener noreferrer">Bluesky <small>18+</small></a>
+    </div>
+
+    <div class="section-label">Adults only</div>
+    <div class="link-stack">
+      <a class="link-card adult-card" href="https://onlyfans.com/sacredmasculinity" target="_blank" rel="noopener noreferrer">
+        <div><strong>The 18+ Inner Circle</strong><span>Verified-adult private notes, refined desire, and behind-the-scenes ritual.</span></div><div class="arrow" aria-hidden="true">→</div>
+      </a>
+      <a class="link-card adult-card" href="https://scarletblue.com.au/male-escort/mr-daniel-cruze?city=Perth" target="_blank" rel="noopener noreferrer">
+        <div><strong>Private Enquiries (18+)</strong><span>For adult companionship enquiries, availability, and discreet direct contact.</span></div><div class="arrow" aria-hidden="true">→</div>
+      </a>
+    </div>
+    <p class="adult-note">The adult-only destinations above are intended solely for people aged 18 and over. Privacy, consent, discretion, and respectful communication are non-negotiable.</p>
+
+    <footer>
+      <p>© 2026 Daniel Cruze · <a href="index.html">Return to danielcruze.com</a></p>
+    </footer>
+  </main>
+</body>
+</html>
