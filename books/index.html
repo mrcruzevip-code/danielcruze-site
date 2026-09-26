@@ -1,1 +1,154 @@
-<html>probe</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books — Daniel Cruze</title>
+  <meta name="description" content="Foundational books by Daniel Cruze — Gate 1: Sensory Awakening, 12 Sacred Principles, The Grand Codex of the Heart, and Breath of Life." />
+  <meta property="og:title" content="Books — Daniel Cruze" />
+  <meta property="og:description" content="Physical and digital books — the foundational texts of The Highest Rite system." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://danielcruze.com/books" />
+  <link rel="canonical" href="https://danielcruze.com/books" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --deep: #0d0d0d; --surface: #141414; --border: #2a2a2a;
+      --gold: #c9a84c; --gold-dim: #8a6f2e; --bone: #e8e0d0; --muted: #7a7060; --white: #f5f0e8;
+      --serif: 'Cormorant Garamond', Georgia, serif; --sans: 'Space Grotesk', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--bone); font-family: var(--sans); font-size: 16px; line-height: 1.6; overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 2.5rem; background: rgba(8,8,8,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.12); }
+    .nav-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; letter-spacing: 0.15em; color: var(--gold); text-decoration: none; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-cta { display: inline-block; padding: 0.55rem 1.4rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); background: var(--gold); text-decoration: none; }
+    main { flex: 1; padding: 8rem 2rem 5rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--gold-dim); }
+    h1.section-title { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.15; color: var(--white); margin-bottom: 1.5rem; }
+    h1.section-title em { font-style: italic; color: var(--gold); }
+    .section-body { font-family: var(--serif); font-size: 1.15rem; font-weight: 300; line-height: 1.8; color: var(--bone); max-width: 680px; margin-bottom: 3.5rem; }
+    .books-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--border); }
+    .book-card { background: var(--black); padding: 2.75rem 2.25rem; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; transition: background 0.3s; }
+    .book-card:hover { background: var(--surface); }
+    .book-card.coming-soon { opacity: 0.72; }
+    .book-card.coming-soon:hover { background: var(--black); }
+    .book-meta-label { font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.85rem; }
+    .book-title { font-family: var(--serif); font-size: clamp(1.35rem, 2.5vw, 1.85rem); font-weight: 300; color: var(--white); line-height: 1.25; margin-bottom: 0.75rem; }
+    .book-blurb { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); line-height: 1.7; max-width: 560px; }
+    .book-aside { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; min-width: 160px; }
+    .book-price { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--gold); }
+    .book-price span { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.25rem; }
+    .btn-primary { font-family: var(--sans); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 0.9rem 1.75rem; text-decoration: none; transition: background 0.3s, transform 0.2s; display: inline-block; white-space: nowrap; }
+    .btn-primary:hover { background: var(--bone); transform: translateY(-1px); }
+    .btn-soon { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--border); padding: 0.9rem 1.75rem; display: inline-block; white-space: nowrap; cursor: default; }
+    .back-row { margin-top: 3rem; text-align: center; }
+    .btn-ghost { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,168,76,0.4); padding: 1rem 2.5rem; text-decoration: none; display: inline-block; }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--bone); }
+    footer { background: var(--deep); border-top: 1px solid var(--border); padding: 3rem 2.5rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+    .footer-brand { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0.1em; color: var(--gold); }
+    .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-family: var(--sans); font-size: 0.65rem; color: var(--muted); }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .book-card { grid-template-columns: 1fr; gap: 1.5rem; }
+      .book-aside { align-items: flex-start; text-align: left; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo">Daniel Cruze</a>
+    <ul class="nav-links">
+      <li><a href="/#sacred">The Work</a></li>
+      <li><a href="/#gates">12 Gates</a></li>
+      <li><a href="/#blueprint">Soul Blueprint</a></li>
+      <li><a href="/books" class="active">Books</a></li>
+      <li><a href="https://linktr.ee/digitalcompanion" target="_blank" rel="noopener">The 33rd House</a></li>
+    </ul>
+    <a href="/#enquiry" class="nav-cta">Private Enquiry</a>
+  </nav>
+  <main id="books">
+    <div class="section-inner">
+      <div class="section-label">The Treasury</div>
+      <h1 class="section-title">The Written<br><em>Transmissions</em></h1>
+      <p class="section-body">Foundational texts of The Highest Rite — thresholds you can hold in your hands. Secure checkout via Stripe.</p>
+      <div class="books-grid">
+        <article class="book-card">
+          <div>
+            <div class="book-meta-label">Gate 1</div>
+            <h2 class="book-title">Sensory Awakening — The Five Gateways</h2>
+            <p class="book-blurb">The first gate opened. A transmission on reclaiming the body as the primary instrument of knowing — five sensory gateways into presence, desire, and initiated awareness.</p>
+          </div>
+          <div class="book-aside">
+            <div class="book-price"><span>Price</span>A$33</div>
+            <a class="btn-primary" href="https://buy.stripe.com/6oU6oH7DPcwYdxCfwQ6wE0l" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </article>
+        <article class="book-card">
+          <div>
+            <div class="book-meta-label">Foundational Text</div>
+            <h2 class="book-title">12 Sacred Principles for Living With Meaning</h2>
+            <p class="book-blurb">The cartography of sacred masculinity in twelve principles — not rules, but thresholds. Sovereign will, eternal return, paradox held without collapse.</p>
+          </div>
+          <div class="book-aside">
+            <div class="book-price"><span>Price</span>A$33</div>
+            <a class="btn-primary" href="https://buy.stripe.com/3cIdR93nz7cEfFK1G06wE0m" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </article>
+        <article class="book-card">
+          <div>
+            <div class="book-meta-label">Codex</div>
+            <h2 class="book-title">The Grand Codex of the Heart</h2>
+            <p class="book-blurb">The deeper volume — heart as axis, devotion as practice, the erotic and the sacred held in one continuous rite.</p>
+          </div>
+          <div class="book-aside">
+            <div class="book-price"><span>Price</span>A$97</div>
+            <a class="btn-primary" href="https://buy.stripe.com/00w9ATe2d68A516acw6wE0k" target="_blank" rel="noopener">Buy Now</a>
+          </div>
+        </article>
+        <article class="book-card coming-soon">
+          <div>
+            <div class="book-meta-label">Coming Soon</div>
+            <h2 class="book-title">Breath of Life</h2>
+            <p class="book-blurb">The breath as initiation. This transmission is still in preparation — checkout will open here when it is ready. No payment link yet.</p>
+          </div>
+          <div class="book-aside">
+            <div class="book-price"><span>Status</span>—</div>
+            <span class="btn-soon">Coming Soon</span>
+          </div>
+        </article>
+      </div>
+      <div class="back-row">
+        <a href="/" class="btn-ghost">← Back to Daniel Cruze</a>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Daniel Cruze</div>
+      <ul class="footer-links">
+        <li><a href="/#sacred">The Work</a></li>
+        <li><a href="/#gates">12 Gates</a></li>
+        <li><a href="/books">Books</a></li>
+        <li><a href="https://linktr.ee/digitalcompanion" target="_blank" rel="noopener">The 33rd House</a></li>
+        <li><a href="/social.html">Social</a></li>
+        <li><a href="mailto:the33rdhouse@outlook.com.au">Contact</a></li>
+      </ul>
+      <div class="footer-copy">© 2026 Daniel Cruze · Cruze Estate Trust ABN 94 861 551 272 · the33rdhouse@outlook.com.au</div>
+    </div>
+  </footer>
+</body>
+</html>
