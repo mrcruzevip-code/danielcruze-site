@@ -1,0 +1,4 @@
+img[src*="/images/"]:not([src$=".webp"]){object-fit:contain !important;object-position:center center !important;position:relative !important;width:100% !important;height:auto !important;max-height:none !important;left:auto !important;top:auto !important;right:auto !important;bottom:auto !important;background:#0A0A0A;}
+.cross-dissolve-container{position:relative !important;height:auto !important;min-height:0 !important;}
+div:has(img[src*="/images/"]:not([src$=".webp"])){overflow:visible !important;height:auto !important;min-height:0 !important;max-height:none !important;}
+div[style*="linear-gradient(180deg, rgba(10,10,10"]{opacity:.15 !important;}
