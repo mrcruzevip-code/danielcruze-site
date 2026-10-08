@@ -1,2 +1,1 @@
-img[src*="hiHseYIRZnypehcZ.jpg"]{object-fit:contain !important;object-position:center center !important;background:#0A0A0A;}
-img[src*="mirror-towel_62d9e09d.jpg"],img[src*="outdoor-shirtless_03dde843.jpg"]{object-fit:contain !important;object-position:center center !important;background:#0A0A0A;}
+img[src*='/images/']:not([src$='.webp']){object-fit:contain !important;object-position:center center !important;background:#0A0A0A;}
