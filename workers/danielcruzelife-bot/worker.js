@@ -10,6 +10,7 @@ const BRAND = Object.freeze({
   books: 'https://danielcruze.com/books/',
   soulBlueprint: 'https://danielcruze.com/soul-blueprint/',
   enquiries: 'https://danielcruze.com/contact/',
+  email: 'daniel@danielcruze.com',
   journal: 'https://danielcruze.com/journal/',
 });
 
@@ -87,7 +88,7 @@ async function handleBlueprint(env, chatId) {
 
 async function handleEnquire(env, chatId) {
   await sendBrandCard(env, chatId);
-  await sendMessage(env, chatId, `<b>PRIVATE ENQUIRIES</b>\n\nBookings are by appointment. Pre-booking is preferred and every enquiry is handled with discretion.\n\nUse the private enquiry page to email Daniel directly.`, buttons([
+  await sendMessage(env, chatId, `<b>PRIVATE ENQUIRIES</b>\n\nBookings are by appointment. Pre-booking is preferred and every enquiry is handled with discretion.\n\nEmail Daniel directly at <b>${BRAND.email}</b>, or use the private enquiry page below.`, buttons([
     [{ text: '✉️ MAKE A PRIVATE ENQUIRY', url: BRAND.enquiries }],
     [{ text: '🏛️ DANIELCRUZE.COM', url: BRAND.website }],
   ]));
