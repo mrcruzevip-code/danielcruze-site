@@ -5,7 +5,7 @@ import { StatusBar } from "expo-status-bar";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import "react-native-reanimated";
-import { Platform, useWindowDimensions } from "react-native";
+import { Platform } from "react-native";
 import "@/lib/_core/nativewind-pressable";
 import { ThemeProvider } from "@/lib/theme-provider";
 import {
@@ -27,7 +27,6 @@ export const unstable_settings = {
 };
 
 export default function RootLayout() {
-  const dimensions = useWindowDimensions();
   const initialInsets = initialWindowMetrics?.insets ?? DEFAULT_WEB_INSETS;
   const initialFrame = initialWindowMetrics?.frame ?? DEFAULT_WEB_FRAME;
 
@@ -113,7 +112,7 @@ export default function RootLayout() {
     return (
       <ThemeProvider>
         <SafeAreaProvider initialMetrics={providerInitialMetrics}>
-          <SafeAreaFrameContext.Provider value={{ ...frame, width: dimensions.width || 1024, height: dimensions.height || 768 }}>
+          <SafeAreaFrameContext.Provider value={frame}>
             <SafeAreaInsetsContext.Provider value={insets}>
               {content}
             </SafeAreaInsetsContext.Provider>
