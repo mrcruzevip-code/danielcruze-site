@@ -1,0 +1,23 @@
+/* Highest Rite static-export safety layer — source app remains canonical. */
+html, body, #root { max-width: 100%; overflow-x: clip; }
+/* Expo Image uses a background-image view after hydration; preserve every pixel of
+   meaningful photographs, book covers and illustrated art by default. */
+[data-expoimage] { max-width: 100%; min-width: 0; background-color: #0a0a0a; }
+[data-expoimage] > *, [data-expoimage] [style*="background-image"], [data-expoimage] .r-4gszlv {
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  object-fit: contain !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+[data-expoimage] img { object-fit: contain !important; max-width: 100%; max-height: 100%; }
+@media (max-width: 720px) {
+  /* Expo's frozen 760-pixel landing-screen snapshot otherwise hides controls
+     below the fold on small devices. The editable source has a dynamic fix. */
+  [style*="min-height:760px"] { min-height: min(100svh, 760px) !important; }
+  [data-expoimage] { min-width: 0 !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-expoimage], [data-expoimage] * { transition-duration: 0s !important; }
+}
