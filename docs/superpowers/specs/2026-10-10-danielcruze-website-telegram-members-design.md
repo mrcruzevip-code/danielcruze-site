@@ -1,3 +1,5 @@
+> **Architecture status (updated 2026-10-10): SUPERSEDED FOR IMPLEMENTATION.** This document remains the original web-centric discovery/security baseline. The owner approved an **app-first Highest Rite** delivery architecture and explicit all-device responsive-image requirements. The authoritative written design is [2026-10-10-highest-rite-app-first-responsive-design.md](2026-10-10-highest-rite-app-first-responsive-design.md). Keep this document for evidence and previous decisions; do not implement its static-website-only recommendation without consulting the newer specification.
+
 # Daniel Cruze Website + Telegram Members Portal — Architecture Design
 
 **Date:** 2026-10-10
