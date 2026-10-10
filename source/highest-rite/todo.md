@@ -1,0 +1,90 @@
+# The Highest Rite — TODO
+
+- [x] Configure dark theme colors (scarlet/ivory/near-black palette)
+- [x] Set up drawer/stack navigation (no tab bar)
+- [x] Add icon mappings for all navigation icons
+- [x] Build Home screen with all 8 sections (Threshold, The Man, The Field, The Experiences, The Proof, The Journal, The Temple, Private Enquiries, Footer)
+- [x] Build About Daniel screen
+- [x] Build Sacred Masculinity screen
+- [x] Build Work With Daniel (service hub) screen
+- [x] Build 6 service detail screens (Private Mentoring, Intimacy Coaching, Masculine Embodiment, Couples Polarity, Tantric Guidance, Retreat/Travel)
+- [x] Build For Men screen
+- [x] Build For Women screen
+- [x] Build For Couples screen
+- [x] Build Journal screen with article grid
+- [x] Build Article Detail screen
+- [x] Build The 33rd House screen
+- [x] Build Contact screen with enquiry form
+- [x] Add testimonials data
+- [x] Add journal/article sample content
+- [x] Generate app icon (dark, scarlet, sacred geometry)
+- [x] Update app.config.ts with branding
+- [x] Create brand skill using skill-creator
+- [x] Gather and integrate SimilarWeb analytics data
+- [x] Final polish and checkpoint
+- [x] Optimize all 18 Daniel photos for mobile (compress without quality loss)
+- [x] Upload optimized photos to CDN
+- [x] Integrate photos into Home screen hero and sections
+- [x] Integrate photos into About Daniel screen
+- [x] Integrate photos into service screens and audience pages
+- [x] Add photo gallery/carousel component (integrated into Home screen)
+- [x] Update content data with CDN image URLs
+- [x] Fix: Home page second image displays horizontal instead of vertical
+- [x] Fix: About page second image displays horizontal instead of vertical
+- [x] Remove Sacred Masculinity header photo and replace with different image (city-night-whiskey portrait)
+- [x] Redistribute images so every screen has a unique photo (no duplicates between page heroes and service pages)
+- [x] Replace Sacred Masculinity header photo (now outdoor-shirtless portrait)
+- [x] Upload book cover images to CDN (Path of Transformation + 12 Sacred Principles)
+- [x] Add Books page (/the-books) with both covers, descriptions, author note, buy/enquire CTAs
+- [x] Add Community/Telegram section to Home screen with 3 CTA buttons
+- [x] Add Books section to Home screen (covers floating on dark background)
+- [x] Update all screen copy to match production blueprint (exact headlines and body text)
+- [x] Wire social links: Instagram @danielcruzelife, Facebook @danielcruzelife, X @DanielCruzeAU, Telegram channels
+- [x] Add email daniel@danielcruze.com to contact and footer (in content.ts)
+- [x] Update footer with "Amor Aeternus. Libertas Sacra." and full social links
+- [x] Add book references subtly across About, footer, and other pages
+- [x] Add Books link to drawer navigation
+- [x] Update Sacred Masculinity page with 3 doctrine pillars and Telegram CTA
+- [x] Update Work With Daniel copy to match blueprint (7 service tiles with exact headlines)
+- [x] Update Contact page with interest area dropdown and direct contact options
+- [x] Add Soul Blueprint bridge page (/soul-blueprint) with narrative + outbound CTA to the33rdhouse.org
+- [x] Update The Temple page to be a gateway to the33rdhouse.org (not standalone)
+- [x] Add Soul Blueprint to service tiles on Work With Daniel (7 services total, in content.ts)
+- [x] Update About page with author framing (12 Gates, 60+ volumes, system architect)
+- [x] Add Star Gate series reference and Meta-Map visual to Books page
+- [x] Add outbound link CTAs to the33rdhouse.org where appropriate
+- [x] Fix: For Women page hero image displays horizontal instead of vertical (swap to portrait photo)
+- [x] Fix: About page second image displays horizontal instead of vertical (swap to portrait photo)
+- [x] Add The 33rd House logos (gold shield crest + text wordmark) to the 33rd House page
+- [x] Remove gym-hoodie image from For Women page — discarded, using hero-whiskey-dark instead
+- [x] Verify Soul Blueprint CTA opens the33rdhouse.org externally (confirmed: Linking.openURL wired correctly)
+- [x] Verify the33rdhouse.org loads correctly (confirmed: site live with full 12 Gates, Chartography, navigation)
+- [x] Complete sitemap audit — all 17 screens documented and verified
+- [x] Wire Contact form to open email client directly via mailto: with pre-filled subject, body, name, interest, and message
+- [x] Add Cancellation Policy content and page
+- [x] Add Deposit Policy content and page
+- [x] Add NDA / Confidentiality Agreement content and page
+- [x] Add Terms & Conditions content and page
+- [x] Add navigation links to policies (footer, contact page, drawer menu)
+- [x] Add "Decoding the Cosmos" screen — 144 Realms interactive map (13 Gates × 12 Realms), Four Great Currents, grid/list views, realm detail panel
+- [x] Add "Beyond Duality" screen — Gateway Teaching with expandable sections, Coniunctio polarity map, central thesis
+- [x] Add navigation to both new screens from drawer menu and relevant pages
+- [x] Add "Sacred Teachings" section to Journal page linking to Decoding the Cosmos and Beyond Duality
+- [x] Write Article 1: Sacred Masculinity in the Modern Age (1,000-1,200 words)
+- [x] Write Article 2: Polarity Is Not a Game — It Is a Force (900-1,100 words)
+- [x] Write Article 3: What Erotic Intelligence Actually Means (900-1,100 words)
+- [x] Write Article 4: Why Men's Work Matters Now (900-1,100 words)
+- [x] Write Article 5: The 33rd House: A Map of Consciousness (1,000-1,200 words)
+- [x] Write Article 6: Ritual, Initiation, and the Threshold (1,000-1,200 words)
+- [x] Add subtitles to 3 esoteric doctrine articles (Kundalini, Milk & Honey, Christos Oil)
+- [x] Remove white text wordmark logo from The 33rd House page
+- [x] Full image audit: check all assignments for duplicates and landscape orientation
+- [x] Fix image duplicates: zero overlaps between page heroes and service images
+- [x] Reassign page heroes to prefer portrait/square, move landscape to smaller service cards
+- [x] Ensure all image containers use proper top-center cropping for landscape photos
+- [x] Remove Decoding the Cosmos and Beyond Duality from drawer menu (keep linked from Journal Sacred Teachings)
+- [x] Ensure all 4 poker/chip photos are used prominently (not just in services/gallery)
+- [x] Upload new portrait photo (1000076373.jpg) and set as Home landing page hero showing face
+- [x] Ensure all 4 poker photos remain prominently used (poker-bw=ForCouples, poker-closeup=33rdHouse, poker-drinking=CouplesPolarity, poker-wide=MasculineEmbodiment, poker-lean=TantricGuidance)
+- [x] Replace Contact page hero with white shirt open portrait (1000076363.jpg)
+- [x] Replace Journal page hero with black top seated portrait (07814f23)
