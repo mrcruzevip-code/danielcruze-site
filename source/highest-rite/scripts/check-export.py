@@ -23,9 +23,13 @@ def main():
         assert any(t=='link' and a.get('rel')=='canonical' and a.get('href','').startswith('https://danielcruze.com/') for t,a in page.tags),(p.name,'canonical')
         for key in ('og:title','og:description','og:url','og:image'):
             assert any(t=='meta' and a.get('property')==key and a.get('content') for t,a in page.tags),(p.name,key)
+        html=p.read_text()
+        assert 'data-site-footer' in html,(p.name,'site footer')
+        assert 'mailto:daniel@danielcruze.com' in html,(p.name,'Daniel email')
     home=(OUT/'index.html').read_text()
     for section in ('DANIEL CRUZE','SACRED MASCULINITY','PRIVATE WORK','PUBLISHED WORKS','TESTIMONIALS','FROM THE JOURNAL','THE 33RD HOUSE','THE COMMUNITY','PRIVATE ENQUIRIES'):
         assert section in home,('Original home section lost',section)
+    assert 'application/ld+json' in home and 'schema.org' in home, 'Google structured data missing'
     images=list((ROOT/'public/images').iterdir());assert len(images)>=23
     for image in images: assert (OUT/'images'/image.name).read_bytes()==image.read_bytes(),('Original photograph missing/changed',image.name)
     content=(ROOT/'lib/content.ts').read_text()

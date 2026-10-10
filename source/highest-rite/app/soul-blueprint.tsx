@@ -8,6 +8,8 @@ import { SectionDivider } from "@/components/section-divider";
 import { IMAGES, BRAND, SOCIALS, THE_33RD_HOUSE } from "@/lib/content";
 import { StyleSheet } from "react-native";
 
+const SOUL_BLUEPRINT_BOOKING_URL = "https://book.stripe.com/bJe7sLgal9kM3X23O86wE0o";
+
 export default function SoulBlueprintScreen() {
   return (
     <AppShell>
@@ -107,11 +109,11 @@ export default function SoulBlueprintScreen() {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Begin Your Reading</Text>
             <Text style={styles.body}>
-              Investment is discussed upon booking. Soul Blueprint readings are processed through The 33rd House platform.
+              A$333 AUD. Secure booking is processed by AIB HUB PTY LTD, with fulfilment details confirmed after payment.
             </Text>
             <CTAButton
-              label="BOOK YOUR SOUL BLUEPRINT"
-              onPress={() => Linking.openURL(SOCIALS.the33rdHouse.url)}
+              label="BOOK YOUR SOUL BLUEPRINT — A$333"
+              onPress={() => Linking.openURL(SOUL_BLUEPRINT_BOOKING_URL)}
             />
             <View style={{ height: 16 }} />
             <CTAButton

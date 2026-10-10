@@ -92,6 +92,8 @@ export interface Book {
   subtitle: string;
   description: string;
   coverImage: string;
+  checkoutUrl?: string;
+  priceLabel?: string;
 }
 
 export const BOOKS: Book[] = [
@@ -110,6 +112,27 @@ export const BOOKS: Book[] = [
     description:
       "Twelve principles distilled from the initiatory path. Each principle is a gate — a threshold that, once crossed, changes how a man relates to himself, to others, and to the sacred.\n\nThis is not a self-help book. It is a field manual for men who have decided that surface living is no longer enough. Each principle maps directly to the 12-Gate system of The 33rd House, offering a bridge between ancient doctrine and daily practice.",
     coverImage: IMAGES.books.sacredPrinciples,
+    checkoutUrl: "https://buy.stripe.com/3cIdR93nz7cEfFK1G06wE0m",
+    priceLabel: "A$33 AUD",
+  },
+];
+
+// Existing live AIB HUB PTY LTD checkout records from the original Daniel Cruze catalogue.
+// These titles use no invented artwork and do not replace the restored cover-led books above.
+export const LIVE_BOOK_CHECKOUTS = [
+  {
+    id: "gate-1-sensory-awakening",
+    title: "Gate 1: Sensory Awakening — The Five Gateways",
+    description: "The first gate opened: a transmission on reclaiming the body as the primary instrument of knowing.",
+    priceLabel: "A$33 AUD",
+    checkoutUrl: "https://buy.stripe.com/6oU6oH7DPcwYdxCfwQ6wE0l",
+  },
+  {
+    id: "grand-codex-heart",
+    title: "The Grand Codex of the Heart",
+    description: "A deeper volume on heart as axis, devotion as practice, and the sacred held in one continuous rite.",
+    priceLabel: "A$97 AUD",
+    checkoutUrl: "https://buy.stripe.com/00w9ATe2d68A516acw6wE0k",
   },
 ];
 

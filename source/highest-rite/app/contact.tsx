@@ -234,6 +234,15 @@ export default function ContactScreen() {
               variant="outline"
               size="lg"
             />
+            <TouchableOpacity
+              onPress={() => Linking.openURL(`mailto:${BRAND.email}`)}
+              accessibilityRole="link"
+              style={{ alignSelf: "center", marginTop: 20, padding: 8 }}
+            >
+              <Text style={[styles.directEmail, { color: colors.primary }]}>
+                EMAIL DANIEL DIRECTLY · {BRAND.email.toUpperCase()}
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -376,5 +385,11 @@ const styles = StyleSheet.create({
     fontSize: 11,
     fontWeight: "300",
     letterSpacing: 1,
+  },
+  directEmail: {
+    fontSize: 11,
+    fontWeight: "400",
+    letterSpacing: 1.5,
+    textAlign: "center",
   },
 });

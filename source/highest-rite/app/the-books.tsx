@@ -5,7 +5,7 @@ import { ScreenContainer } from "@/components/screen-container";
 import { AppShell } from "@/components/app-shell";
 import { CTAButton } from "@/components/cta-button";
 import { SectionDivider } from "@/components/section-divider";
-import { BOOKS, BRAND, SOCIALS } from "@/lib/content";
+import { BOOKS, BRAND, LIVE_BOOK_CHECKOUTS, SOCIALS } from "@/lib/content";
 import { StyleSheet } from "react-native";
 
 export default function TheBooksScreen() {
@@ -45,11 +45,39 @@ export default function TheBooksScreen() {
                   <Text style={styles.bookSubtitle}>{book.subtitle}</Text>
                   <View style={styles.dividerLine} />
                   <Text style={styles.bookDescription}>{book.description}</Text>
+                  {book.checkoutUrl && (
+                    <View style={styles.checkoutBlock}>
+                      <Text style={styles.priceLabel}>{book.priceLabel}</Text>
+                      <CTAButton
+                        label="SECURE CHECKOUT"
+                        onPress={() => Linking.openURL(book.checkoutUrl!)}
+                      />
+                    </View>
+                  )}
                 </View>
               </View>
               {index < BOOKS.length - 1 && <SectionDivider />}
             </View>
           ))}
+
+          <SectionDivider />
+
+          {/* Existing written transmissions with verified live checkout */}
+          <View style={styles.section}>
+            <Text style={styles.sectionLabel}>THE TREASURY</Text>
+            <Text style={styles.sectionTitle}>Further Transmissions</Text>
+            {LIVE_BOOK_CHECKOUTS.map((book) => (
+              <View key={book.id} style={styles.treasuryCard}>
+                <Text style={styles.treasuryTitle}>{book.title}</Text>
+                <Text style={styles.treasuryDescription}>{book.description}</Text>
+                <Text style={styles.priceLabel}>{book.priceLabel}</Text>
+                <CTAButton
+                  label="SECURE CHECKOUT"
+                  onPress={() => Linking.openURL(book.checkoutUrl)}
+                />
+              </View>
+            ))}
+          </View>
 
           <SectionDivider />
 
@@ -177,6 +205,40 @@ const styles = StyleSheet.create({
     color: "#9B9B8F",
     fontSize: 15,
     lineHeight: 24,
+    textAlign: "center",
+  },
+  checkoutBlock: {
+    alignItems: "center",
+    marginTop: 24,
+  },
+  priceLabel: {
+    color: "#8B2635",
+    fontSize: 12,
+    fontWeight: "600",
+    letterSpacing: 2,
+    marginBottom: 14,
+  },
+  treasuryCard: {
+    alignItems: "center",
+    borderTopWidth: 0.5,
+    borderTopColor: "#2A2520",
+    marginTop: 24,
+    paddingTop: 24,
+  },
+  treasuryTitle: {
+    color: "#F5F0E8",
+    fontSize: 18,
+    fontWeight: "600",
+    letterSpacing: 0.8,
+    lineHeight: 26,
+    marginBottom: 12,
+    textAlign: "center",
+  },
+  treasuryDescription: {
+    color: "#9B9B8F",
+    fontSize: 14,
+    lineHeight: 22,
+    marginBottom: 18,
     textAlign: "center",
   },
   section: {
