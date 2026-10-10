@@ -7,14 +7,18 @@ import { CTAButton } from "@/components/cta-button";
 import { SectionDivider } from "@/components/section-divider";
 import { BOOKS, BRAND, LIVE_BOOK_CHECKOUTS, SOCIALS } from "@/lib/content";
 import { StyleSheet } from "react-native";
+import { useSiteDimensions } from "@/hooks/use-site-dimensions";
 
 export default function TheBooksScreen() {
+  const { width } = useSiteDimensions();
+  const desktop = width >= 960;
+
   return (
     <AppShell>
       <ScreenContainer>
         <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
           {/* Hero */}
-          <View style={styles.heroSection}>
+          <View style={[styles.heroSection, desktop && styles.heroSectionDesktop]}>
             <LinearGradient
               colors={["#0A0A0A", "#1A0A0A", "#0A0A0A"]}
               style={StyleSheet.absoluteFill}
@@ -31,8 +35,8 @@ export default function TheBooksScreen() {
           {/* Book Cards */}
           {BOOKS.map((book, index) => (
             <View key={book.id}>
-              <View style={styles.bookCard}>
-                <View style={styles.coverContainer}>
+              <View style={[styles.bookCard, desktop && styles.bookCardDesktop]}>
+                <View style={[styles.coverContainer, desktop && styles.coverContainerDesktop]}>
                   <Image
                     source={{ uri: book.coverImage }}
                     style={styles.coverImage}
@@ -40,11 +44,11 @@ export default function TheBooksScreen() {
                     transition={400}
                   />
                 </View>
-                <View style={styles.bookInfo}>
-                  <Text style={styles.bookTitle}>{book.title}</Text>
-                  <Text style={styles.bookSubtitle}>{book.subtitle}</Text>
+                <View style={[styles.bookInfo, desktop && styles.bookInfoDesktop]}>
+                  <Text style={[styles.bookTitle, desktop && styles.bookTitleDesktop]}>{book.title}</Text>
+                  <Text style={[styles.bookSubtitle, desktop && styles.bookSubtitleDesktop]}>{book.subtitle}</Text>
                   <View style={styles.dividerLine} />
-                  <Text style={styles.bookDescription}>{book.description}</Text>
+                  <Text style={[styles.bookDescription, desktop && styles.bookDescriptionDesktop]}>{book.description}</Text>
                   {book.checkoutUrl && (
                     <View style={styles.checkoutBlock}>
                       <Text style={styles.priceLabel}>{book.priceLabel}</Text>
@@ -63,7 +67,7 @@ export default function TheBooksScreen() {
           <SectionDivider />
 
           {/* Existing written transmissions with verified live checkout */}
-          <View style={styles.section}>
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionLabel}>THE TREASURY</Text>
             <Text style={styles.sectionTitle}>Further Transmissions</Text>
             {LIVE_BOOK_CHECKOUTS.map((book) => (
@@ -82,7 +86,7 @@ export default function TheBooksScreen() {
           <SectionDivider />
 
           {/* Star Gate Series Reference */}
-          <View style={styles.section}>
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionLabel}>THE LARGER BODY OF WORK</Text>
             <Text style={styles.sectionTitle}>The Star Gate Series</Text>
             <Text style={styles.sectionBody}>
@@ -100,7 +104,7 @@ export default function TheBooksScreen() {
           <SectionDivider />
 
           {/* Author Note */}
-          <View style={styles.section}>
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionLabel}>FROM THE AUTHOR</Text>
             <Text style={styles.authorQuote}>
               "I did not write these books to be admired. I wrote them because the path I walked had no map — and I decided that the men and women who came after me deserved one."
@@ -111,7 +115,7 @@ export default function TheBooksScreen() {
           <SectionDivider />
 
           {/* CTA */}
-          <View style={styles.section}>
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionTitle}>Begin the Path</Text>
             <Text style={styles.sectionBody}>
               For enquiries about the books, bulk orders, or speaking engagements, contact Daniel directly.
@@ -139,6 +143,10 @@ const styles = StyleSheet.create({
     paddingTop: 60,
     paddingBottom: 48,
     alignItems: "center",
+  },
+  heroSectionDesktop: {
+    paddingTop: 112,
+    paddingBottom: 88,
   },
   heroLabel: {
     color: "#8B2635",
@@ -178,6 +186,41 @@ const styles = StyleSheet.create({
   },
   bookInfo: {
     alignItems: "center",
+  },
+  bookCardDesktop: {
+    width: "100%",
+    maxWidth: 1180,
+    alignSelf: "center",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 72,
+    paddingHorizontal: 64,
+    paddingVertical: 72,
+  },
+  coverContainerDesktop: {
+    flexGrow: 0,
+    flexShrink: 0,
+    width: 340,
+    marginBottom: 0,
+  },
+  bookInfoDesktop: {
+    flex: 1,
+    alignItems: "flex-start",
+    maxWidth: 620,
+  },
+  bookTitleDesktop: {
+    textAlign: "left",
+    fontSize: 34,
+    lineHeight: 42,
+  },
+  bookSubtitleDesktop: {
+    textAlign: "left",
+    fontSize: 18,
+  },
+  bookDescriptionDesktop: {
+    textAlign: "left",
+    fontSize: 16,
+    lineHeight: 28,
   },
   bookTitle: {
     color: "#F5F0E8",
@@ -245,6 +288,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 32,
     alignItems: "center",
+  },
+  sectionDesktop: {
+    width: "100%",
+    maxWidth: 980,
+    alignSelf: "center",
+    paddingHorizontal: 48,
+    paddingVertical: 56,
   },
   sectionLabel: {
     color: "#8B2635",

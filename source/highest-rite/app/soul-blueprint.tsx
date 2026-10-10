@@ -7,16 +7,20 @@ import { CTAButton } from "@/components/cta-button";
 import { SectionDivider } from "@/components/section-divider";
 import { IMAGES, BRAND, SOCIALS, THE_33RD_HOUSE } from "@/lib/content";
 import { StyleSheet } from "react-native";
+import { useSiteDimensions } from "@/hooks/use-site-dimensions";
 
 const SOUL_BLUEPRINT_BOOKING_URL = "https://book.stripe.com/bJe7sLgal9kM3X23O86wE0o";
 
 export default function SoulBlueprintScreen() {
+  const { width } = useSiteDimensions();
+  const desktop = width >= 960;
+
   return (
     <AppShell headerTransparent>
       <ScreenContainer>
         <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
           {/* Hero with image */}
-          <View style={styles.heroContainer}>
+          <View style={[styles.heroContainer, desktop && styles.heroContainerDesktop]}>
             <Image
               source={{ uri: IMAGES.services["soul-blueprint"] }}
               style={StyleSheet.absoluteFill}
@@ -27,7 +31,7 @@ export default function SoulBlueprintScreen() {
               colors={["rgba(10,10,10,0.4)", "rgba(10,10,10,0.85)", "#0A0A0A"]}
               style={StyleSheet.absoluteFill}
             />
-            <View style={styles.heroContent}>
+            <View style={[styles.heroContent, desktop && styles.heroContentDesktop]}>
               <Text style={styles.heroLabel}>CHARTOGRAPHY</Text>
               <Text style={styles.heroTitle}>SOUL{"\n"}BLUEPRINT</Text>
               <Text style={styles.heroSubtitle}>
@@ -39,7 +43,7 @@ export default function SoulBlueprintScreen() {
           <SectionDivider />
 
           {/* What Is It */}
-          <View style={styles.section}>
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionLabel}>THE READING</Text>
             <Text style={styles.sectionTitle}>What Is a Soul Blueprint?</Text>
             <Text style={styles.body}>
@@ -53,7 +57,7 @@ export default function SoulBlueprintScreen() {
           <SectionDivider />
 
           {/* The Gate System */}
-          <View style={styles.section}>
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionLabel}>THE ARCHITECTURE</Text>
             <Text style={styles.sectionTitle}>The 12-Gate System</Text>
             {Object.values(THE_33RD_HOUSE.gateSystem).map((level, i) => (
@@ -70,7 +74,7 @@ export default function SoulBlueprintScreen() {
           <SectionDivider />
 
           {/* What You Receive */}
-          <View style={styles.section}>
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionLabel}>WHAT YOU RECEIVE</Text>
             <Text style={styles.sectionTitle}>Your Personal Map</Text>
             <View style={styles.bulletList}>
@@ -85,7 +89,7 @@ export default function SoulBlueprintScreen() {
           <SectionDivider />
 
           {/* How It Works */}
-          <View style={styles.section}>
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionLabel}>THE PROCESS</Text>
             <Text style={styles.sectionTitle}>How It Works</Text>
             <View style={styles.stepContainer}>
@@ -106,7 +110,7 @@ export default function SoulBlueprintScreen() {
           <SectionDivider />
 
           {/* CTA */}
-          <View style={styles.section}>
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionTitle}>Begin Your Reading</Text>
             <Text style={styles.body}>
               A$333 AUD. Secure booking is processed by AIB HUB PTY LTD, with fulfilment details confirmed after payment.
@@ -139,10 +143,19 @@ const styles = StyleSheet.create({
     height: 500,
     justifyContent: "flex-end",
   },
+  heroContainerDesktop: {
+    height: 680,
+  },
   heroContent: {
     paddingHorizontal: 24,
     paddingBottom: 40,
     alignItems: "center",
+  },
+  heroContentDesktop: {
+    width: "100%",
+    maxWidth: 620,
+    alignSelf: "center",
+    paddingBottom: 72,
   },
   heroLabel: {
     color: "#8B2635",
@@ -170,6 +183,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingVertical: 32,
     alignItems: "center",
+  },
+  sectionDesktop: {
+    width: "100%",
+    maxWidth: 1040,
+    alignSelf: "center",
+    paddingHorizontal: 56,
+    paddingVertical: 56,
   },
   sectionLabel: {
     color: "#8B2635",
