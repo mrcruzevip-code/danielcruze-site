@@ -12,7 +12,7 @@ const SOUL_BLUEPRINT_BOOKING_URL = "https://book.stripe.com/bJe7sLgal9kM3X23O86w
 
 export default function SoulBlueprintScreen() {
   return (
-    <AppShell>
+    <AppShell headerTransparent>
       <ScreenContainer>
         <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
           {/* Hero with image */}
@@ -20,7 +20,7 @@ export default function SoulBlueprintScreen() {
             <Image
               source={{ uri: IMAGES.services["soul-blueprint"] }}
               style={StyleSheet.absoluteFill}
-              contentFit="contain"
+              contentFit="cover"
               transition={400}
             />
             <LinearGradient

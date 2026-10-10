@@ -29,6 +29,9 @@ def main():
                 assert not data['badImages'],(width,route,'broken images',data['badImages'])
                 assert not errors,(width,route,'runtime errors',errors)
                 assert 'A New Public Chapter' not in data['text'],(width,route,'replacement screen')
+                if width == 390 and route == '/soul-blueprint/':
+                    hero_top=page.get_by_text('CHARTOGRAPHY',exact=True).evaluate("el => el.parentElement?.parentElement?.getBoundingClientRect().top")
+                    assert hero_top is not None and hero_top <= 2,(width,route,'blank hero band',hero_top)
                 results.append({'width':width,'route':route,'passed':True})
                 if width in (390,1440) and route in ('/','/books/','/soul-blueprint/'):
                     page.screenshot(path=str(dest/f'restored-{route.strip("/") or "home"}-{width}.png'))

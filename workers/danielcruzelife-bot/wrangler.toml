@@ -1,0 +1,7 @@
+name = "danielcruzelife-bot"
+main = "worker.js"
+compatibility_date = "2026-10-10"
+account_id = "6a44e3cb01797044f56d2bfd68550463"
+
+# BOT_TOKEN is an existing Cloudflare Worker secret. Keep it in Cloudflare;
+# never place it in this repository or a .dev.vars file.
