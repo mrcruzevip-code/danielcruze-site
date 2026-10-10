@@ -39,7 +39,9 @@ export function HeaderBar({
       <View style={{ flexDirection: "row", alignItems: "center", flex: 1 }}>
         {showBack && (
           <TouchableOpacity
-            onPress={() => router.back()}
+            accessibilityRole="button"
+            accessibilityLabel="Go back"
+            onPress={() => router.canGoBack() ? router.back() : router.replace("/" as any)}
             style={{
               paddingRight: 16,
               paddingVertical: 4,
@@ -75,6 +77,8 @@ export function HeaderBar({
       </View>
 
       <TouchableOpacity
+        accessibilityRole="button"
+        accessibilityLabel="Open menu"
         onPress={onMenuPress}
         style={{
           padding: 8,

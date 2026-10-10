@@ -1,9 +1,9 @@
+import { useSiteDimensions } from "@/hooks/use-site-dimensions";
 import { useState, useRef } from "react";
 import {
   ScrollView,
   Text,
   View,
-  useWindowDimensions,
   StyleSheet,
   Platform,
   Linking,
@@ -33,7 +33,7 @@ import Animated, {
 
 export default function HomeScreen() {
   const colors = useColors();
-  const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = useWindowDimensions();
+  const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = useSiteDimensions();
   const router = useRouter();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -65,7 +65,7 @@ export default function HomeScreen() {
       {/* Floating hamburger — appears after scroll */}
       {scrolled && (
         <Animated.View
-          entering={FadeIn.duration(300)}
+          entering={Platform.OS === "web" ? undefined : FadeIn.duration(300)}
           style={styles.floatingHeader}
         >
           <Text
@@ -74,7 +74,9 @@ export default function HomeScreen() {
             DANIEL CRUZE
           </Text>
           <TouchableOpacity
-            onPress={() => setDrawerOpen(true)}
+            accessibilityRole="button"
+              accessibilityLabel="Open menu"
+              onPress={() => setDrawerOpen(true)}
             style={styles.hamburgerBtn}
           >
             <View style={{ gap: 5 }}>
@@ -123,7 +125,7 @@ export default function HomeScreen() {
             style={StyleSheet.absoluteFillObject}
           />
           <Animated.View
-            entering={FadeInDown.duration(800).delay(200)}
+            entering={Platform.OS === "web" ? undefined : FadeInDown.duration(800).delay(200)}
             style={styles.heroContent}
           >
             <Text style={[styles.heroName, { color: "#F5F0E8" }]}>
@@ -146,7 +148,9 @@ export default function HomeScreen() {
 
           {/* Subtle hamburger in top-right on hero */}
           <TouchableOpacity
-            onPress={() => setDrawerOpen(true)}
+            accessibilityRole="button"
+              accessibilityLabel="Open menu"
+              onPress={() => setDrawerOpen(true)}
             style={styles.heroHamburger}
           >
             <View style={{ gap: 5 }}>

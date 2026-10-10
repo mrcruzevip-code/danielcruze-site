@@ -36,6 +36,8 @@ export function CTAButton({
 
   return (
     <TouchableOpacity
+      accessibilityRole="button"
+      accessibilityLabel={label}
       onPress={onPress}
       activeOpacity={0.7}
       style={{

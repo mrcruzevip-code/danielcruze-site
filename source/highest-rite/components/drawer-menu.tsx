@@ -1,4 +1,5 @@
-import { View, Text, ScrollView, useWindowDimensions, Platform, Linking } from "react-native";
+import { useSiteDimensions } from "@/hooks/use-site-dimensions";
+import { View, Text, ScrollView, Platform, Linking } from "react-native";
 import { useRouter } from "expo-router";
 import { TouchableOpacity } from "react-native";
 import { DRAWER_ITEMS, BRAND, SOCIALS } from "@/lib/content";
@@ -24,7 +25,7 @@ const SOCIAL_LINKS = [
 export function DrawerMenu({ visible, onClose }: DrawerMenuProps) {
   const router = useRouter();
   const colors = useColors();
-  const { width: SCREEN_WIDTH } = useWindowDimensions();
+  const { width: SCREEN_WIDTH } = useSiteDimensions();
 
   const overlayStyle = useAnimatedStyle(() => ({
     opacity: withTiming(visible ? 1 : 0, {
@@ -52,6 +53,8 @@ export function DrawerMenu({ visible, onClose }: DrawerMenuProps) {
     }, 200);
   };
 
+  if (!visible) return null;
+
   return (
     <Animated.View
       style={[
@@ -68,7 +71,9 @@ export function DrawerMenu({ visible, onClose }: DrawerMenuProps) {
     >
       <TouchableOpacity
         activeOpacity={1}
-        onPress={onClose}
+        accessibilityRole="button"
+          accessibilityLabel="Close menu"
+          onPress={onClose}
         style={{
           position: "absolute",
           top: 0,
@@ -96,6 +101,8 @@ export function DrawerMenu({ visible, onClose }: DrawerMenuProps) {
         ]}
       >
         <TouchableOpacity
+          accessibilityRole="button"
+          accessibilityLabel="Close menu"
           onPress={onClose}
           style={{
             position: "absolute",
@@ -123,6 +130,8 @@ export function DrawerMenu({ visible, onClose }: DrawerMenuProps) {
           {DRAWER_ITEMS.map((item, index) => (
             <TouchableOpacity
               key={item.label}
+              accessibilityRole="button"
+              accessibilityLabel={item.label}
               onPress={() => handleNavigate(item.route)}
               style={{
                 paddingVertical: 14,

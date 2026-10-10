@@ -13,14 +13,14 @@ test('meaningful images must never use crop-by-default cover',()=>{
 
 test('hero must reflow on rotation; no module-level snapshot viewport',()=>{
  const p=readFileSync(new URL('../app/(tabs)/index.tsx',import.meta.url),'utf8');
- assert.ok(p.includes('useWindowDimensions('));
+ assert.ok(p.includes('useSiteDimensions('));
  assert.ok(!p.includes('Dimensions.get("window")'));
  assert.ok(!p.includes('width: (SCREEN_WIDTH - 100) / 2'));
 });
 
 test('drawer width recalculates on rotation',()=>{
  const p=readFileSync(new URL('../components/drawer-menu.tsx',import.meta.url),'utf8');
- assert.ok(p.includes('useWindowDimensions('));
+ assert.ok(p.includes('useSiteDimensions('));
  assert.ok(!p.includes('Dimensions.get("window")'));
 });
 

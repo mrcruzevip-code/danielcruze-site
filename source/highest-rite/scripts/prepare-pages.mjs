@@ -6,21 +6,20 @@ const out = path.join(root, 'dist');
 if (!fs.existsSync(path.join(out, 'index.html'))) throw new Error('Run Expo web export first');
 const origin = 'https://danielcruze.com';
 const canonical = ['/', '/about/', '/books/', '/journal/', '/social/', '/contact/', '/work-with-daniel/', '/the-33rd-house/'];
-const noindex = new Set(['for-men', 'for-women', 'for-couples', 'soul-blueprint', 'sacred-masculinity', 'beyond-duality', 'decoding-cosmos', 'policies']);
+const noindex = new Set(['dev/theme-lab', 'oauth/callback']);
 const redirect = (target) => `<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${origin}${target}"><meta http-equiv="refresh" content="0;url=${target}"><title>Page moved | Daniel Cruze</title></head><body><p><a href="${target}">Continue to Daniel Cruze</a></p></body></html>\n`;
 const walk = (dir) => fs.readdirSync(dir, { withFileTypes:true }).flatMap(e => e.isDirectory() ? walk(path.join(dir,e.name)) : [path.join(dir,e.name)]);
 const pages = walk(out).filter(f => f.endsWith('.html'));
 for (const file of pages) {
   const rel = path.relative(out, file).replaceAll(path.sep, '/');
   if (['index.html', '+not-found.html', '_sitemap.html'].includes(rel) || rel.startsWith('(tabs)/')) continue;
-  if (rel.startsWith('dev/') || rel.startsWith('oauth/')) { fs.rmSync(file); continue; }
   if (rel.endsWith('/index.html')) continue;
   const slug = rel.slice(0, -5);
   if (slug === 'the-books') continue;
   let text = fs.readFileSync(file,'utf8');
   // Canonical metadata must describe the directory URL, never a mismatched .html route.
   text = text.replaceAll(`${origin}/${slug}"`, `${origin}/${slug}/"`);
-  if (noindex.has(slug) || slug.startsWith('service/')) {
+  if (noindex.has(slug)) {
     if (!/name="robots"/.test(text)) text = text.replace('</head>', '<meta name="robots" content="noindex,follow"></head>');
   } else if (!slug.includes('[')) canonical.push(`/${slug}/`);
   const dest = path.join(out,slug,'index.html');
@@ -30,10 +29,7 @@ for (const file of pages) {
 for (const rel of ['the-books.html','the-books/index.html']) {
   const dest=path.join(out,rel);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,redirect('/books/'));
 }
-for (const rel of ['dev','oauth']) fs.rmSync(path.join(out,rel),{recursive:true,force:true});
-const allowedImages=new Set(['suited-chair_8e0b5ce6.jpg','JEAPxcuKIPiAcekA.webp','TFJThplzLeYHMeAW.webp']);
-const imageDir=path.join(out,'images');
-if(fs.existsSync(imageDir)) for(const filename of fs.readdirSync(imageDir)) if(!allowedImages.has(filename))fs.rmSync(path.join(imageDir,filename));
+// Preserve every original photograph and route. No content-pruning allowlist.
 const publicRoutes=[...new Set(canonical)].sort();
 const escaped=publicRoutes.map(r=>`  <url><loc>${origin}${r}</loc></url>`).join('\n');
 fs.writeFileSync(path.join(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${escaped}\n</urlset>\n`);
