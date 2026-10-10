@@ -7,6 +7,7 @@ const links = [
   { label: 'INSTAGRAM', name: SOCIALS.instagram.handle, detail: 'Daily field notes and public transmissions', url: SOCIALS.instagram.url },
   { label: 'SACRED MASCULINITY', name: 'Telegram Channel', detail: 'Doctrine, teachings, and transmissions', url: SOCIALS.telegramChannel.url },
   { label: 'SACRED MASCULINE', name: 'Telegram Community', detail: 'Community discussion and brotherhood', url: SOCIALS.telegramGroup.url },
+  { label: 'DANIEL CRUZE BOT', name: '@danielcruzelife_bot', detail: 'Open the official Telegram bot', url: 'https://t.me/danielcruzelife_bot' },
   { label: 'DIRECT MESSAGE', name: 'Daniel Cruze', detail: 'Personal Telegram for private enquiries', url: SOCIALS.telegramPersonal.url },
 ];
 export default function SocialScreen() {
