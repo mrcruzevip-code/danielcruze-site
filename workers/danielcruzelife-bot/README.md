@@ -1,31 +1,32 @@
 # `@danielcruzelife_bot`
 
-This is the version-controlled source for the live Daniel Cruze / The Highest Rite Telegram bot.
+This is the version-controlled source for **The Highest Rite / Daniel Cruze** Telegram bot. It mirrors the public Daniel Cruze site and uses the existing Highest Rite app mark as its welcome image.
 
-## What it does
+## Current live bot experience
 
-- Sends the existing **33rd House crest** as a branded welcome card.
-- Keeps the existing `/oath`, `/buy`, `/order`, and `/founder` flows.
-- Adds public, easy-to-edit commands:
-  - `/books` — verified live book checkout links.
-  - `/blueprint` — the live Soul Blueprint booking link.
-  - `/site` — Daniel Cruze website and private enquiry route.
-- Holds all brand copy, image URLs, website links, book links and legacy links in the `BRAND` and `LINKS` blocks at the top of `worker.js`.
+- Uses the existing **Highest Rite app mark** hosted on `danielcruze.com` as its welcome card.
+- Uses The Highest Rite visual language: deep black, burgundy and ivory with Daniel Cruze as the founder voice.
+- Provides `/books`, `/blueprint`, `/enquire`, `/journal`, and `/site`.
+- Sends people to the live Daniel Cruze pages and the verified AIB HUB PTY LTD book / Soul Blueprint checkout links.
 
-## Safe edit rule
+## Easy owner edits
 
-Edit **only** the values in `BRAND`, `LINKS`, labels, and copy unless a technical change is intended. Do not add `BOT_TOKEN` to any file. The token remains the existing Cloudflare `BOT_TOKEN` secret binding.
+Open `worker.js` and edit only:
 
-## Deploy
+- `BRAND` — public brand mark, website routes and signature.
+- `CHECKOUT` — a verified replacement Stripe link.
+- The text inside each command handler.
 
-From this folder, after reviewing changes:
+Do **not** add any token or key to Git. `BOT_TOKEN` stays as the existing Cloudflare Worker secret.
+
+## Deploy from `main`
 
 ```bash
 npx wrangler deploy --keep-vars
 ```
 
-`--keep-vars` is required so the existing Worker secret binding is retained. After deployment, send `/start`, `/books`, `/blueprint`, and `/site` to the bot and verify the buttons open only the intended public destinations.
+`--keep-vars` retains the existing Cloudflare Worker secret binding. Verify `/start`, `/books`, `/blueprint`, `/enquire`, `/journal`, and `/site` in Telegram after deployment.
 
-## Stripe boundary
+## Stripe webhook status
 
-The bot provides the verified public checkout links. It does **not** yet receive or fulfil Stripe webhooks. Do not claim a Telegram delivery or entitlement after payment until a signed Stripe webhook plus buyer identity mapping is separately implemented.
+The bot currently opens the verified Stripe checkout links. It does **not** yet claim or send a paid delivery after Stripe checkout. That requires a second, authenticated integration: a Stripe webhook secret, an exact selected AIB HUB PTY LTD seller account, and a durable mapping between a Telegram chat and a Stripe Checkout Session. Those must be added before making any purchase-triggered Telegram promise.
