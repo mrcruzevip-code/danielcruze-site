@@ -1,3 +1,5 @@
+> **RECOVERY UPDATE — 2026-10-10:** The original `the-highest-rite.zip` (23 MB; SHA-256 `9b30228b051b4339b13438a40d4a160b1a449cee89ab8910c0bbfc2e4288a091`) was found in available project files, extracted locally and verified to contain editable Expo Router 6 / Expo SDK 54 app screens, `lib/content.ts`, shared components, tests and assets. Source recovery is **now confirmed**, superseding all earlier 'not recovered' statements. A sanitized 111-file source-only ZIP and 20-file responsive/contact patch have been prepared locally; 14 focused Node tests passed. Full Expo dependency install, typecheck, web export and real-device browser verification remain untested. Implementation branch `feat/highest-rite-source-responsive-20261010`, draft PR #4, contains CSS across 22 static exports and initial reusable media source. **Do not treat source recovery as a released application.**
+
 # The Highest Rite — App-First Consolidation and Universal Responsive Images
 
 **Design date:** 2026-10-10.
