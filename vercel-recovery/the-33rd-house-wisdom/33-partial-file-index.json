@@ -1,0 +1,614 @@
+{
+  "source_deployment": "dpl_kJS63hpQuMbZVFhrxL4vdfpeebqj",
+  "completeness": "partial",
+  "listed_file_count": 145,
+  "truncated_subtrees": 23,
+  "meaning": "Metadata only; file contents and images not included.",
+  "files": [
+    {
+      "path": "/src//.gitkeep",
+      "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    },
+    {
+      "path": "/src//assets/index-B9yV4J3w.css",
+      "hash": "e9c41d87ffbf137e7521da2f0eb5e0f24647721a"
+    },
+    {
+      "path": "/src//assets/index-DojmW_PM.js",
+      "hash": "08a5717c0fb912d9366261fa80ee14d1ba57c6ee"
+    },
+    {
+      "path": "/src//covers/book-1-star-gate.webp",
+      "hash": "14c7cc3a44d91f6f8f859ccde8b71b57a31f5d7e"
+    },
+    {
+      "path": "/src//covers/codex-cover.webp",
+      "hash": "a5f95d067e4d7d4ad1d4c54fb78931831a210199"
+    },
+    {
+      "path": "/src//covers/complete-codex-new.webp",
+      "hash": "b98ca94e5ca6f9a34a2108132b76cefb24b57c99"
+    },
+    {
+      "path": "/src//covers/complete-codex.webp",
+      "hash": "97ac961c1d68aa429b50a2a38c2177843b022f18"
+    },
+    {
+      "path": "/src//covers/complete-curriculum.webp",
+      "hash": "cb50469d99f1e0fb80f4d9009b2363b863ed7795"
+    },
+    {
+      "path": "/src//covers/curriculum-cover.webp",
+      "hash": "6dbe161066f465ca9277a37b415e79a9cedfdf14"
+    },
+    {
+      "path": "/src//covers/gate-01-origin.webp",
+      "hash": "bc17428948d36d40ed0635faf1ae18f1800f7a7a"
+    },
+    {
+      "path": "/src//covers/gate-02-focus.webp",
+      "hash": "7175d3ddc10fed18154bca3ce25f895e83c50cfb"
+    },
+    {
+      "path": "/src//covers/gate-03-expansion.webp",
+      "hash": "042297f145d5bbe439cc66a35d0847db688b64fe"
+    },
+    {
+      "path": "/src//covers/gate-04-reflection.webp",
+      "hash": "8aa4da1f48210e98acf61f9c107d357f578814df"
+    },
+    {
+      "path": "/src//covers/gate-05-integration.webp",
+      "hash": "c3767c619d014199d9f5062ebcaa46e3546b35d8"
+    },
+    {
+      "path": "/src//covers/gate-06-transformation.webp",
+      "hash": "dfdf30572a80c50c9c253bee4999f7476324e24b"
+    },
+    {
+      "path": "/src//covers/gate-07-illumination.webp",
+      "hash": "79cead95e1f525f6d71d45005d7428ca47092df8"
+    },
+    {
+      "path": "/src//covers/gate-08-sovereignty.webp",
+      "hash": "aabbbbc3a0c43ef4f288d288bab1ab7c35dd338f"
+    },
+    {
+      "path": "/src//covers/gate-09-union.webp",
+      "hash": "ede7b457281948d735aacea47e1abfc5f0f205cd"
+    },
+    {
+      "path": "/src//covers/gate-10-transcendence.webp",
+      "hash": "e800fb447824f5c485af0b536ba78b4a9a3b850a"
+    },
+    {
+      "path": "/src//covers/gate-11-return.webp",
+      "hash": "02fdb2f5baa7642948b1a150edd44303fe082586"
+    },
+    {
+      "path": "/src//covers/gate-12-completion.webp",
+      "hash": "1661bff9b95d1ecd5551ceb688e4a1cb1ee05685"
+    },
+    {
+      "path": "/src//covers/guide-cover.webp",
+      "hash": "9f46c5bbbd193c3c229ee61da19ffc2564121fd3"
+    },
+    {
+      "path": "/src//covers/inner-circle-new.webp",
+      "hash": "07cd3d5ebb720e0eb02ed55c6a51043d77f36ff6"
+    },
+    {
+      "path": "/src//covers/inner-temple-2.webp",
+      "hash": "ec1a3cebea66ef936fffd5d67af97be5fd54da39"
+    },
+    {
+      "path": "/src//covers/institute-cover.webp",
+      "hash": "3424f3ff55eb5174a8342be07cb3c9c712ac7a1f"
+    },
+    {
+      "path": "/src//covers/manual-cover.webp",
+      "hash": "4ba578cbe21fa2109f0d76ea8dc2f719a32b1e5f"
+    },
+    {
+      "path": "/src//covers/month-01-new.webp",
+      "hash": "be68e487590a8e723a146078f18321ac80ebc9c8"
+    },
+    {
+      "path": "/src//covers/month-01.webp",
+      "hash": "dfe1090338cc202880e06154f2887e2b12479e82"
+    },
+    {
+      "path": "/src//covers/month-02-new.webp",
+      "hash": "1d504d54960a923b774ce76655c226a085a6829b"
+    },
+    {
+      "path": "/src//covers/month-02.webp",
+      "hash": "d04f46a21a74fdcb0df44ad7b0fbce4fa3901050"
+    },
+    {
+      "path": "/src//covers/month-03.webp",
+      "hash": "9ed389c38981cc6a0360c2853cb7cc02d212326a"
+    },
+    {
+      "path": "/src//covers/month-04.webp",
+      "hash": "f73903d97339e2042a3caf9152d2a679fb8bf764"
+    },
+    {
+      "path": "/src//covers/month-05.webp",
+      "hash": "20d9d82943247b59b2400d770d3e1d048cc510ae"
+    },
+    {
+      "path": "/src//covers/month-06.webp",
+      "hash": "238e36f52fd326fb85c1ea6a4b5dcb4af05b9760"
+    },
+    {
+      "path": "/src//covers/month-07.webp",
+      "hash": "d6a4d222e169640dd7be590c23fc577398c65d24"
+    },
+    {
+      "path": "/src//covers/month-08.webp",
+      "hash": "cb546d67c643bcba39ca31416d2f57e84699c659"
+    },
+    {
+      "path": "/src//covers/month-09.webp",
+      "hash": "cebed6e412d0fea6775175860e674654fa20e749"
+    },
+    {
+      "path": "/src//covers/month-10.webp",
+      "hash": "9d01da3570c00bf0beaf4f9340d863f14492cb95"
+    },
+    {
+      "path": "/src//covers/month-11.webp",
+      "hash": "2c775ffd1144d5a7d40203b123cdf37419e07a9e"
+    },
+    {
+      "path": "/src//covers/month-12.webp",
+      "hash": "047ead1bf79b90598f753809b1ca9d15212816eb"
+    },
+    {
+      "path": "/src//covers/public-codex-1.webp",
+      "hash": "88d295b3939729bb9247367c2792251113fef000"
+    },
+    {
+      "path": "/src//covers/star-gate-cosmology-new.webp",
+      "hash": "78725de3e41a6a4486d2142e10283d8e8d1d0ef7"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022737_Manus.webp",
+      "hash": "93dd122a7e75a63e707cd9ede3648a2164a97a6c"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022745_Manus.webp",
+      "hash": "87b876835ab6df92c28e58202360762d928ad5c6"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022752_Manus.webp",
+      "hash": "e9e40e1279612bb37efc7040d7fa56458f735fff"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022758_Manus.webp",
+      "hash": "56676c1ac9a2cee9942769cd365142e6ad0eadfb"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022806_Manus.webp",
+      "hash": "fa16acdf7c2fb2c927908b253aa61c92f4ba56c5"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022813_Manus.webp",
+      "hash": "8fc95a4efff9c04635655a5e46c6cce1d63f953a"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022819_Manus.webp",
+      "hash": "29c3965a066f64250bcfd7ebdc4d8fa3fc32aa47"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022831_Manus.webp",
+      "hash": "6ec7e81e104a0f37af8e37a8e7355405452a10cb"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022837_Manus.webp",
+      "hash": "8a191f398a47ba360ff3333fc1e959c27778033d"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022844_Manus.webp",
+      "hash": "678580be7d14335cc6e53ce623f011d1e6b5cc00"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022849_Manus.webp",
+      "hash": "9ca56b70739b9141adf3aaf81c86f1a3e2783d3e"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022855_Manus.webp",
+      "hash": "2cd44ea3bca71939df57e2f015d50f12b2ebba79"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022901_Manus.webp",
+      "hash": "6ca7574e18e85f2efaac4a43d9a07e545ed30d5e"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022908_Manus.webp",
+      "hash": "b4ee7bd791a1c7e37754f6f4d43b6a8d8274ab2d"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022914_Manus.webp",
+      "hash": "b22547d2fd8b908c620e552d8ec938d5643b367b"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022920_Manus.webp",
+      "hash": "3cc8fe0855341b87d885adb818d305780b78ba6b"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022925_Manus.webp",
+      "hash": "fa8bb69a2cf10846cf41eaacd3bdabf445d278c8"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022932_Manus.webp",
+      "hash": "9b60ca711a11fbae937acbee86e862d330aea6d1"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022938_Manus.webp",
+      "hash": "c3813eac6a46c61ff0826282e045fbb3df2b1114"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022944_Manus.webp",
+      "hash": "486a37ec4bf32fab07a17e8337eae1f48af4d6aa"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022950_Manus.webp",
+      "hash": "ea6a85f2757828a9ce7797b10718c10c5d025022"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_022956_Manus.webp",
+      "hash": "2ab8494e11ad36c54285341193a2b2e7dd3bcb7a"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_023002_Manus.webp",
+      "hash": "ae866726f1d69a32fcbbb9d49f430a4973fe18ff"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_023007_Manus.webp",
+      "hash": "6e04b39900c037c269f2ea25f2e5eb7235cdcf79"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_023027_Manus.webp",
+      "hash": "45e85fa883e59ce32786acc430b21134727133d1"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_023034_Manus.webp",
+      "hash": "7d27b8acc3947d2dfdfd153c4079a97d5d5d3e64"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_023040_Manus.webp",
+      "hash": "331858e1980afca1970cd8d71c99111d2f978bed"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_023107_Manus.webp",
+      "hash": "054fa1aa7d9eb7f124fca740d24d8c271bf89bc5"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_023915_Manus.webp",
+      "hash": "3f75cee77051d35b96bf4ce23d905b3554a9b946"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251123_035513_Messages.webp",
+      "hash": "fffa0b6cb900bb6ffe15996b922251b4285980fd"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105438_Manus.webp",
+      "hash": "417e3632f62d412a3c5a529d23ea7f469f280e5e"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251125_012324_Manus.webp",
+      "hash": "417e3632f62d412a3c5a529d23ea7f469f280e5e"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105446_Manus.webp",
+      "hash": "ad6694013998eed55f0eca810f06907f20e3e145"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105452_Manus.webp",
+      "hash": "9c60241210b3e09bc426a55c23112bf17a9da098"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105458_Manus.webp",
+      "hash": "b18a2cd8523616f8b3b260944d3a42e0ade56f35"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105505_Manus.webp",
+      "hash": "99bd27ddcaa1bc95d74c2da6cd243ae7c9435a15"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105511_Manus.webp",
+      "hash": "743b0c9943cb3ad77e5a4e79699bafd172aa712d"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105518_Manus.webp",
+      "hash": "76ce19b3321d6b20c2a8ad3e70986826cf373922"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105525_Manus.webp",
+      "hash": "79a03798d9480863dcc0980fd7a30a37699a9985"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105531_Manus.webp",
+      "hash": "cfdf1e6a031d1588dd4d558def058be781179874"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105538_Manus.webp",
+      "hash": "4f8178cda2a374e06e3002416a8875a2f8dd2171"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105544_Manus.webp",
+      "hash": "1289d19cc414e8f1eb8bf282c13d59697c8ac1c7"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105550_Manus.webp",
+      "hash": "04eed4d29f07b916e6fe3ee254f7f16ba10f5c69"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251124_105605_Manus.webp",
+      "hash": "77e66bc9ea4f6d338cb47093069620039942e355"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251125_012210_Manus.webp",
+      "hash": "0a867da755e4c59773d4a0b78f74116362d5b523"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251125_012227_Manus.webp",
+      "hash": "28a720df27dcdf4cd1fe91027dcf505376f842c4"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251125_012236_Manus.webp",
+      "hash": "6a204c96c3d0fa10639116da9715c15a8304ffaf"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251125_012242_Manus.webp",
+      "hash": "3e1700425fd349519bf8429a81b58369e9283293"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251125_012256_Manus.webp",
+      "hash": "cd76a4455134a61a01abebf91a72e1c1061f4219"
+    },
+    {
+      "path": "/src//glyphs/Screenshot_20251125_012303_Manus.webp",
+      "hash": "332f919a1b666bc18f55be18a6874e86d0119d2e"
+    },
+    {
+      "path": "/src//glyphs/realm-095.webp",
+      "hash": "f86763f0c91fb3e441ae8c57da8bf4a4855d91f6"
+    },
+    {
+      "path": "/src//glyphs/realm-096.webp",
+      "hash": "d3a41c90534c8e4af8a61bebffe1c1a02623736b"
+    },
+    {
+      "path": "/src//glyphs/realm-097.webp",
+      "hash": "c62dc982cb0852c8a8e7d4e2a0535e90b5c6ff07"
+    },
+    {
+      "path": "/src//glyphs/realm-098.webp",
+      "hash": "6679139a00cf8d40159b7edea0c5abfac02a48a3"
+    },
+    {
+      "path": "/src//glyphs/realm-099.webp",
+      "hash": "93072ad8ce0fb15b10757a4a59bb1d183b2a8f23"
+    },
+    {
+      "path": "/src//glyphs/realm-100.webp",
+      "hash": "bec92fbe5beb70480523990ade3ba480097861e9"
+    },
+    {
+      "path": "/src//glyphs/realm-101.webp",
+      "hash": "4d4ba935c1034054264e37c9c76567a1cc0a3add"
+    },
+    {
+      "path": "/src//glyphs/realm-102.webp",
+      "hash": "8f04bc0d587a77946e30d325278070e99b11e214"
+    },
+    {
+      "path": "/src//glyphs/realm-103.webp",
+      "hash": "ecd96f019fd8dde9b0a853db924fba1229f0712f"
+    },
+    {
+      "path": "/src//glyphs/realm-104.webp",
+      "hash": "d30fb9b3ea87d8aeb44e697099658d813205e524"
+    },
+    {
+      "path": "/src//glyphs/realm-105.webp",
+      "hash": "ef694b1ec9e4ced0de48ec24e82537710bd70fbb"
+    },
+    {
+      "path": "/src//glyphs/realm-106.webp",
+      "hash": "d0040e520f119f81638eba25bc73e0bfe3c15da8"
+    },
+    {
+      "path": "/src//glyphs/realm-107.webp",
+      "hash": "0b4b9a402057865c5b61f676cd92fb937ba6e37b"
+    },
+    {
+      "path": "/src//glyphs/realm-108.webp",
+      "hash": "076774dc1091fe299a730679eb00d6b8ec5ebad2"
+    },
+    {
+      "path": "/src//glyphs/realm-109.webp",
+      "hash": "6facfaf57fb73d91140b2b837a8a5ec68a954a41"
+    },
+    {
+      "path": "/src//glyphs/realm-110.webp",
+      "hash": "93d18b28261cfb9f5785edc324ff9d44f2a705d1"
+    },
+    {
+      "path": "/src//glyphs/realm-111.webp",
+      "hash": "520e19e72c4bf7bf81cc803a4c06b2d71d8aebbb"
+    },
+    {
+      "path": "/src//glyphs/realm-112.webp",
+      "hash": "d2ab24039b2cff8c37062cd43c15b15ebc3d71e4"
+    },
+    {
+      "path": "/src//glyphs/realm-113.webp",
+      "hash": "d6db96e7c22da38f15a90549744a9ca76909c0c5"
+    },
+    {
+      "path": "/src//glyphs/realm-114.webp",
+      "hash": "6e55c123ae5c01b8bb4d95c183ae654f30f8973f"
+    },
+    {
+      "path": "/src//glyphs/realm-115.webp",
+      "hash": "419e4a6e8b14d02ccf8cff30459f8f34c08c0331"
+    },
+    {
+      "path": "/src//glyphs/realm-116.webp",
+      "hash": "41bbbba9d7742732c3703784314fa7e810594678"
+    },
+    {
+      "path": "/src//glyphs/realm-117.webp",
+      "hash": "175adf8529d5d7b218b61154a53148d743d1f6cf"
+    },
+    {
+      "path": "/src//glyphs/realm-118.webp",
+      "hash": "137340bf5ee5ecc84d93484b6e6f5e825fb13693"
+    },
+    {
+      "path": "/src//glyphs/realm-119.webp",
+      "hash": "13465f2f2273f5eeb7804b635f7991fda115ce5e"
+    },
+    {
+      "path": "/src//glyphs/realm-120.webp",
+      "hash": "9539767a7269d2eb455ce0be9a59c28433f89fda"
+    },
+    {
+      "path": "/src//glyphs/realm-121.webp",
+      "hash": "d0332acdf6d9d8f5ed2c9e3c60119885e52906f8"
+    },
+    {
+      "path": "/src//glyphs/realm-122.webp",
+      "hash": "77bf0f5e9f8bcd815a8f561e974a00bc25bd0bf6"
+    },
+    {
+      "path": "/src//glyphs/realm-123.webp",
+      "hash": "4fd47b5238f930f7fd28d28914ccbff30cf302eb"
+    },
+    {
+      "path": "/src//glyphs/realm-124.webp",
+      "hash": "9afc3b8e55a28b833378ae34c7dc529283a4decb"
+    },
+    {
+      "path": "/src//glyphs/realm-125.webp",
+      "hash": "0325f5741fe8488d0a960dea508ce5015d201995"
+    },
+    {
+      "path": "/src//glyphs/realm-126.webp",
+      "hash": "4f16e4eaa1e857f694c5e19bd8d2124bb3fea3d8"
+    },
+    {
+      "path": "/src//glyphs/realm-127.webp",
+      "hash": "afc57f2cc8d8b3ba6ec56e0b100203dcde82f38b"
+    },
+    {
+      "path": "/src//glyphs/realm-128.webp",
+      "hash": "4d838c120103bce24510aae2bff23f521b587b98"
+    },
+    {
+      "path": "/src//glyphs/realm-129.webp",
+      "hash": "0aeee2e8aab4013eaadb2f55808ef19b5ed64118"
+    },
+    {
+      "path": "/src//glyphs/realm-130.webp",
+      "hash": "f7eb945e443338ed65ffb7a47b75883e5c44d0d0"
+    },
+    {
+      "path": "/src//glyphs/realm-131.webp",
+      "hash": "a661cf6f6e1763942fa92599b00882e14534735f"
+    },
+    {
+      "path": "/src//glyphs/realm-132.webp",
+      "hash": "ef8586e5170e572fd261d41a0dca0982a6ad13f1"
+    },
+    {
+      "path": "/src//glyphs/realm-133.webp",
+      "hash": "09a742e05a2904c64db25152507629bc85466cfe"
+    },
+    {
+      "path": "/src//glyphs/realm-134.webp",
+      "hash": "a8a9481630b1e708a713b11defbed9ecdd269564"
+    },
+    {
+      "path": "/src//glyphs/realm-135.webp",
+      "hash": "7d05c3ec6377f3056b4ebd8bd15402d450bb1118"
+    },
+    {
+      "path": "/src//glyphs/realm-136.webp",
+      "hash": "dff261a1684b92e37e9ffb405f52d7da808b4e65"
+    },
+    {
+      "path": "/src//glyphs/realm-137.webp",
+      "hash": "c77a931f2d48cae5d5fae44eb86fd8fb0bbe206e"
+    },
+    {
+      "path": "/src//glyphs/realm-138.webp",
+      "hash": "0ffadab0513095b9f8f576925a043133478bd6fa"
+    },
+    {
+      "path": "/src//glyphs/realm-139.webp",
+      "hash": "e6cdeeb8d147142ccfc8eeca165aa588abd3d613"
+    },
+    {
+      "path": "/src//glyphs/realm-140.webp",
+      "hash": "7975a483b7138c9613a74bc9c80e5d83ddf240ab"
+    },
+    {
+      "path": "/src//glyphs/realm-141.webp",
+      "hash": "e8b155bfa0694167979be99438f1619dfa4b3895"
+    },
+    {
+      "path": "/src//glyphs/realm-142.webp",
+      "hash": "39deafab4de95ac945400b6afb62467911b55e27"
+    },
+    {
+      "path": "/src//glyphs/realm-143.webp",
+      "hash": "0eff67186e5198a6ad5f675c4971fe91d4d316cb"
+    },
+    {
+      "path": "/src//glyphs/realm-144.webp",
+      "hash": "5a164c0ed2315eda513cca8417aec7cdfa1c0fd5"
+    },
+    {
+      "path": "/src//index.html",
+      "hash": "d2fbddb835f8f0c3efd94713bc7c22f24a7db0c6"
+    },
+    {
+      "path": "/src//robots.txt",
+      "hash": "81765b535fa36abacacfe30faf9a5d6bdde97c2d"
+    },
+    {
+      "path": "/src//sitemap.xml",
+      "hash": "87a1a447aed12b24d8736bf2042c3dc6c6588a06"
+    }
+  ],
+  "truncated_at": [
+    "/src//assets/images",
+    "/src//assets/images",
+    "/src//assets/images",
+    "/src//assets/images",
+    "/src//assets/images",
+    "/src//assets/images",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//covers/heroes",
+    "/src//images/books",
+    "/src//images/books",
+    "/src//images/books",
+    "/src//images/books",
+    "/src//images/books",
+    "/src//images/books"
+  ]
+}
