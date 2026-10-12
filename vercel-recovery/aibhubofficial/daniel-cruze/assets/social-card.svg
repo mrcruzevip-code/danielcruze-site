@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Daniel Cruze — Founder and Builder</title>
+  <desc id="desc">Black and gold Daniel Cruze social sharing card.</desc>
+  <defs>
+    <radialGradient id="glow" cx="80%" cy="20%" r="70%">
+      <stop offset="0" stop-color="#4b3d1e"/>
+      <stop offset="0.55" stop-color="#15120c"/>
+      <stop offset="1" stop-color="#090909"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="950" cy="315" r="190" fill="none" stroke="#8f753a" stroke-width="2" opacity=".65"/>
+  <circle cx="950" cy="315" r="145" fill="#0d0c09" stroke="#d7b35f" stroke-width="2"/>
+  <text x="950" y="350" text-anchor="middle" fill="#d7b35f" font-family="Georgia, serif" font-size="108" letter-spacing="-9">DC</text>
+  <text x="90" y="170" fill="#d7b35f" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="7">FOUNDER · BUILDER · OPERATOR</text>
+  <text x="90" y="285" fill="#f4efe3" font-family="Georgia, serif" font-size="82">DANIEL</text>
+  <text x="90" y="372" fill="#d7b35f" font-family="Georgia, serif" font-size="82" font-style="italic">CRUZE</text>
+  <text x="90" y="466" fill="#b5ad9c" font-family="Arial, sans-serif" font-size="26">Build with intent. Own the outcome.</text>
+  <line x1="90" y1="520" x2="690" y2="520" stroke="#8f753a" opacity=".5"/>
+</svg>
