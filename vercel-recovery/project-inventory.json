@@ -1,0 +1,143 @@
+{
+  "captured_on": "2026-10-12",
+  "source": "Vercel connected accounts",
+  "completeness": "partial",
+  "projects": [
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "33rdhouse-platform",
+      "project_id": "prj_IzaWxIsQoBJBpkYZisCkFAQMGsky",
+      "git_source": "The33rdHouse/the33rdhouse-platform",
+      "git_status": "accessible",
+      "deployment_status": "READY"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "the33rdhouse",
+      "project_id": "prj_7sC3tuARGWJRGje5LIL5NJ6iBMJi",
+      "git_source": "The33rdHouse/the33rdhouse-website",
+      "git_status": "accessible",
+      "deployment_status": "NO_DEPLOYMENTS"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "the-33rd-house",
+      "project_id": "prj_gvFpqTEvCdtX1JtPQ7dE5gX7ycwf",
+      "git_source": "The33rdHouse/the33rdhouse-platform",
+      "git_status": "accessible",
+      "deployment_status": "READY"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "the33rd-house-the33rdhouse-platform-commit-b8baa4ada7aa03c9fa496ce3c45ffd2436603e4d-o77y",
+      "project_id": "prj_GW2mtyUiobmE0rB1jLOiWGwQhdfB",
+      "git_source": "mrcruzevip-code/The33rdHouse-the33rdhouse-platform-commit-b8baa4ada7aa03c9fa496ce3c45ffd2436603e4d",
+      "git_status": "not-accessible",
+      "deployment_status": "READY"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "33",
+      "project_id": "prj_Vnq3w6ooNwZeVLiTibgXbTpJFVXy",
+      "git_source": null,
+      "git_status": "unlinked",
+      "deployment_status": "READY"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "sacred-libraries",
+      "project_id": "prj_NpbKrZHbAMDBolDs4gtehUxjpspO",
+      "git_source": "The33rdHouse/sacred-library-static",
+      "git_status": "accessible",
+      "deployment_status": "NO_DEPLOYMENTS"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "project-jw35u",
+      "project_id": "prj_t6xDHRU1Fqea64fomd49h6eHnXo1",
+      "git_source": null,
+      "git_status": "unlinked",
+      "deployment_status": "NO_DEPLOYMENTS"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "v0-nano-banana-pro-playground",
+      "project_id": "prj_OxdgjseMXa9KNbjt08jOBNaaeKmZ",
+      "git_source": "mrcruzevip-code/The33rdHouse-the33rdhouse-platform-commit-b8baa4ada7aa03c9fa496ce3c45ffd2436603e4d",
+      "git_status": "not-accessible",
+      "deployment_status": "NO_DEPLOYMENTS"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "the33rd-house-the33rdhouse-platform-commit-b8baa4ada7aa03c9fa496ce3c45ffd2436603e4d-tb6n",
+      "project_id": "prj_OLjCkuT7epC9edWFhCSKqUGwG2tq",
+      "git_source": "mrcruzevip-code/The33rdHouse-the33rdhouse-platform-commit-b8baa4ada7aa03c9fa496ce3c45ffd2436603e4d",
+      "git_status": "not-accessible",
+      "deployment_status": "READY"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "v0-recreate-ui-from-screenshot",
+      "project_id": "prj_r1TeabzdiRBuZT7zoLaUQ5njnDA8",
+      "git_source": null,
+      "git_status": "unlinked",
+      "deployment_status": "NO_DEPLOYMENTS"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "the33rd-house-the33rdhouse-platform-commit-b8baa4ada7aa03c9fa496ce3c45ffd2436603e4d",
+      "project_id": "prj_eBN2eeO5Wft0HiQwc5hB33wBC8Aa",
+      "git_source": "mrcruzevip-code/The33rdHouse-the33rdhouse-platform-commit-b8baa4ada7aa03c9fa496ce3c45ffd2436603e4d",
+      "git_status": "not-accessible",
+      "deployment_status": "READY"
+    },
+    {
+      "team": "the-33rd-house-wisdom",
+      "name": "the33rdhouse-blog",
+      "project_id": "prj_JlydRifCXjrgSLEw8fAfhLBKBffT",
+      "git_source": "The33rdHouse/the33rdhouse-website",
+      "git_status": "accessible",
+      "deployment_status": "NO_DEPLOYMENTS"
+    },
+    {
+      "team": "aibhubofficial",
+      "name": "the-daniel-cruze-experience",
+      "project_id": "prj_64xv4blF5CS6Sw4FAIuWlOQY0vbW",
+      "git_source": "The33rdHouse/the33rdhouse-living-codex",
+      "git_status": "not-accessible",
+      "deployment_status": "READY"
+    },
+    {
+      "team": "aibhubofficial",
+      "name": "daniel-cruze",
+      "project_id": "prj_8heyIIAcPuKUcMgSWIyHOIU6pfM7",
+      "git_source": null,
+      "git_status": "unlinked",
+      "deployment_status": "READY"
+    },
+    {
+      "team": "aibhubofficial",
+      "name": "daniel-cruze-site",
+      "project_id": "prj_iB61YGqDgmlJfoyLHo8PRJ8U9GXt",
+      "git_source": null,
+      "git_status": "unlinked",
+      "deployment_status": "READY"
+    },
+    {
+      "team": "aibhubofficial",
+      "name": "project-chcp9",
+      "project_id": "prj_bhDMmkVOiZIsHEWLhvC6PP5YAbrO",
+      "git_source": null,
+      "git_status": "unlinked",
+      "deployment_status": "NO_DEPLOYMENTS"
+    },
+    {
+      "team": "aibhubofficial",
+      "name": "v0-aibhubofficial-1571-ae8212d3",
+      "project_id": "prj_TYshol1gsrzOFsW7zzEqoluWMpUI",
+      "git_source": null,
+      "git_status": "unlinked",
+      "deployment_status": "NO_DEPLOYMENTS"
+    }
+  ]
+}
