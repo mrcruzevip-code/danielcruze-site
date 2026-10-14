@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import json, os, threading
+import json, os, threading, wave, io, math, struct
 from pathlib import Path
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -22,6 +22,13 @@ def main():
             for route in routes:
                 response=page.goto(base+route,wait_until='networkidle');page.wait_for_timeout(150)
                 assert response.status==200,(width,route,response.status)
+                if route == '/studio/':
+                    assert page.locator('#canvas').count()==1, 'studio canvas missing'
+                    assert page.get_by_role('heading',name='Video Studio.').count()==1
+                    assert page.evaluate('document.documentElement.scrollWidth') <= width+2, (width,route,'horizontal overflow')
+                    assert not errors, (width,route,'runtime errors',errors)
+                    results.append({'width':width,'route':route,'passed':True})
+                    continue
                 data=page.evaluate('''() => {const root=document.querySelector('#root');return {hydrated:Object.keys(root||{}).some(k=>k.startsWith('__react')),text:root?.innerText||'',width:document.documentElement.scrollWidth,rootWidth:root?.getBoundingClientRect().width,badImages:[...document.images].filter(i=>i.getBoundingClientRect().width>0&&(!i.complete||i.naturalWidth===0)).map(i=>i.getAttribute('src'))};}''')
                 assert data['hydrated'] and data['rootWidth']>0,(width,route,'blank/unhydrated')
                 assert len(data['text'])>120,(width,route,'missing content')
@@ -44,6 +51,29 @@ def main():
             page.goto(base+alias,wait_until='networkidle');page.wait_for_url('**'+target);assert page.locator('#root').inner_text().strip(),alias
         response=page.goto(base+'/missing-route-validation');assert response.status==404
         context=browser.new_context(java_script_enabled=False);raw=context.new_page();raw.goto(base+'/books/');assert 'The Path of Transformation' in raw.locator('body').inner_text()
+        page.goto(base+'/studio/',wait_until='networkidle')
+        wav=io.BytesIO()
+        with wave.open(wav,'wb') as f:
+            f.setnchannels(1);f.setsampwidth(2);f.setframerate(16000)
+            f.writeframes(b''.join(struct.pack('<h',int(8000*math.sin(2*math.pi*440*i/16000))) for i in range(32000)))
+        page.locator('#audio').set_input_files({'name':'test.wav','mimeType':'audio/wav','buffer':wav.getvalue()})
+        page.get_by_text('Recording ready.',exact=True).wait_for()
+        page.locator('#template').select_option('03')
+        assert page.locator('#title').input_value()=='What used to work'
+        with page.expect_download() as saved:
+            page.get_by_role('button',name='Save project',exact=True).click()
+        saved.value.save_as(str(dest/'studio-project.json'))
+        assert json.loads((dest/'studio-project.json').read_text())['number']=='03'
+        page.locator('#title').fill('Changed')
+        page.locator('#restore').set_input_files(str(dest/'studio-project.json'))
+        page.get_by_text('Settings restored. Load the original recording to continue.',exact=True).wait_for()
+        assert page.locator('#title').input_value()=='What used to work'
+        with page.expect_download(timeout=30000) as rendered:
+            page.get_by_role('button',name='Export video',exact=True).click()
+        video=dest/rendered.value.suggested_filename
+        rendered.value.save_as(str(video));assert video.stat().st_size>1000, 'empty video export'
+        assert not errors, ('studio export runtime errors',errors)
+        assert page.locator('#play').is_enabled(), 'controls not restored after export'
         browser.close()
     server.shutdown();(dest/'responsive-results.json').write_text(json.dumps(results,indent=2)+'\n')
     print(f'PASS: {len(results)} original-route/viewport hydration checks, retained imagery, visible original hero, real drawer/deep-link navigation, aliases, no-JS Books and HTTP 404.')
