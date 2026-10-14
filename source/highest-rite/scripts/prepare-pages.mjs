@@ -6,11 +6,11 @@ const out = path.join(root, 'dist');
 if (!fs.existsSync(path.join(out, 'index.html'))) throw new Error('Run Expo web export first');
 
 const origin = 'https://danielcruze.com';
-const canonical = ['/', '/about/', '/books/', '/journal/', '/soul-blueprint/', '/social/', '/contact/', '/work-with-daniel/', '/the-33rd-house/'];
+const canonical = ['/', '/about/', '/books/', '/journal/', '/soul-blueprint/', '/social/', '/contact/', '/work-with-daniel/', '/the-33rd-house/', '/studio/'];
 const noindex = new Set(['dev/theme-lab', 'oauth/callback']);
 const coreNav = [
   ['Home', '/'], ['Books', '/books/'], ['Soul Blueprint', '/soul-blueprint/'],
-  ['Journal', '/journal/'], ['Private Enquiries', '/contact/'], ['Social', '/social/'],
+  ['Video Studio', '/studio/'], ['Journal', '/journal/'], ['Private Enquiries', '/contact/'], ['Social', '/social/'],
 ];
 const redirect = (target) => `<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${origin}${target}"><meta http-equiv="refresh" content="0;url=${target}"><title>Page moved | Daniel Cruze</title></head><body><p><a href="${target}">Continue to Daniel Cruze</a></p></body></html>\n`;
 const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => entry.isDirectory() ? walk(path.join(dir, entry.name)) : [path.join(dir, entry.name)]);

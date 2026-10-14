@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "admin@the33rdhouse.com",
+    "name": "The Cruze Estate Trust"
+  },
+  "description": "Create editable scene-based HTML videos and render them locally to MP4 using HyperFrames, with bundled workflows, templates and sound effects.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "category": "Productivity",
+        "defaultPrompt": "Use HTML Video Production to create an editable video from my materials.",
+        "developerName": "The Cruze Estate Trust",
+        "displayName": "HTML Video Production",
+        "longDescription": "Produce product-launch videos, explainers, motion graphics, captions and music-synced videos using the supplied HyperFrames skill collection, adapted for ChatGPT and Codex. Media generation depends on available connected tools or supplied assets.",
+        "shortDescription": "Editable HTML videos to MP4"
+      }
+    }
+  },
+  "name": "html-video-production",
+  "version": "0.2.0"
+}
