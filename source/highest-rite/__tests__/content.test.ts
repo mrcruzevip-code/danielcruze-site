@@ -67,8 +67,19 @@ describe("Social links", () => {
 });
 
 describe("Books", () => {
-  it("has 2 books", () => {
-    expect(BOOKS).toHaveLength(2);
+  it("has 3 books, including the live Gentleman's Guide Book One", () => {
+    expect(BOOKS).toHaveLength(3);
+  });
+
+  it("lists the Guide with the supplied cover, exact subtitle, and live status", () => {
+    const guide = BOOKS.find((book) => book.id === "gentlemans-guide-book-one");
+    expect(guide).toBeDefined();
+    expect(guide?.title).toBe("The Gentleman's Guide to Intimacy, Pleasure, & Sensual Dominance");
+    expect(guide?.subtitle).toBe("Book 1 of 5 — Foundations of Connection and Pleasure");
+    expect(guide?.availabilityLabel).toBe("AVAILABLE NOW");
+    expect(guide?.coverImage).toBe(IMAGES.books.gentlemansGuide);
+    expect(guide?.checkoutUrl).toBe("https://www.amazon.com.au/dp/B0HNGVX967");
+    expect(guide?.priceLabel).toBe("Kindle $14.32");
   });
 
   it("each book has required fields", () => {

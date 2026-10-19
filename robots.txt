@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /dev
-Disallow: /oauth
+Disallow: /api/
+Disallow: /dev/
+Disallow: /oauth/
+Sitemap: https://danielcruze.com/sitemap.xml

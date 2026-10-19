@@ -1,0 +1,235 @@
+{
+  "routes": [
+    {
+      "path": "/(tabs)/"
+    },
+    {
+      "path": "/_sitemap/"
+    },
+    {
+      "path": "/_sitemap.html"
+    },
+    {
+      "path": "/about/"
+    },
+    {
+      "path": "/about.html"
+    },
+    {
+      "path": "/article/[id]/"
+    },
+    {
+      "path": "/article/[id].html"
+    },
+    {
+      "path": "/article/a1/"
+    },
+    {
+      "path": "/article/a1.html"
+    },
+    {
+      "path": "/article/a2/"
+    },
+    {
+      "path": "/article/a2.html"
+    },
+    {
+      "path": "/article/a3/"
+    },
+    {
+      "path": "/article/a3.html"
+    },
+    {
+      "path": "/article/a4/"
+    },
+    {
+      "path": "/article/a4.html"
+    },
+    {
+      "path": "/article/a5/"
+    },
+    {
+      "path": "/article/a5.html"
+    },
+    {
+      "path": "/article/a6/"
+    },
+    {
+      "path": "/article/a6.html"
+    },
+    {
+      "path": "/article/christos-oil/"
+    },
+    {
+      "path": "/article/christos-oil.html"
+    },
+    {
+      "path": "/article/kundalini/"
+    },
+    {
+      "path": "/article/kundalini.html"
+    },
+    {
+      "path": "/article/milk-and-honey/"
+    },
+    {
+      "path": "/article/milk-and-honey.html"
+    },
+    {
+      "path": "/beyond-duality/"
+    },
+    {
+      "path": "/beyond-duality.html"
+    },
+    {
+      "path": "/books/"
+    },
+    {
+      "path": "/books.html"
+    },
+    {
+      "path": "/contact/"
+    },
+    {
+      "path": "/contact.html"
+    },
+    {
+      "path": "/decoding-cosmos/"
+    },
+    {
+      "path": "/decoding-cosmos.html"
+    },
+    {
+      "path": "/dev/theme-lab/"
+    },
+    {
+      "path": "/dev/theme-lab.html"
+    },
+    {
+      "path": "/for-couples/"
+    },
+    {
+      "path": "/for-couples.html"
+    },
+    {
+      "path": "/for-men/"
+    },
+    {
+      "path": "/for-men.html"
+    },
+    {
+      "path": "/for-women/"
+    },
+    {
+      "path": "/for-women.html"
+    },
+    {
+      "path": "/"
+    },
+    {
+      "path": "/journal/"
+    },
+    {
+      "path": "/journal.html"
+    },
+    {
+      "path": "/oauth/callback/"
+    },
+    {
+      "path": "/oauth/callback.html"
+    },
+    {
+      "path": "/policies/"
+    },
+    {
+      "path": "/policies.html"
+    },
+    {
+      "path": "/sacred-masculinity/"
+    },
+    {
+      "path": "/sacred-masculinity.html"
+    },
+    {
+      "path": "/service/[id]/"
+    },
+    {
+      "path": "/service/[id].html"
+    },
+    {
+      "path": "/service/couples-polarity/"
+    },
+    {
+      "path": "/service/couples-polarity.html"
+    },
+    {
+      "path": "/service/intimacy-coaching/"
+    },
+    {
+      "path": "/service/intimacy-coaching.html"
+    },
+    {
+      "path": "/service/masculine-embodiment/"
+    },
+    {
+      "path": "/service/masculine-embodiment.html"
+    },
+    {
+      "path": "/service/private-mentoring/"
+    },
+    {
+      "path": "/service/private-mentoring.html"
+    },
+    {
+      "path": "/service/retreat-travel/"
+    },
+    {
+      "path": "/service/retreat-travel.html"
+    },
+    {
+      "path": "/service/soul-blueprint/"
+    },
+    {
+      "path": "/service/soul-blueprint.html"
+    },
+    {
+      "path": "/service/tantric-guidance/"
+    },
+    {
+      "path": "/service/tantric-guidance.html"
+    },
+    {
+      "path": "/social/"
+    },
+    {
+      "path": "/social.html"
+    },
+    {
+      "path": "/soul-blueprint/"
+    },
+    {
+      "path": "/soul-blueprint.html"
+    },
+    {
+      "path": "/studio/"
+    },
+    {
+      "path": "/the-33rd-house/"
+    },
+    {
+      "path": "/the-33rd-house.html"
+    },
+    {
+      "path": "/the-books/"
+    },
+    {
+      "path": "/the-books.html"
+    },
+    {
+      "path": "/work-with-daniel/"
+    },
+    {
+      "path": "/work-with-daniel.html"
+    }
+  ]
+}
