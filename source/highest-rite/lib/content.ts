@@ -117,6 +117,8 @@ export const BOOKS: Book[] = [
     description:
       "A guide through the initiatory descent — from the constructed self to the essential self. This book maps the stages of masculine transformation: the shedding of ego armour, the confrontation with shadow, and the emergence of a man who leads from depth rather than defence.\n\nDrawing on five millennia of wisdom tradition — from Mesopotamian temple rites to Vedic initiation to the Gnostic bridal chamber — this work offers a practical, embodied path for the modern man who senses there is more beneath the surface.",
     coverImage: IMAGES.books.pathOfTransformation,
+    checkoutUrl: "https://buy.stripe.com/7sY4gzcY9fJaalq2K46wE0E",
+    priceLabel: "A$34.95 AUD",
   },
   {
     id: "12-sacred-principles",
