@@ -1,0 +1,39 @@
+{
+  "name": "danielcruze-books",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "list_books",
+      "description": "List all books with checkout links"
+    },
+    {
+      "name": "get_book",
+      "description": "Get one book by id"
+    }
+  ],
+  "books": [
+    {
+      "id": "gentlemans-guide-book-one",
+      "title": "The Gentleman's Guide to Intimacy, Pleasure, & Sensual Dominance",
+      "subtitle": "Book 1 of 5 — Foundations of Connection and Pleasure",
+      "availability": "AVAILABLE NOW",
+      "amazon": "https://www.amazon.com.au/dp/B0HNGVX967",
+      "stripe": "https://buy.stripe.com/9B6dR92jv68A2SY2K46wE0F",
+      "price": "Kindle $14.32"
+    },
+    {
+      "id": "path-of-transformation",
+      "title": "The Path of Transformation",
+      "subtitle": "From Ego to Essence",
+      "stripe": "https://buy.stripe.com/7sY4gzcY9fJaalq2K46wE0E",
+      "price": "A$34.95 AUD"
+    },
+    {
+      "id": "12-sacred-principles",
+      "title": "12 Sacred Principles",
+      "subtitle": "For Living with Meaning",
+      "stripe": "https://buy.stripe.com/3cIdR93nz7cEfFK1G06wE0m",
+      "price": "A$33 AUD"
+    }
+  ]
+}
