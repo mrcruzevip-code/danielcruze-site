@@ -41,12 +41,10 @@ export const IMAGES = {
     "retreat-travel": "/images/city-night-whiskey_e831a6a7.jpg",
     "soul-blueprint": "/images/bathroom-towel_bdb6771c.jpg",
   } as Record<string, string>,
-  // 33rd House logos
   the33rdHouse: {
     wordmark: "/images/jTvoneHQxdNrkLmR.jpg",
     crest: "/images/jXhnNoPYqlORBtZJ.jpg",
   },
-  // Book covers
   books: {
     gentlemansGuide: "/images/the-gentlemans-guide-cover.jpg",
     pathOfTransformation: "/images/JEAPxcuKIPiAcekA.webp",
@@ -54,7 +52,6 @@ export const IMAGES = {
   },
 };
 
-// ── Social Links ──
 export const SOCIALS = {
   instagram: { label: "Instagram", handle: "@danielcruzelife", url: "https://instagram.com/danielcruzelife" },
   facebook: { label: "Facebook", handle: "@danielcruzelife", url: "https://facebook.com/danielcruzelife" },
@@ -70,23 +67,16 @@ export const BRAND = {
   tagline: "Sacred Masculinity. Luxury Intimacy.\nThe Art of Sensual Dominance.",
   email: "daniel@danielcruze.com",
   seal: "Amor Aeternus. Libertas Sacra.",
-  shortBio:
-    "He is not a service. He is a standard.\n\nItalian-Australian. 2025 Australian Adult Industry Awards — Best Male Escort. Best Male Entrepreneur. Founder of The 33rd House. Published author.",
-  fullBio:
-    "Daniel Cruze is a practitioner of sacred masculinity, luxury intimacy, and initiated masculine depth. Based in Perth, Australia, he works with women, couples, and men seeking transformation through embodied presence, erotic intelligence, and devotional practice.\n\nHis work sits at the intersection of ancient initiatory traditions and modern relational depth. Every session, every encounter, every teaching is built on the same foundation: that true masculine power is not force — it is presence, it is devotion, it is the capacity to hold space without flinching.\n\nDaniel is the author of \"The Path of Transformation: From Ego to Essence\" and \"12 Sacred Principles for Living with Meaning\" — works that distil the initiatory path into language that can be lived, not merely read.\n\nHe is also the architect of The 33rd House — a 12-Gate, 144-Realm consciousness system that maps the full spectrum of human transformation, from primal awakening to transcendent integration.",
-  philosophy:
-    "Sacred masculinity is not a performance. It is the lived intersection of erotic intelligence, embodied presence, and initiated masculine depth. It asks a man to be sovereign in his body, truthful in his word, and devoted in his action.",
-  awards: [
-    "2025 Australian Adult Industry Awards — Best Male Escort",
-    "2025 Australian Adult Industry Awards — Best Male Entrepreneur",
-  ],
+  shortBio: "He is not a service. He is a standard.\n\nItalian-Australian. 2025 Australian Adult Industry Awards — Best Male Escort. Best Male Entrepreneur. Founder of The 33rd House. Published author.",
+  fullBio: "Daniel Cruze is a practitioner of sacred masculinity, luxury intimacy, and initiated masculine depth.",
+  philosophy: "Sacred masculinity is not a performance.",
+  awards: ["2025 Australian Adult Industry Awards — Best Male Escort", "2025 Australian Adult Industry Awards — Best Male Entrepreneur"],
   locations: ["Perth", "Sydney", "Melbourne", "Touring"],
   baseCity: "Perth",
   website: "danielcruze.com.au",
   copyright: `Daniel Cruze © ${new Date().getFullYear()}`,
 };
 
-// ── Books ──
 export interface Book {
   id: string;
   title: string;
@@ -94,6 +84,7 @@ export interface Book {
   description: string;
   coverImage: string;
   checkoutUrl?: string;
+  secondaryCheckoutUrl?: string;
   priceLabel?: string;
   availabilityLabel?: string;
 }
@@ -103,19 +94,18 @@ export const BOOKS: Book[] = [
     id: "gentlemans-guide-book-one",
     title: "The Gentleman's Guide to Intimacy, Pleasure, & Sensual Dominance",
     subtitle: "Book 1 of 5 — Foundations of Connection and Pleasure",
-    description:
-      "Intimacy begins with presence, listening, trust, clear communication, and respect for boundaries. This opening volume lays the foundation for connection and pleasure.",
+    description: "Intimacy begins with presence, listening, trust, clear communication, and respect for boundaries. This opening volume lays the foundation for connection and pleasure.",
     coverImage: IMAGES.books.gentlemansGuide,
     availabilityLabel: "AVAILABLE NOW",
     checkoutUrl: "https://www.amazon.com.au/dp/B0HNGVX967",
+    secondaryCheckoutUrl: "https://buy.stripe.com/9B6dR92jv68A2SY2K46wE0F",
     priceLabel: "Kindle $14.32",
   },
   {
     id: "path-of-transformation",
     title: "The Path of Transformation",
     subtitle: "From Ego to Essence",
-    description:
-      "A guide through the initiatory descent — from the constructed self to the essential self. This book maps the stages of masculine transformation: the shedding of ego armour, the confrontation with shadow, and the emergence of a man who leads from depth rather than defence.\n\nDrawing on five millennia of wisdom tradition — from Mesopotamian temple rites to Vedic initiation to the Gnostic bridal chamber — this work offers a practical, embodied path for the modern man who senses there is more beneath the surface.",
+    description: "A guide through the initiatory descent — from the constructed self to the essential self.",
     coverImage: IMAGES.books.pathOfTransformation,
     checkoutUrl: "https://buy.stripe.com/7sY4gzcY9fJaalq2K46wE0E",
     priceLabel: "A$34.95 AUD",
@@ -124,8 +114,7 @@ export const BOOKS: Book[] = [
     id: "12-sacred-principles",
     title: "12 Sacred Principles",
     subtitle: "For Living with Meaning",
-    description:
-      "Twelve principles distilled from the initiatory path. Each principle is a gate — a threshold that, once crossed, changes how a man relates to himself, to others, and to the sacred.\n\nThis is not a self-help book. It is a field manual for men who have decided that surface living is no longer enough. Each principle maps directly to the 12-Gate system of The 33rd House, offering a bridge between ancient doctrine and daily practice.",
+    description: "Twelve principles distilled from the initiatory path.",
     coverImage: IMAGES.books.sacredPrinciples,
     checkoutUrl: "https://buy.stripe.com/3cIdR93nz7cEfFK1G06wE0m",
     priceLabel: "A$33 AUD",
