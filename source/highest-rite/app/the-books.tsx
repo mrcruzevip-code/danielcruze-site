@@ -5,7 +5,7 @@ import { ScreenContainer } from "@/components/screen-container";
 import { AppShell } from "@/components/app-shell";
 import { CTAButton } from "@/components/cta-button";
 import { SectionDivider } from "@/components/section-divider";
-import { BOOKS, LIVE_BOOK_CHECKOUTS } from "@/lib/content";
+import { BOOKS } from "@/lib/content";
 import { StyleSheet } from "react-native";
 import { useSiteDimensions } from "@/hooks/use-site-dimensions";
 
@@ -47,9 +47,13 @@ export default function TheBooksScreen() {
                   {book.checkoutUrl && (
                     <View style={styles.checkoutBlock}>
                       <Text style={styles.priceLabel}>{book.priceLabel}</Text>
-                      <CTAButton label="AMAZON KINDLE" onPress={() => Linking.openURL(book.checkoutUrl!)} />
-                      {book.secondaryCheckoutUrl && (
-                        <CTAButton label="STRIPE CHECKOUT" onPress={() => Linking.openURL(book.secondaryCheckoutUrl!)} />
+                      {book.secondaryCheckoutUrl ? (
+                        <>
+                          <CTAButton label="AMAZON KINDLE" onPress={() => Linking.openURL(book.checkoutUrl!)} />
+                          <CTAButton label="STRIPE CHECKOUT" onPress={() => Linking.openURL(book.secondaryCheckoutUrl!)} />
+                        </>
+                      ) : (
+                        <CTAButton label="SECURE CHECKOUT" onPress={() => Linking.openURL(book.checkoutUrl!)} />
                       )}
                     </View>
                   )}
@@ -58,21 +62,6 @@ export default function TheBooksScreen() {
               {index < BOOKS.length - 1 && <SectionDivider />}
             </View>
           ))}
-
-          <SectionDivider />
-
-          <View style={[styles.section, desktop && styles.sectionDesktop]}>
-            <Text style={styles.sectionLabel}>THE TREASURY</Text>
-            <Text style={styles.sectionTitle}>Further Transmissions</Text>
-            {LIVE_BOOK_CHECKOUTS.map((book) => (
-              <View key={book.id} style={styles.treasuryCard}>
-                <Text style={styles.treasuryTitle}>{book.title}</Text>
-                <Text style={styles.treasuryDescription}>{book.description}</Text>
-                <Text style={styles.priceLabel}>{book.priceLabel}</Text>
-                <CTAButton label="SECURE CHECKOUT" onPress={() => Linking.openURL(book.checkoutUrl)} />
-              </View>
-            ))}
-          </View>
         </ScrollView>
       </ScreenContainer>
     </AppShell>
