@@ -39,11 +39,11 @@ export function CTAButton({
       accessibilityRole="button"
       accessibilityLabel={label}
       onPress={onPress}
-      activeOpacity={0.7}
+      activeOpacity={0.8}
       style={{
         paddingVertical: paddingV,
         paddingHorizontal: paddingH,
-        borderWidth: 0.5,
+        borderWidth: variant === "ghost" ? 0 : 1.5,
         borderColor,
         backgroundColor: bgColor,
         alignSelf: "center",
@@ -53,7 +53,7 @@ export function CTAButton({
         style={{
           color: textColor,
           fontSize,
-          fontWeight: "300",
+          fontWeight: "600",
           letterSpacing: 3,
           textTransform: "uppercase",
           textAlign: "center",
