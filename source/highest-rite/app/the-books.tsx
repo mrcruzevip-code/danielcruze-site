@@ -5,7 +5,7 @@ import { ScreenContainer } from "@/components/screen-container";
 import { AppShell } from "@/components/app-shell";
 import { CTAButton } from "@/components/cta-button";
 import { SectionDivider } from "@/components/section-divider";
-import { BOOKS, BRAND, LIVE_BOOK_CHECKOUTS, SOCIALS } from "@/lib/content";
+import { BOOKS, LIVE_BOOK_CHECKOUTS } from "@/lib/content";
 import { StyleSheet } from "react-native";
 import { useSiteDimensions } from "@/hooks/use-site-dimensions";
 
@@ -17,12 +17,8 @@ export default function TheBooksScreen() {
     <AppShell>
       <ScreenContainer>
         <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
-          {/* Hero */}
           <View style={[styles.heroSection, desktop && styles.heroSectionDesktop]}>
-            <LinearGradient
-              colors={["#0A0A0A", "#1A0A0A", "#0A0A0A"]}
-              style={StyleSheet.absoluteFill}
-            />
+            <LinearGradient colors={["#0A0A0A", "#1A0A0A", "#0A0A0A"]} style={StyleSheet.absoluteFill} />
             <Text style={styles.heroLabel}>PUBLISHED WORKS</Text>
             <Text style={styles.heroTitle}>THE BOOKS</Text>
             <Text style={styles.heroSubtitle}>
@@ -32,17 +28,11 @@ export default function TheBooksScreen() {
 
           <SectionDivider />
 
-          {/* Book Cards */}
           {BOOKS.map((book, index) => (
             <View key={book.id}>
               <View style={[styles.bookCard, desktop && styles.bookCardDesktop]}>
                 <View style={[styles.coverContainer, desktop && styles.coverContainerDesktop]}>
-                  <Image
-                    source={{ uri: book.coverImage }}
-                    style={styles.coverImage}
-                    contentFit="contain"
-                    transition={400}
-                  />
+                  <Image source={{ uri: book.coverImage }} style={styles.coverImage} contentFit="contain" transition={400} />
                 </View>
                 <View style={[styles.bookInfo, desktop && styles.bookInfoDesktop]}>
                   <Text style={[styles.bookTitle, desktop && styles.bookTitleDesktop]}>{book.title}</Text>
@@ -57,10 +47,10 @@ export default function TheBooksScreen() {
                   {book.checkoutUrl && (
                     <View style={styles.checkoutBlock}>
                       <Text style={styles.priceLabel}>{book.priceLabel}</Text>
-                      <CTAButton
-                        label="SECURE CHECKOUT"
-                        onPress={() => Linking.openURL(book.checkoutUrl!)}
-                      />
+                      <CTAButton label="AMAZON KINDLE" onPress={() => Linking.openURL(book.checkoutUrl!)} />
+                      {book.secondaryCheckoutUrl && (
+                        <CTAButton label="STRIPE CHECKOUT" onPress={() => Linking.openURL(book.secondaryCheckoutUrl!)} />
+                      )}
                     </View>
                   )}
                 </View>
@@ -71,7 +61,6 @@ export default function TheBooksScreen() {
 
           <SectionDivider />
 
-          {/* Existing written transmissions with verified live checkout */}
           <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionLabel}>THE TREASURY</Text>
             <Text style={styles.sectionTitle}>Further Transmissions</Text>
@@ -80,10 +69,7 @@ export default function TheBooksScreen() {
                 <Text style={styles.treasuryTitle}>{book.title}</Text>
                 <Text style={styles.treasuryDescription}>{book.description}</Text>
                 <Text style={styles.priceLabel}>{book.priceLabel}</Text>
-                <CTAButton
-                  label="SECURE CHECKOUT"
-                  onPress={() => Linking.openURL(book.checkoutUrl)}
-                />
+                <CTAButton label="SECURE CHECKOUT" onPress={() => Linking.openURL(book.checkoutUrl)} />
               </View>
             ))}
           </View>
