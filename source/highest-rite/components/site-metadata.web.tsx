@@ -1,4 +1,5 @@
 import Head from 'expo-router/head';
+import { PAGE_CONTENT } from '@/lib/site-registry';
 import { usePathname } from 'expo-router';
 import { ARTICLES, SERVICES, BRAND, IMAGES, SOCIALS } from '@/lib/content';
 
@@ -27,8 +28,10 @@ export function SiteMetadata() {
   const id = path.split('/').at(-1);
   const article = path.startsWith('/article/') ? ARTICLES.find((item) => item.id === id) : null;
   const service = path.startsWith('/service/') ? SERVICES.find((item) => item.id === id) : null;
-  const title = article ? `${article.title} | Daniel Cruze` : service ? `${service.title} | Daniel Cruze` : titles[path] || 'The Highest Rite | Daniel Cruze';
-  const description = article?.excerpt || service?.subtitle || 'The Highest Rite by Daniel Cruze: sacred masculinity, embodied presence, published books, Soul Blueprint readings and private work.';
+  const page = PAGE_CONTENT[path];
+  const title = article ? `${article.title} | Daniel Cruze` : service ? `${service.title} | Daniel Cruze` : page?.title || titles[path] || 'The Highest Rite | Daniel Cruze';
+  const description = article?.excerpt || service?.subtitle || page?.description || 'Daniel Cruze: books, writing and The Highest Rite.';
+  const imageUrl = page?.image ? (page.image.startsWith('https://') ? page.image : `https://danielcruze.com${page.image}`) : `https://danielcruze.com${IMAGES.hero}`;
   const canonicalPath = path === '/the-books' ? '/books/' : path === '/' ? '/' : `${path}/`;
   const url = `https://danielcruze.com${canonicalPath}`;
   const structuredData = JSON.stringify({
@@ -55,19 +58,20 @@ export function SiteMetadata() {
   return <Head>
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="Daniel Cruze, The Highest Rite, sacred masculinity, Soul Blueprint, embodied presence, spiritual books" />
+    <meta name="keywords" content={page?.keywords || "Daniel Cruze, The Highest Rite, books, The 33rd House"} />
     <link rel="canonical" href={url} />
     <meta property="og:site_name" content="The Highest Rite | Daniel Cruze" />
     <meta property="og:type" content={article ? 'article' : 'website'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={url} />
-    <meta property="og:image" content={`https://danielcruze.com${IMAGES.hero}`} />
+    <meta property="og:image" content={imageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
+    {page?.imageAlt ? <meta name="twitter:image:alt" content={page.imageAlt} /> : null}
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={`https://danielcruze.com${IMAGES.hero}`} />
-    {path.startsWith('/dev/') || path.startsWith('/oauth/') ? <meta name="robots" content="noindex,follow" /> : <meta name="robots" content="index,follow,max-image-preview:large" />}
+    <meta name="twitter:image" content={imageUrl} />
+    {path.startsWith('/dev/') || path.startsWith('/oauth/') || page?.robots === 'noindex,follow' ? <meta name="robots" content="noindex,follow" /> : <meta name="robots" content="index,follow,max-image-preview:large" />}
     <script type="application/ld+json">{structuredData}</script>
   </Head>;
 }
