@@ -206,9 +206,10 @@ export default function The33rdHouseScreen() {
           <Text
             style={[styles.body, { color: colors.muted, marginTop: 16 }]}
           >
-            DanielCruze.com is the public front door; this app is the personal
-            flagship. The 33rd House is the larger temple, the doctrine
-            ecosystem, the world that extends beyond any single practitioner.
+            DanielCruze.com is the public front door. The 33rd House is the
+            Temple beyond it. LAW provides legal stewardship, governance and
+            licensing; LORE holds the Living Codex, sacred works and lineage.
+            Spirit connects the two pillars.
           </Text>
         </View>
 
