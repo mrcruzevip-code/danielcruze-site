@@ -191,7 +191,7 @@ export default function HomeScreen() {
         </View>
         <View style={styles.section}>
           <Text style={[styles.bodyText, { color: colors.muted }]}>
-            Italian-Australian. {BRAND.awards.join(". ")}. Founder of The 33rd House. Published author.
+            Italian-Australian. Founder of The 33rd House. Author and creator of the Living Codex.
           </Text>
           <View style={{ marginTop: 32 }}>
             <CTAButton
@@ -438,8 +438,8 @@ export default function HomeScreen() {
               THE 33RD HOUSE
             </Text>
             <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.8)" }]}>
-              Beyond the private session is a larger initiatory world.{"\n"}A
-              system. A doctrine. A map of human consciousness evolution.
+              Daniel Cruze is the front door. The 33rd House is the Temple.{"\n"}
+              LAW and LORE meet through the Living Codex and 144 Realms.
             </Text>
           </View>
         </View>
