@@ -100,7 +100,7 @@ export default function The33rdHouseScreen() {
             THE GATE SYSTEM
           </Text>
           <Text style={[styles.body, { color: colors.muted, marginBottom: 24 }]}>
-            12 Gates. 144 Realms. A cosmological map of masculine initiation
+            Gate 0 is the Threshold. Gates 1–12 open into 144 Realms. A map of initiation and study
             that moves from foundation to transcendence. Each Gate contains 12
             Realms of practice, doctrine, and embodied wisdom.
           </Text>
@@ -154,10 +154,10 @@ export default function The33rdHouseScreen() {
             SOUL BLUEPRINT
           </Text>
           <Text style={[styles.body, { color: colors.muted }]}>
-            The Chartography system maps your unique position within the 144
+            Chartography symbolically explores your position within the 144
             Realms. A Soul Blueprint reading reveals your dominant Gate, your
             shadow patterns, and your initiatory path forward. This is not
-            astrology. It is a living diagnostic built from Daniel's doctrine.
+            astrology or a medical diagnosis; it is an interpretive framework.
           </Text>
           <View style={{ marginTop: 24 }}>
             <CTAButton
@@ -206,7 +206,7 @@ export default function The33rdHouseScreen() {
           <Text
             style={[styles.body, { color: colors.muted, marginTop: 16 }]}
           >
-            The two are connected but distinct. This app is the personal
+            DanielCruze.com is the public front door; this app is the personal
             flagship. The 33rd House is the larger temple, the doctrine
             ecosystem, the world that extends beyond any single practitioner.
           </Text>
