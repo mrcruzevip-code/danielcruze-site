@@ -73,7 +73,7 @@ export const BRAND = {
   shortBio:
     "He is not a service. He is a standard.\n\nItalian-Australian. 2025 Australian Adult Industry Awards — Best Male Escort. Best Male Entrepreneur. Founder of The 33rd House. Published author.",
   fullBio:
-    "Daniel Cruze is a practitioner of sacred masculinity, luxury intimacy, and initiated masculine depth. Based in Perth, Australia, he works with women, couples, and men seeking transformation through embodied presence, erotic intelligence, and devotional practice.\n\nHis work sits at the intersection of ancient initiatory traditions and modern relational depth. Every session, every encounter, every teaching is built on the same foundation: that true masculine power is not force — it is presence, it is devotion, it is the capacity to hold space without flinching.\n\nDaniel is the author of \"The Path of Transformation: From Ego to Essence\" and \"12 Sacred Principles for Living with Meaning\" — works that distil the initiatory path into language that can be lived, not merely read.\n\nHe is also the architect of The 33rd House — a 12-Gate, 144-Realm consciousness system that maps the full spectrum of human transformation, from primal awakening to transcendent integration.",
+    "Daniel Cruze is a practitioner of sacred masculinity, luxury intimacy, and initiated masculine depth. Based in Perth, Australia, he works with women, couples, and men seeking transformation through embodied presence, erotic intelligence, and devotional practice.\n\nHis work sits at the intersection of ancient initiatory traditions and modern relational depth. Every session, every encounter, every teaching is built on the same foundation: that true masculine power is not force — it is presence, it is devotion, it is the capacity to hold space without flinching.\n\nDaniel is the author of \"The Path of Transformation: From Ego to Essence\" and \"12 Sacred Principles for Living with Meaning\" — works that distil the initiatory path into language that can be lived, not merely read.\n\nHe is also the architect of The 33rd House — a Temple with Gate 0 as its threshold and twelve Gates spanning 144 Realms that maps the full spectrum of human transformation, from primal awakening to transcendent integration.",
   philosophy:
     "Sacred masculinity is not a performance. It is the lived intersection of erotic intelligence, embodied presence, and initiated masculine depth. It asks a man to be sovereign in his body, truthful in his word, and devoted in his action.",
   awards: [
@@ -82,7 +82,7 @@ export const BRAND = {
   ],
   locations: ["Perth", "Sydney", "Melbourne", "Touring"],
   baseCity: "Perth",
-  website: "danielcruze.com.au",
+  website: "danielcruze.com",
   copyright: `Daniel Cruze © ${new Date().getFullYear()}`,
 };
 
@@ -649,9 +649,9 @@ export const SACRED_MASCULINITY_PRINCIPLES = [
 
 export const THE_33RD_HOUSE = {
   title: "The 33rd House",
-  subtitle: "Beyond the private session is a larger initiatory world.",
+  subtitle: "Daniel Cruze is the front door. The 33rd House is the Temple beyond.",
   description:
-    "A system. A doctrine. A map of human consciousness evolution.\n\nThe 33rd House is the temple beyond the threshold. It holds the teachings, the library, the community, and the initiatory path that extends far beyond any single session or encounter with Daniel Cruze.\n\nBuilt on a 12-Gate, 144-Realm consciousness system drawing from 5,000 years of wisdom tradition — Mesopotamian, Egyptian, Vedic, Hermetic — The 33rd House is not a service. It is a world.",
+    "A system. A doctrine. A map of human consciousness evolution.\n\nThe 33rd House is the temple beyond the threshold. It holds the teachings, the library, the community, and the initiatory path that extends far beyond any single session or encounter with Daniel Cruze.\n\nThe Temple brings LAW and LORE together: governance, intellectual-property stewardship and licensing on one side; sacred works, lineage, wisdom and curriculum on the other. Gate 0 is the threshold; Gates 1–12 contain 144 Realms. Spirit runs through the middle. The 33rd House is the shared destination behind Daniel Cruze, the public front door.",
   gateSystem: {
     level1: "Gates 1–3: Foundation (Awareness)",
     level2: "Gates 4–6: Integration (Understanding)",
