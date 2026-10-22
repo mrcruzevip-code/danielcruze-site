@@ -82,7 +82,7 @@ export const BRAND = {
   ],
   locations: ["Perth", "Sydney", "Melbourne", "Touring"],
   baseCity: "Perth",
-  website: "danielcruze.com.au",
+  website: "danielcruze.com",
   copyright: `Daniel Cruze © ${new Date().getFullYear()}`,
 };
 
