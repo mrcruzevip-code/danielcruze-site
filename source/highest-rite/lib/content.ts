@@ -52,7 +52,24 @@ export const IMAGES = {
     pathOfTransformation: "/images/JEAPxcuKIPiAcekA.webp",
     sacredPrinciples: "/images/TFJThplzLeYHMeAW.webp",
   },
+  // Highest Rite navigation icons retained from reviewed PR #17.
+  icons: {
+    begin: "/images/icons/begin.png",
+    teachings: "/images/icons/teachings.png",
+    theWork: "/images/icons/the-work.png",
+    men: "/images/icons/men.png",
+    house: "/images/icons/house.png",
+  },
 };
+
+/** Approved public icon vocabulary; does not replace the original page content. */
+export const RITE_ICONS = [
+  { id: "begin", label: "BEGIN", image: IMAGES.icons.begin, href: "/" },
+  { id: "teachings", label: "TEACHINGS", image: IMAGES.icons.teachings, href: "/journal" },
+  { id: "the-work", label: "THE WORK", image: IMAGES.icons.theWork, href: "/work-with-daniel" },
+  { id: "men", label: "MEN", image: IMAGES.icons.men, href: "/for-men" },
+  { id: "house", label: "HOUSE", image: IMAGES.icons.house, href: "/the-33rd-house" },
+] as const;
 
 // ── Social Links ──
 export const SOCIALS = {
