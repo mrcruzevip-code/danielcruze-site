@@ -5,6 +5,8 @@ import { BRAND, SOCIALS } from '@/lib/content';
 
 const links = [
   { label: 'INSTAGRAM', name: SOCIALS.instagram.handle, detail: 'Daily field notes and public transmissions', url: SOCIALS.instagram.url },
+  { label: 'FACEBOOK', name: SOCIALS.facebook.handle, detail: 'Public updates, books, and transmissions', url: SOCIALS.facebook.url },
+  { label: 'X', name: SOCIALS.x.handle, detail: 'Short-form doctrine and field notes', url: SOCIALS.x.url },
   { label: 'SACRED MASCULINITY', name: 'Telegram Channel', detail: 'Doctrine, teachings, and transmissions', url: SOCIALS.telegramChannel.url },
   { label: 'SACRED MASCULINE', name: 'Telegram Community', detail: 'Community discussion and brotherhood', url: SOCIALS.telegramGroup.url },
   { label: 'DANIEL CRUZE BOT', name: '@danielcruzelife_bot', detail: 'Open the official Telegram bot', url: 'https://t.me/danielcruzelife_bot' },
