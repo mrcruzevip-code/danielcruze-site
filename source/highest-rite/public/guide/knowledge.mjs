@@ -3,6 +3,7 @@
 export const TELEGRAM = 'https://t.me/danielcruzelife_bot?start=website_guide';
 const topics = {
   books: { text: 'Explore Daniel’s published works in Books. The public catalogue has the current descriptions and links.', links: [{ label: 'Explore books', href: '/books/' }] },
+  blueprint: { text: 'Explore the Soul Blueprint pathway on its public page. For questions about suitability or availability, contact Daniel directly.', links: [{ label: 'Explore Soul Blueprint', href: '/soul-blueprint/' }, { label: 'Make an enquiry', href: '/contact/' }] },
   work: { text: 'For private work with Daniel, start with Work With Daniel, then send an enquiry to discuss suitability and availability. I cannot confirm a booking.', links: [{ label: 'Work with Daniel', href: '/work-with-daniel/' }, { label: 'Make an enquiry', href: '/contact/' }] },
   journal: { text: 'The public Journal is the place to explore Daniel’s writing and teachings. Read each piece in its original context.', links: [{ label: 'Read the Journal', href: '/journal/' }] },
   house: { text: 'The 33rd House is the wider ecosystem. Daniel’s public House page introduces that pathway.', links: [{ label: 'Discover The 33rd House', href: '/the-33rd-house/' }] },
@@ -21,11 +22,12 @@ export function answer(input, previousTopic) {
   else if (/^(tell me more|more|yes|show me|where can i find (it|them))[?.!]*$/.test(q) && Object.hasOwn(topics, previousTopic || '')) topic = previousTopic;
   else if (/\b(telegram|bot)\b/.test(q)) topic = 'telegram';
   else if (/who are you|are you (daniel|human|ai)|what can you do/.test(q)) topic = 'identity';
+  else if (/soul blueprint|chartography/.test(q)) topic = 'blueprint';
+  else if (/\b(journal|teachings|teaching|wisdom|article|articles|presence|masculinity)\b/.test(q)) topic = 'journal';
+  else if (/33rd|\b(house|gate|gates|realm|realms)\b/.test(q)) topic = 'house';
   else if (/\b(book a|booking|session|service|private work|work with|appointment|intimacy|massage)\b/.test(q)) topic = 'work';
   else if (/\b(book|books|read|reading|codex|volume|volumes|published)\b/.test(q)) topic = 'books';
   else if (/\b(contact|enquiry|enquiries|email|speak|message daniel)\b/.test(q)) topic = 'contact';
-  else if (/\b(journal|teachings|teaching|wisdom|article|articles|presence|masculinity)\b/.test(q)) topic = 'journal';
-  else if (/33rd|\b(house|gate|gates|realm|realms)\b/.test(q)) topic = 'house';
   else if (/\b(about|daniel|founder|highest rite)\b/.test(q)) topic = 'about';
   else if (/^(hi|hello|hey|start)[!. ]*$/.test(q)) topic = 'hello';
   else if (/^(thanks|thank you)[!. ]*$/.test(q)) topic = 'thanks';

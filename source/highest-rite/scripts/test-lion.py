@@ -15,12 +15,12 @@ try:
         options = {'headless': True, 'args': ['--no-sandbox']}
         if os.environ.get('CHROMIUM_PATH'): options['executable_path'] = os.environ['CHROMIUM_PATH']
         browser = p.chromium.launch(**options)
-        for width in (320, 390, 768, 1440):
-            page = browser.new_page(viewport={'width': width, 'height': 800}, reduced_motion='reduce')
+        for width, height in ((320,800), (390,800), (768,800), (1440,800), (844,390)):
+            page = browser.new_page(viewport={'width': width, 'height': height}, reduced_motion='reduce')
             errors = []
             page.on('pageerror', lambda e: errors.append(str(e)))
             page.goto(f'http://127.0.0.1:{server.server_port}/', wait_until='networkidle')
-            launch = page.get_by_role('button', name='Open The Gentleman’s Lion guide')
+            launch = page.locator('#gentlemans-lion .launch')
             launch.click()
             assert launch.get_attribute('aria-expanded') == 'true'
             field = page.get_by_role('textbox', name='Your question')
@@ -31,6 +31,9 @@ try:
             assert page.get_by_role('link', name='Continue in Telegram').get_attribute('href') == 'https://t.me/danielcruzelife_bot?start=website_guide'
             box = page.get_by_role('dialog').bounding_box()
             assert box['x'] >= 0 and box['x']+box['width'] <= width+1 and box['y'] >= 0
+            assert page.get_by_role('log').bounding_box()['height'] >= 100
+            footer = page.locator('#gentlemans-lion .foot').bounding_box()
+            assert footer['y'] + footer['height'] <= box['y'] + box['height'] + 1
             assert page.locator('#gentlemans-lion .launch img').get_attribute('src') == '/guide/lion-idle.png'
             assert page.locator('#gentlemans-lion img').evaluate_all('imgs => imgs.every(i => i.complete && i.naturalWidth > 0)')
             field.press('Escape')
@@ -45,9 +48,9 @@ try:
             # Direct static entry and client navigation must not drop or duplicate it.
             page.goto(f'http://127.0.0.1:{server.server_port}/studio/', wait_until='networkidle')
             assert page.get_by_role('button', name='Open The Gentleman’s Lion guide').count() == 1
-            results.append({'width': width, 'passed': True}); page.close()
+            results.append({'width': width, 'height': height, 'passed': True}); page.close()
         browser.close()
     (ROOT/'test-results/lion-results.json').write_text(json.dumps(results, indent=2)+'\n')
-    print('PASS: guide questions, safe rendering, source links, Telegram URL, keyboard focus, reduced motion and bounds at four widths.')
+    print('PASS: guide questions, safe rendering, source links, Telegram URL, keyboard focus, reduced motion and bounds at four widths and landscape height.')
 finally:
     server.shutdown()

@@ -23,3 +23,8 @@ test('followup has context but unrelated input does not inherit the topic', () =
   assert.equal(answer('Tell me more', 'books').topic, 'books');
   assert.equal(answer('weather', 'books').topic, 'unknown');
 });
+test('specific named pathways take priority over generic reading words', () => {
+ assert.equal(answer('Where can I read the journal?').links[0].href,'/journal/');
+ assert.equal(answer('Where can I read Daniel’s teachings?').links[0].href,'/journal/');
+ assert.equal(answer('Soul Blueprint reading').links[0].href,'/soul-blueprint/');
+});
