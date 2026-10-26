@@ -30,3 +30,9 @@ npx wrangler deploy --keep-vars
 ## Stripe webhook status
 
 The bot currently opens the verified Stripe checkout links. It does **not** yet claim or send a paid delivery after Stripe checkout. That requires a second, authenticated integration: a Stripe webhook secret, an exact selected AIB HUB PTY LTD seller account, and a durable mapping between a Telegram chat and a Stripe Checkout Session. Those must be added before making any purchase-triggered Telegram promise.
+
+## The Gentleman’s Lion guide
+
+Ordinary text in private bot conversations now receives curated public-navigation replies. Group chatter remains ignored. `/start website_guide` and addressed command forms are parsed correctly. The public answer index is shared with the website at `source/highest-rite/public/guide/knowledge.mjs`; deploy with Wrangler bundling from this directory. This is a bounded guide, not an LLM chatbot. Website chat history is never sent to Telegram.
+
+Verify locally: `node --test worker.test.mjs`. Tests intercept outbound Telegram calls; they do not send messages to people.
