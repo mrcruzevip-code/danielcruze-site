@@ -1,0 +1,23 @@
+{
+  "project": "Daniel Cruze | Independent Video Studio",
+  "title": "PRESENCE BEFORE PERFORMANCE",
+  "series": "THE GENTLEMANS SERIES",
+  "byline": "DANIEL CRUZE",
+  "url": "danielcruze.com",
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 24,
+  "palette": {
+    "background": "#171819",
+    "foreground": "#F1ECE1",
+    "accent": "#D4B78F"
+  },
+  "assets": {
+    "portrait": "assets/portrait.jpg",
+    "voice": "assets/voice.m4a",
+    "captions": "assets/captions_DRAFT.srt"
+  },
+  "captions_verified": false
+}
