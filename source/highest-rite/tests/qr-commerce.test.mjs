@@ -37,3 +37,24 @@ test("Both target URLs are QR-encodable with high error correction", async () =>
     assert.match(svg, /<path\b/);
   }
 });
+
+
+test("new image-sourced QR candidates cannot silently become public products", () => {
+  const candidates = JSON.parse(fs.readFileSync(path.join(root, "data/qr-source-candidates.json"), "utf8"));
+  assert.equal(candidates.reviewOnly, true);
+  assert.equal(candidates.autoPublish, false);
+  assert.equal(candidates.sources.length, 10);
+  const ids = new Set();
+  for (const candidate of candidates.sources) {
+    assert.equal(candidate.publishApproved, false);
+    assert.ok(!ids.has(candidate.id), "duplicate candidate ID");
+    ids.add(candidate.id);
+    if (["restricted-invite", "expired-signed-download", "development-app"].includes(candidate.category)) {
+      assert.equal(candidate.targetUrl, null, "restricted link must not be committed");
+    }
+    if (candidate.targetUrl) {
+      assert.equal(new URL(candidate.targetUrl).protocol, "https:");
+      assert.ok(!JSON.stringify(manifest).includes(candidate.targetUrl), "unapproved destination must not be used by public QR routes");
+    }
+  }
+});
