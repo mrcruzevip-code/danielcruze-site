@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "status": "review-only",
+  "origin": "https://danielcruze.com",
+  "codes": [
+    {
+      "id": "gold",
+      "path": "/qr/gold/",
+      "audience": "public",
+      "title": "The Knowledge Collection",
+      "purpose": "Public educational publications and existing book catalogue",
+      "paymentEnabled": false,
+      "productionReady": false
+    },
+    {
+      "id": "temple",
+      "path": "/qr/temple/",
+      "audience": "public",
+      "title": "The Digital Temple",
+      "purpose": "Public introduction to The 33rd House; protected memberships pending",
+      "paymentEnabled": false,
+      "productionReady": false
+    }
+  ]
+}
