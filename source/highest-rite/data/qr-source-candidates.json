@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-04",
+  "purpose": "Evidence-only QR candidate register, not bundled as live checkout or QR routes",
+  "originalCount": 10,
+  "reviewOnly": true,
+  "autoPublish": false,
+  "sources": [
+    {
+      "id": "telegram-folder-invite",
+      "evidence": "833.jpg",
+      "category": "restricted-invite",
+      "label": "Telegram folder invite",
+      "targetHost": "t.me",
+      "targetUrl": null,
+      "observedPrice": null,
+      "review": "private invite to multiple chats; link intentionally excluded",
+      "publishApproved": false
+    },
+    {
+      "id": "felt-sense-stripe",
+      "evidence": "997.jpg",
+      "category": "payment",
+      "label": "The Felt Sense: Somatic Intelligence",
+      "targetHost": "buy.stripe.com",
+      "targetUrl": "https://buy.stripe.com/00weVde2d68AfFKdoI6wE0p",
+      "observedPrice": "A$33.00 screenshot",
+      "review": "check live product/account ownership, refund and delivery; not in connected The 33rd House account's returned live payment links",
+      "publishApproved": false
+    },
+    {
+      "id": "path-transformation-stripe",
+      "evidence": "996.jpg",
+      "category": "payment",
+      "label": "The Path of Transformation",
+      "targetHost": "buy.stripe.com",
+      "targetUrl": "https://buy.stripe.com/cNi4gz3nzaoQfFK70k6wE01",
+      "observedPrice": "A$34.95 screenshot",
+      "review": "reconcile duplicate/alternative checkout with existing BOOKS record, check account and delivery",
+      "publishApproved": false
+    },
+    {
+      "id": "australian-hospitality",
+      "evidence": "1352.png",
+      "category": "external-community",
+      "label": "Australian Hospitality Telegram",
+      "targetHost": "t.me",
+      "targetUrl": "https://t.me/AustralianHospitality",
+      "observedPrice": null,
+      "review": "separate unrelated community; no automatic cross-brand link",
+      "publishApproved": false
+    },
+    {
+      "id": "bank-ready-store",
+      "evidence": "1889.png",
+      "category": "store-product",
+      "label": "The Bank-Ready Blueprint",
+      "targetHost": "danielcruze.store",
+      "targetUrl": "https://danielcruze.store/shop/39d6dc05-71e6-4d18-aa51-bd6d89d9d912",
+      "observedPrice": "$49 screenshot; currency unverified",
+      "review": "product ownership, live store route, finance claims and digital fulfilment unverified; domain currently not accessible from public web fetch",
+      "publishApproved": false
+    },
+    {
+      "id": "manus-sales-dashboard",
+      "evidence": "2512.jpg",
+      "category": "development-app",
+      "label": "Manus-hosted sales dashboard",
+      "targetHost": "salesdash-cliiu2a9.manus.space",
+      "targetUrl": null,
+      "observedPrice": null,
+      "review": "potentially internal, do not embed without owner access/security review",
+      "publishApproved": false
+    },
+    {
+      "id": "the33rdhouse-public-telegram",
+      "evidence": "3014.jpg",
+      "category": "community",
+      "label": "The 33rd House Telegram",
+      "targetHost": "t.me",
+      "targetUrl": "https://t.me/the33rdhouse",
+      "observedPrice": null,
+      "review": "confirm ownership and public channel access before adding official community CTA",
+      "publishApproved": false
+    },
+    {
+      "id": "netlify-deploy-preview-15",
+      "evidence": "4027.png",
+      "category": "development-preview",
+      "label": "The 33rd House Netlify preview #15",
+      "targetHost": "deploy-preview-15.the33rdhouse.com",
+      "targetUrl": "https://deploy-preview-15.the33rdhouse.com",
+      "observedPrice": null,
+      "review": "preview-only not canonical; do not put on printed/public QR",
+      "publishApproved": false
+    },
+    {
+      "id": "android-apk-v1-0-4",
+      "evidence": "4045.png",
+      "category": "expired-signed-download",
+      "label": "The 33rd House Android build v1.0.4",
+      "targetHost": "vida-prod-webdev-app.s3.us-east-1.amazonaws.com",
+      "targetUrl": null,
+      "observedPrice": null,
+      "review": "temporary presigned Amazon S3 APK URL; credential/signature deliberately omitted; signed 2026-07-21 and valid 7 days; expired",
+      "publishApproved": false
+    },
+    {
+      "id": "android-apk-v1-0-10",
+      "evidence": "4043.png",
+      "category": "expired-signed-download",
+      "label": "The 33rd House Android build v1.0.10",
+      "targetHost": "vida-prod-webdev-app.s3.us-east-1.amazonaws.com",
+      "targetUrl": null,
+      "observedPrice": null,
+      "review": "temporary presigned Amazon S3 APK URL; credential/signature deliberately omitted; signed 2026-07-21 and valid 7 days; expired",
+      "publishApproved": false
+    }
+  ]
+}
