@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Platform,
   Linking,
+  Pressable,
 } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
@@ -67,6 +68,7 @@ export default function HomeScreen() {
       <View style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 520, zIndex: 1 }}>
         <Image 
           source={{ uri: 'https://danielcruze.com/images/hiHseYIRZnypehcZ.jpg' }} 
+          alt="Daniel Cruze - Sacred Masculinity and Luxury Intimacy Companion"
           style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' }}
           contentFit="cover"
         />
@@ -80,19 +82,29 @@ export default function HomeScreen() {
             backgroundColor: 'rgba(20, 20, 20, 0.45)', borderWidth: 0.5, borderColor: 'rgba(245, 240, 232, 0.15)',
             borderRadius: 8, maxWidth: 620, width: '100%'
           }}>
-            <Text style={{ color: '#F5F0E8', fontSize: 28, fontWeight: '200', letterSpacing: 12, textAlign: 'center', marginBottom: 16 }}>
+            <Text 
+              accessibilityRole="header" 
+              aria-level={1}
+              style={{ color: '#F5F0E8', fontSize: 28, fontWeight: '200', letterSpacing: 12, textAlign: 'center', marginBottom: 16 }}>
               DANIEL CRUZE
             </Text>
             <Text style={{ color: 'rgba(245, 240, 232, 0.75)', fontSize: 14, fontWeight: '300', letterSpacing: 2, lineHeight: 24, textAlign: 'center', marginBottom: 32 }}>
               Sacred Masculinity. Luxury Intimacy.{'\n'}The Art of Sensual Dominance.
             </Text>
-            <TouchableOpacity 
+            
+            {/* GLOWING BUTTON (Uses Pressable for hover effects) */}
+            <Pressable 
               onPress={() => { scrollRef.current?.scrollTo({ y: 520, animated: true }); }}
-              style={{ paddingVertical: 16, paddingHorizontal: 40, borderWidth: 0.5, borderColor: '#F5F0E8' }}>
+              style={({ hovered, pressed }) => [
+                { paddingVertical: 16, paddingHorizontal: 40, borderWidth: 0.5, borderColor: '#F5F0E8', backgroundColor: 'transparent' },
+                hovered && { backgroundColor: 'rgba(245, 240, 232, 0.1)', shadowColor: '#F5F0E8', shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.8, shadowRadius: 15 },
+                pressed && { opacity: 0.7 }
+              ]}
+            >
               <Text style={{ color: '#F5F0E8', fontSize: 14, fontWeight: '300', letterSpacing: 3, textTransform: 'uppercase' }}>
                 Enter
               </Text>
-            </TouchableOpacity>
+            </Pressable>
           </View>
         </View>
 
@@ -153,6 +165,7 @@ export default function HomeScreen() {
           <View style={styles.imageSection}>
             <Image
               source={IMAGES.theMan}
+              alt="Daniel Cruze - Author, Teacher, and Best Male Escort 2025"
               style={styles.sectionImage}
               contentFit="contain"
               transition={400}
@@ -187,6 +200,7 @@ export default function HomeScreen() {
           <View style={styles.imageSection}>
             <Image
               source={IMAGES.sacredMasculinity}
+              alt="Sacred Masculinity and embodied presence"
               style={styles.sectionImageTall}
               contentFit="contain"
               transition={400}
@@ -197,7 +211,7 @@ export default function HomeScreen() {
               style={styles.sectionImageOverlay}
             />
             <View style={styles.sectionImageContentBottom}>
-              <Text style={[styles.sectionHeader, { color: "#F5F0E8" }]}>
+              <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: "#F5F0E8" }]}>
                 SACRED MASCULINITY
               </Text>
               <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.8)" }]}>
@@ -220,7 +234,7 @@ export default function HomeScreen() {
 
           {/* ===== SECTION 4: THE EXPERIENCES ===== */}
           <View style={styles.section}>
-            <Text style={[styles.sectionHeader, { color: colors.foreground }]}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
               PRIVATE WORK
             </Text>
             <View style={styles.tilesContainer}>
@@ -233,6 +247,7 @@ export default function HomeScreen() {
                 >
                   <Image
                     source={tile.image}
+                    alt={`${tile.label} - ${tile.sub}`}
                     style={StyleSheet.absoluteFillObject}
                     contentFit="contain"
                     transition={300}
@@ -258,7 +273,7 @@ export default function HomeScreen() {
 
           {/* ===== SECTION 5: THE BOOKS ===== */}
           <View style={styles.section}>
-            <Text style={[styles.sectionHeader, { color: colors.foreground }]}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
               PUBLISHED WORKS
             </Text>
             <Text style={[styles.bodyText, { color: colors.muted, marginBottom: 32 }]}>
@@ -274,6 +289,7 @@ export default function HomeScreen() {
                 >
                   <Image
                     source={{ uri: book.coverImage }}
+                    alt={`Book Cover: ${book.title}`}
                     style={styles.bookCover}
                     contentFit="contain"
                     transition={400}
@@ -297,7 +313,7 @@ export default function HomeScreen() {
 
           {/* ===== SECTION 6: THE PROOF ===== */}
           <View style={styles.section}>
-            <Text style={[styles.sectionHeader, { color: colors.foreground }]}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
               TESTIMONIALS
             </Text>
             {TESTIMONIALS.map((t) => (
@@ -330,7 +346,7 @@ export default function HomeScreen() {
 
           {/* ===== SECTION 7: THE JOURNAL ===== */}
           <View style={styles.section}>
-            <Text style={[styles.sectionHeader, { color: colors.foreground }]}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
               FROM THE JOURNAL
             </Text>
             {ARTICLES.slice(0, 3).map((article) => (
@@ -376,6 +392,7 @@ export default function HomeScreen() {
           <View style={styles.imageSection}>
             <Image
               source={IMAGES.temple}
+              alt="The 33rd House Temple - Initiation and Consciousness Evolution"
               style={styles.sectionImage}
               contentFit="contain"
               transition={400}
@@ -386,7 +403,7 @@ export default function HomeScreen() {
               style={styles.sectionImageOverlay}
             />
             <View style={styles.sectionImageContentBottom}>
-              <Text style={[styles.sectionHeader, { color: "#F5F0E8" }]}>
+              <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: "#F5F0E8" }]}>
                 THE 33RD HOUSE
               </Text>
               <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.8)" }]}>
@@ -409,7 +426,7 @@ export default function HomeScreen() {
 
           {/* ===== SECTION 9: THE COMMUNITY ===== */}
           <View style={styles.section}>
-            <Text style={[styles.sectionHeader, { color: colors.foreground }]}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
               THE COMMUNITY
             </Text>
             <Text style={[styles.bodyText, { color: colors.muted, marginBottom: 32 }]}>
@@ -452,6 +469,7 @@ export default function HomeScreen() {
           <View style={styles.imageSection}>
             <Image
               source={IMAGES.contact}
+              alt="Contact Daniel Cruze for Private Enquiries"
               style={styles.sectionImageShort}
               contentFit="contain"
               contentPosition="top"
@@ -463,7 +481,7 @@ export default function HomeScreen() {
               style={styles.sectionImageOverlay}
             />
             <View style={styles.sectionImageContentBottom}>
-              <Text style={[styles.sectionHeader, { color: "#F5F0E8" }]}>
+              <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: "#F5F0E8" }]}>
                 PRIVATE ENQUIRIES
               </Text>
               <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.7)" }]}>
@@ -731,3 +749,122 @@ const styles = StyleSheet.create({
     borderWidth: 0.5,
     borderColor: "#1A1A1A",
     padding: 20,
+    alignItems: "center",
+  },
+  communityLabel: {
+    color: "#8B2635",
+    fontSize: 10,
+    letterSpacing: 3,
+    fontWeight: "600",
+    marginBottom: 8,
+  },
+  communityName: {
+    color: "#F5F0E8",
+    fontSize: 16,
+    fontWeight: "300",
+    letterSpacing: 2,
+    marginBottom: 6,
+  },
+  communityDesc: {
+    color: "#9B9B8F",
+    fontSize: 13,
+    fontWeight: "300",
+    letterSpacing: 0.5,
+  },
+  // Testimonials
+  testimonialCard: {
+    padding: 24,
+    borderWidth: 0.5,
+    marginBottom: 16,
+  },
+  testimonialQuote: {
+    fontSize: 14,
+    fontWeight: "300",
+    lineHeight: 24,
+    fontStyle: "italic",
+    letterSpacing: 0.3,
+  },
+  testimonialAuthor: {
+    fontSize: 12,
+    fontWeight: "300",
+    marginTop: 16,
+    letterSpacing: 1,
+  },
+  // Articles
+  articleCard: {
+    paddingVertical: 20,
+    borderBottomWidth: 0.5,
+  },
+  articleCategory: {
+    fontSize: 10,
+    fontWeight: "400",
+    letterSpacing: 3,
+    textTransform: "uppercase",
+    marginBottom: 6,
+  },
+  articleTitle: {
+    fontSize: 17,
+    fontWeight: "300",
+    letterSpacing: 0.5,
+    marginBottom: 8,
+    lineHeight: 24,
+  },
+  articleExcerpt: {
+    fontSize: 13,
+    fontWeight: "300",
+    lineHeight: 21,
+    letterSpacing: 0.3,
+  },
+  // Footer
+  footer: {
+    paddingHorizontal: 32,
+    paddingVertical: 48,
+    alignItems: "center",
+    borderTopWidth: 0.5,
+    borderTopColor: "#1A1A1A",
+    marginTop: 20,
+  },
+  footerSeal: {
+    color: "#8B2635",
+    fontSize: 12,
+    letterSpacing: 4,
+    fontWeight: "500",
+    fontStyle: "italic",
+  },
+  footerSocialRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 12,
+    marginBottom: 12,
+  },
+  footerLink: {
+    color: "#9B9B8F",
+    fontSize: 12,
+    fontWeight: "300",
+    letterSpacing: 1,
+  },
+  footerDot: {
+    color: "#4A4A4A",
+    fontSize: 12,
+  },
+  footerEmail: {
+    color: "#8B2635",
+    fontSize: 12,
+    fontWeight: "300",
+    letterSpacing: 1,
+    marginBottom: 12,
+  },
+  footerLocations: {
+    color: "#4A4A4A",
+    fontSize: 11,
+    fontWeight: "300",
+    letterSpacing: 1,
+    marginBottom: 4,
+  },
+  footerCopy: {
+    color: "#4A4A4A",
+    fontSize: 11,
+    fontWeight: "300",
+    letterSpacing: 1,
+  },
+});
