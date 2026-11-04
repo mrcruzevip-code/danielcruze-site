@@ -62,6 +62,38 @@ export default function HomeScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
+      {/* STICKY HEADER BANNER */}
+        {/* @ts-ignore */}
+        <View style={{ width: '100%', height: 520, position: 'sticky', top: 0, zIndex: 100 }}>
+          <Image 
+            source={{ uri: 'https://danielcruze.com/images/hiHseYIRZnypehcZ.jpg' }} 
+            style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' }}
+            contentFit="cover"
+          />
+          {/* Dark Gradient Overlay */}
+          <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(10, 10, 10, 0.65)' }} />
+
+          {/* Transparent Frosted Text Box */}
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', zIndex: 2, paddingHorizontal: 24 }}>
+            <View style={{
+              alignItems: 'center', paddingHorizontal: 24, paddingVertical: 32,
+              backgroundColor: 'rgba(20, 20, 20, 0.45)', borderWidth: 0.5, borderColor: 'rgba(245, 240, 232, 0.15)',
+              borderRadius: 8, maxWidth: 620, width: '100%'
+            }}>
+              <Text style={{ color: '#F5F0E8', fontSize: 28, fontWeight: '200', letterSpacing: 12, textAlign: 'center', marginBottom: 16 }}>
+                DANIEL CRUZE
+              </Text>
+              <Text style={{ color: 'rgba(245, 240, 232, 0.75)', fontSize: 14, fontWeight: '300', letterSpacing: 2, lineHeight: 24, textAlign: 'center', marginBottom: 32 }}>
+                Sacred Masculinity. Luxury Intimacy.{'\n'}The Art of Sensual Dominance.
+              </Text>
+              <TouchableOpacity style={{ paddingVertical: 16, paddingHorizontal: 40, borderWidth: 0.5, borderColor: '#F5F0E8' }}>
+                <Text style={{ color: '#F5F0E8', fontSize: 14, fontWeight: '300', letterSpacing: 3, textTransform: 'uppercase' }}>
+                  Enter
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
       {/* Floating hamburger — appears after scroll */}
       {scrolled && (
         <Animated.View
