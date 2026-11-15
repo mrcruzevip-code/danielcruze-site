@@ -35,7 +35,9 @@ async function telegram(env, method, payload) {
     body: JSON.stringify(payload),
   });
   if (!response.ok) throw new Error(`Telegram ${method} failed with ${response.status}`);
-  return response.json();
+  const result = await response.json();
+  if (!result.ok) throw new Error(`Telegram ${method} returned an unsuccessful response`);
+  return result;
 }
 
 async function sendMessage(env, chatId, text, extra = {}) {
@@ -111,9 +113,10 @@ async function handleSite(env, chatId) {
 }
 
 async function handleUpdate(update, env) {
-  if (!update.message?.text) return;
+  if (!update.message?.text || update.message.chat?.type !== 'private') return;
   const chatId = update.message.chat.id;
-  const command = update.message.text.trim().split('@')[0].toLowerCase();
+  const [commandToken] = update.message.text.trim().split(/\s+/);
+  const command = commandToken.split('@')[0].toLowerCase();
   const firstName = update.message.from?.first_name;
 
   switch (command) {
@@ -126,6 +129,8 @@ async function handleUpdate(update, env) {
     default:
       if (command.startsWith('/')) {
         await sendMessage(env, chatId, `Use /books, /blueprint, /enquire, /journal or /site.\n\n<i>${BRAND.signature}</i>`);
+      } else {
+        await sendMessage(env, chatId, `<b>THE DANIEL CRUZE GUIDE</b>\n\nI can help you explore the books, journal, Soul Blueprint and enquiry page. Try /books, /journal, /blueprint, /enquire or /site.\n\n<i>${BRAND.signature}</i>`);
       }
   }
 }
