@@ -93,7 +93,8 @@ export default function HomeScreen() {
             </Text>
             
             {/* GLOWING BUTTON (Uses Pressable for hover effects) */}
-            <Pressable 
+            <Pressable
+              accessibilityRole="button"
               onPress={() => { scrollRef.current?.scrollTo({ y: 520, animated: true }); }}
               style={({ hovered, pressed }) => [
                 { paddingVertical: 16, paddingHorizontal: 40, borderWidth: 0.5, borderColor: '#F5F0E8', backgroundColor: 'transparent' },
