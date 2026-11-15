@@ -1,0 +1,24 @@
+name: Independent video source checks
+on:
+  pull_request:
+    paths:
+      - 'tools/independent-video/**'
+      - '.github/workflows/independent-video-check.yml'
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate code and JSON without source media
+        run: |
+          python -m py_compile tools/independent-video/scripts/render.py
+          python -m json.tool tools/independent-video/scene.json > /dev/null
+          test -s tools/independent-video/index.html
+          test -s tools/independent-video/README.md
+          echo 'No production deployment, audio upload, or video generation performed.'
