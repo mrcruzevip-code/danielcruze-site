@@ -35,7 +35,7 @@ export default function AboutScreen() {
           <View style={styles.heroOverlay}>
             <Text style={styles.heroTitle}>ABOUT DANIEL</Text>
             <Text style={styles.heroSub}>
-              The man behind the work.
+              Beyond the image is a practice of presence, trust and deliberate living.
             </Text>
           </View>
         </View>
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     position: "relative",
     overflow: "hidden",
   },
-  section: { paddingHorizontal: 32, paddingVertical: 8 },
+  section: { width: "100%", maxWidth: 880, alignSelf: "center", paddingHorizontal: 24, paddingVertical: 24 },
   sectionTitle: {
     fontSize: 13,
     fontWeight: "300",
@@ -189,10 +189,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   body: {
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: "300",
-    lineHeight: 24,
-    letterSpacing: 0.3,
+    lineHeight: 28,
+    letterSpacing: 0.2,
   },
   bodyCenter: {
     fontSize: 14,

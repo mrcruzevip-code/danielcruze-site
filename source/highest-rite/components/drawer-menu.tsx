@@ -19,8 +19,7 @@ const SOCIAL_LINKS = [
   { label: "Instagram", url: SOCIALS.instagram.url },
   { label: "Facebook", url: SOCIALS.facebook.url },
   { label: "X / Twitter", url: SOCIALS.x.url },
-  { label: "Telegram", url: SOCIALS.telegramChannel.url },
-  { label: "@danielcruzelife_bot", url: "https://t.me/danielcruzelife_bot" },
+  { label: "Official Telegram Guide", url: SOCIALS.telegramBot.url },
 ];
 
 export function DrawerMenu({ visible, onClose }: DrawerMenuProps) {

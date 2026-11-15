@@ -46,7 +46,7 @@ for (const rel of ['the-books.html', 'the-books/index.html']) {
 const publicRoutes = [...new Set(canonical)].sort();
 const escaped = publicRoutes.map((route) => `  <url><loc>${origin}${route}</loc></url>`).join('\n');
 fs.writeFileSync(path.join(out, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${escaped}\n</urlset>\n`);
-fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /dev/\nDisallow: /oauth/\nSitemap: ${origin}/sitemap.xml\n`);
+fs.writeFileSync(path.join(out, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /dev/\nDisallow: /oauth/\n\nSitemap: ${origin}/sitemap.xml\n`);
 fs.writeFileSync(path.join(out, 'CNAME'), 'danielcruze.com\n');
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
 

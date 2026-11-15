@@ -55,9 +55,8 @@ describe("Social links", () => {
     expect(SOCIALS.x.url).toContain("x.com");
   });
 
-  it("has Telegram channels", () => {
-    expect(SOCIALS.telegramChannel.url).toContain("t.me/SacredMasculinity");
-    expect(SOCIALS.telegramGroup.url).toContain("t.me/SacredMasculine");
+  it("links the official bot rather than retired Sacred Masculinity channels", () => {
+    expect(SOCIALS.telegramBot.url).toContain("t.me/danielcruzelife_bot?start=website_guide");
     expect(SOCIALS.telegramPersonal.url).toContain("t.me/danielcruzelife");
   });
 

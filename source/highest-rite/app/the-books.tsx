@@ -66,6 +66,19 @@ export default function TheBooksScreen() {
           <SectionDivider />
 
           <View style={[styles.section, desktop && styles.sectionDesktop]}>
+            <Text style={styles.sectionLabel}>FLAGSHIP MANUSCRIPT</Text>
+            <Text style={styles.sectionTitle}>THE HIGHEST RITE</Text>
+            <Text style={styles.sectionBody}>A Field Guide to Sacred Masculinity, Embodied Presence, and Initiated Depth</Text>
+            <Text style={styles.authorQuote}>“The work begins where performance ends.”</Text>
+            <Text style={styles.sectionBody}>Explore the questions of responsibility, sovereignty, embodied presence and devotion. The manuscript is featured here for discovery; publication and ordering details are not yet announced on this site.</Text>
+            <CTAButton
+              label="ENQUIRE ABOUT THE MANUSCRIPT"
+              onPress={() => Linking.openURL("mailto:" + BRAND.email + "?subject=The%20Highest%20Rite%20Manuscript")}
+              variant="outline"
+            />
+          </View>
+          <SectionDivider />
+          <View style={[styles.section, desktop && styles.sectionDesktop]}>
             <Text style={styles.sectionLabel}>THE TREASURY</Text>
             <Text style={styles.sectionTitle}>Further Transmissions</Text>
             {LIVE_BOOK_CHECKOUTS.map((book) => (

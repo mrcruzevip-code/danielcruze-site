@@ -127,14 +127,14 @@ export default function ForMenScreen() {
 
         <View style={styles.section}>
           <Text style={[styles.sectionTitle, { color: colors.foreground }]}>
-            JOIN THE BROTHERHOOD
+            CONTINUE THE PRACTICE
           </Text>
           <Text style={[styles.body, { color: colors.muted, textAlign: "center", marginBottom: 24 }]}>
-            The Sacred Masculinity Telegram channel is where the conversation continues. Doctrine drops, reflections, and community.
+            The work is measured by what you practise, not what you announce. Explore a reflection, then choose one principle to put into action today.
           </Text>
           <CTAButton
-            label="Join Sacred Masculinity →"
-            onPress={() => Linking.openURL(SOCIALS.telegramChannel.url)}
+            label="Explore the Journal →"
+            onPress={() => router.push("/journal" as any)}
             variant="ghost"
           />
         </View>

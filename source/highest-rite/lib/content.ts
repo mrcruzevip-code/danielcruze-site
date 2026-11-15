@@ -59,8 +59,7 @@ export const SOCIALS = {
   instagram: { label: "Instagram", handle: "@danielcruzelife", url: "https://instagram.com/danielcruzelife" },
   facebook: { label: "Facebook", handle: "@danielcruzelife", url: "https://facebook.com/danielcruzelife" },
   x: { label: "X", handle: "@DanielCruzeAU", url: "https://x.com/DanielCruzeAU" },
-  telegramChannel: { label: "Sacred Masculinity", handle: "Channel", url: "https://t.me/SacredMasculinity" },
-  telegramGroup: { label: "Sacred Masculine", handle: "Community", url: "https://t.me/SacredMasculine" },
+  telegramBot: { label: "Official Bot", handle: "@danielcruzelife_bot", url: "https://t.me/danielcruzelife_bot?start=website_guide" },
   telegramPersonal: { label: "Daniel Cruze", handle: "Telegram", url: "https://t.me/danielcruzelife" },
   the33rdHouse: { label: "The 33rd House", handle: "the33rdhouse.org", url: "https://the33rdhouse.org" },
 };
@@ -71,9 +70,9 @@ export const BRAND = {
   email: "daniel@danielcruze.com",
   seal: "Amor Aeternus. Libertas Sacra.",
   shortBio:
-    "He is not a service. He is a standard.\n\nItalian-Australian. 2025 Australian Adult Industry Awards — Best Male Escort. Best Male Entrepreneur. Founder of The 33rd House. Published author.",
+    "Presence over performance. Connection over appearances.\n\nDaniel Cruze is an Italian-Australian author, the founder of The 33rd House, and the voice behind The Highest Rite — writing about responsibility, intimacy and deliberate living.",
   fullBio:
-    "Daniel Cruze is a practitioner of sacred masculinity, luxury intimacy, and initiated masculine depth. Based in Perth, Australia, he works with women, couples, and men seeking transformation through embodied presence, erotic intelligence, and devotional practice.\n\nHis work sits at the intersection of ancient initiatory traditions and modern relational depth. Every session, every encounter, every teaching is built on the same foundation: that true masculine power is not force — it is presence, it is devotion, it is the capacity to hold space without flinching.\n\nDaniel is the author of \"The Path of Transformation: From Ego to Essence\" and \"12 Sacred Principles for Living with Meaning\" — works that distil the initiatory path into language that can be lived, not merely read.\n\nHe is also the architect of The 33rd House — a 12-Gate, 144-Realm consciousness system that maps the full spectrum of human transformation, from primal awakening to transcendent integration.",
+    "Daniel Cruze is an Italian-Australian author, creative founder, and the voice behind The Highest Rite. His work begins with a simple question: what becomes possible when we stop performing and start being fully present?\n\nThrough books, personal reflection, and private conversations, Daniel explores embodied presence, relational intelligence, trust, and the courage to live by one's word. His approach is attentive rather than theatrical: listen closely, communicate clearly, respect boundaries, and let actions carry the meaning.\n\nHis writing includes The Path of Transformation and 12 Sacred Principles for Living with Meaning. His flagship manuscript, The Highest Rite, explores sovereignty, devotion, and the everyday practice of presence. Beyond the page, he is the founder of The 33rd House, a larger symbolic and contemplative framework.\n\nWhether you arrive for a chapter, a conversation, or the next step in your own practice, begin with what is real. Explore the books and journal, or make a private enquiry when you are ready.",
   philosophy:
     "Sacred masculinity is not a performance. It is the lived intersection of erotic intelligence, embodied presence, and initiated masculine depth. It asks a man to be sovereign in his body, truthful in his word, and devoted in his action.",
   awards: [
