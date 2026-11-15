@@ -47,7 +47,7 @@ export function SiteMetadata() {
         name: BRAND.name,
         url: 'https://danielcruze.com/',
         email: BRAND.email,
-        sameAs: [SOCIALS.instagram.url, SOCIALS.facebook.url, SOCIALS.x.url, SOCIALS.telegramChannel.url],
+        sameAs: [SOCIALS.instagram.url, SOCIALS.facebook.url, SOCIALS.x.url],
       },
     ],
   });
