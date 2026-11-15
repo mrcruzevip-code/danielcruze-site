@@ -30,8 +30,10 @@ def main():
     for section in ('DANIEL CRUZE','SACRED MASCULINITY','PRIVATE WORK','PUBLISHED WORKS','TESTIMONIALS','FROM THE JOURNAL','THE 33RD HOUSE','THE COMMUNITY','PRIVATE ENQUIRIES'):
         assert section in home,('Original home section lost',section)
     assert 'application/ld+json' in home and 'schema.org' in home, 'Google structured data missing'
-    images=list((ROOT/'public/images').iterdir());assert len(images)>=23
-    for image in images: assert (OUT/'images'/image.name).read_bytes()==image.read_bytes(),('Original photograph missing/changed',image.name)
+    images=[item for item in (ROOT/'public/images').rglob('*') if item.is_file()];assert len(images)>=23
+    for image in images:
+        rel=image.relative_to(ROOT/'public')
+        assert (OUT/rel).read_bytes()==image.read_bytes(),('Public image missing/changed',str(rel))
     content=(ROOT/'lib/content.ts').read_text()
     for src in set(re.findall(r'"(/images/[^\"]+)"',content)):
         assert (OUT/src.lstrip('/')).is_file(),('Image reference missing',src)
