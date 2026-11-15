@@ -109,18 +109,6 @@ export default function HomeScreen() {
           </View>
         </View>
 
-        {/* Menu Hamburger positioned over the fixed banner */}
-        <TouchableOpacity
-          accessibilityRole="button"
-          accessibilityLabel="Open menu"
-          onPress={() => setDrawerOpen(true)}
-          style={styles.heroHamburger}
-        >
-          <View style={{ gap: 5 }}>
-            <View style={[styles.hamburgerLine, { backgroundColor: "#F5F0E8", opacity: 0.6 }]} />
-            <View style={[styles.hamburgerLineShort, { backgroundColor: "#F5F0E8", opacity: 0.6 }]} />
-          </View>
-        </TouchableOpacity>
       </View>
 
       {/* Floating hamburger — appears after scrolling down */}
@@ -539,6 +527,20 @@ export default function HomeScreen() {
         </View>
       </ScrollView>
 
+      {!scrolled && (
+        <TouchableOpacity
+          accessibilityRole="button"
+          accessibilityLabel="Open menu"
+          onPress={() => setDrawerOpen(true)}
+          style={styles.heroHamburger}
+        >
+          <View style={{ gap: 5 }}>
+            <View style={[styles.hamburgerLine, { backgroundColor: "#F5F0E8", opacity: 0.6 }]} />
+            <View style={[styles.hamburgerLineShort, { backgroundColor: "#F5F0E8", opacity: 0.6 }]} />
+          </View>
+        </TouchableOpacity>
+      )}
+
       <DrawerMenu
         visible={drawerOpen}
         onClose={() => setDrawerOpen(false)}
@@ -576,7 +578,7 @@ const styles = StyleSheet.create({
     top: Platform.OS === "web" ? 20 : 54,
     right: 20,
     padding: 8,
-    zIndex: 3,
+    zIndex: 30,
   },
   floatingHeader: {
     position: "absolute",
