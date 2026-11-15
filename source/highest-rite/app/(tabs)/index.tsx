@@ -70,7 +70,7 @@ export default function HomeScreen() {
           source={{ uri: 'https://danielcruze.com/images/hiHseYIRZnypehcZ.jpg' }} 
           alt="Daniel Cruze - Sacred Masculinity and Luxury Intimacy Companion"
           style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' }}
-          contentFit="cover"
+          contentFit="contain"
         />
         {/* Dark Gradient Overlay */}
         <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(10, 10, 10, 0.65)' }} />
