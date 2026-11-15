@@ -18,11 +18,12 @@ def main():
         page=Page();page.feed(p.read_text());text=' '.join(page.text)
         assert len(text)>200,f'Empty original page {p.name}'
         assert 'A New Public Chapter' not in text and 'not part of the current public author' not in text,'Replacement boundary content remains'
-        for key in ('description','twitter:card','twitter:image'):
+        for key in ('description','twitter:card','twitter:image','twitter:image:alt'):
             assert any(t=='meta' and a.get('name')==key and a.get('content') for t,a in page.tags),(p.name,key)
         assert any(t=='link' and a.get('rel')=='canonical' and a.get('href','').startswith('https://danielcruze.com/') for t,a in page.tags),(p.name,'canonical')
-        for key in ('og:title','og:description','og:url','og:image'):
+        for key in ('og:title','og:description','og:url','og:image','og:image:alt'):
             assert any(t=='meta' and a.get('property')==key and a.get('content') for t,a in page.tags),(p.name,key)
+        assert not any(t=='meta' and a.get('name')=='keywords' for t,a in page.tags),(p.name,'deprecated meta keywords tag')
         html=p.read_text()
         assert 'data-site-footer' in html,(p.name,'site footer')
         assert 'mailto:daniel@danielcruze.com' in html,(p.name,'Daniel email')
@@ -30,6 +31,7 @@ def main():
     for section in ('DANIEL CRUZE','SACRED MASCULINITY','PRIVATE WORK','PUBLISHED WORKS','TESTIMONIALS','FROM THE JOURNAL','THE 33RD HOUSE','THE COMMUNITY','PRIVATE ENQUIRIES'):
         assert section in home,('Original home section lost',section)
     assert 'application/ld+json' in home and 'schema.org' in home, 'Google structured data missing'
+    assert 'https://danielcruze.com/images/suited-chair_8e0b5ce6.jpg' in home, 'Person schema public portrait missing'
     images=list((ROOT/'public/images').iterdir());assert len(images)>=23
     for image in images: assert (OUT/'images'/image.name).read_bytes()==image.read_bytes(),('Original photograph missing/changed',image.name)
     content=(ROOT/'lib/content.ts').read_text()
@@ -46,8 +48,9 @@ def main():
         s=(OUT/rel).read_text();assert 'http-equiv="refresh"' in s and 'noindex' in s,rel
     assert (OUT/'CNAME').read_text().strip()=='danielcruze.com'
     robots = (OUT/'robots.txt').read_text()
-    expected_robots = "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /dev/\nDisallow: /oauth/\nSitemap: https://danielcruze.com/sitemap.xml\n"
+    expected_robots = "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /dev/\nDisallow: /oauth/\n\nSitemap: https://danielcruze.com/sitemap.xml\n"
     assert robots == expected_robots, 'robots.txt missing or incorrect'
+    assert (ROOT.parents[1]/'robots.txt').read_text() == expected_robots, 'checked-in root robots.txt differs from exported version'
     assert (OUT/'404.html').is_file();ET.parse(OUT/'sitemap.xml')
     print(f'PASS: all original routes and home sections, {len(images)} byte-preserved original images, static metadata, original Books, aliases, sitemap and secret/held-media checks.')
 if __name__=='__main__':main()
