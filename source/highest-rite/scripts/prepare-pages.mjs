@@ -60,3 +60,11 @@ fs.writeFileSync(path.join(out, '_sitemap/index.html'), publicMap);
 const routes = walk(out).filter((file) => file.endsWith('.html')).map((file) => path.relative(out, file).replaceAll(path.sep, '/')).filter((route) => !['404.html', '+not-found.html'].includes(route)).map((route) => ({ path: route === 'index.html' ? '/' : `/${route.replace(/index\.html$/, '')}` }));
 fs.writeFileSync(path.join(out, 'manus-routes.json'), JSON.stringify({ routes }, null, 2) + '\n');
 console.log(`Prepared ${publicRoutes.length} canonical public routes, crawler-visible footers, metadata, index, sitemap and redirect-only legacy aliases in ${out}`);
+
+// Mount outside the hydrated Expo tree, so client navigation retains one guide.
+for (const file of walk(out).filter((entry) => entry.endsWith('.html'))) {
+  const html = fs.readFileSync(file, 'utf8');
+  if (!html.includes('data-lion-guide') && !html.includes('http-equiv="refresh"')) {
+    fs.writeFileSync(file, html.replace('</body>', '<script type="module" data-lion-guide src="/guide/lion.js"></script></body>'));
+  }
+}
