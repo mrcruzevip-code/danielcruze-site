@@ -419,26 +419,19 @@ export default function HomeScreen() {
               THE COMMUNITY
             </Text>
             <Text style={[styles.bodyText, { color: colors.muted, marginBottom: 32 }]}>
-              Join the conversation. Sacred Masculinity is not a solo path — it is forged in the presence of other initiated men and the women who hold them accountable.
+              Follow the writing, explore the books, or open the official guide for a clear next step. Meaningful connection begins with an honest conversation.
             </Text>
             <View style={styles.communityLinks}>
               <TouchableOpacity
-                onPress={() => Linking.openURL(SOCIALS.telegramChannel.url)}
+                onPress={() => Linking.openURL(SOCIALS.telegramBot.url)}
                 activeOpacity={0.7}
+                accessibilityRole="link"
+                accessibilityLabel="Open the official Daniel Cruze Telegram guide"
                 style={styles.communityCard}
               >
-                <Text style={styles.communityLabel}>TELEGRAM CHANNEL</Text>
-                <Text style={styles.communityName}>Sacred Masculinity</Text>
-                <Text style={styles.communityDesc}>Doctrine, teachings, and transmissions</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                onPress={() => Linking.openURL(SOCIALS.telegramGroup.url)}
-                activeOpacity={0.7}
-                style={styles.communityCard}
-              >
-                <Text style={styles.communityLabel}>TELEGRAM GROUP</Text>
-                <Text style={styles.communityName}>Sacred Masculine</Text>
-                <Text style={styles.communityDesc}>Community discussion and brotherhood</Text>
+                <Text style={styles.communityLabel}>OFFICIAL GUIDE</Text>
+                <Text style={styles.communityName}>@danielcruzelife_bot</Text>
+                <Text style={styles.communityDesc}>Books, journal and public pathways</Text>
               </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => Linking.openURL(SOCIALS.telegramPersonal.url)}
@@ -506,8 +499,8 @@ export default function HomeScreen() {
                 <Text style={styles.footerLink}>X</Text>
               </TouchableOpacity>
               <Text style={styles.footerDot}>·</Text>
-              <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.telegramChannel.url)}>
-                <Text style={styles.footerLink}>Telegram</Text>
+              <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.telegramBot.url)}>
+                <Text style={styles.footerLink}>Official Bot</Text>
               </TouchableOpacity>
             </View>
             <TouchableOpacity onPress={() => Linking.openURL(`mailto:${BRAND.email}`)}>
