@@ -45,6 +45,9 @@ def main():
     for rel in ('books.html','the-books.html','the-books/index.html','social.html'):
         s=(OUT/rel).read_text();assert 'http-equiv="refresh"' in s and 'noindex' in s,rel
     assert (OUT/'CNAME').read_text().strip()=='danielcruze.com'
+    robots = (OUT/'robots.txt').read_text()
+    expected_robots = "User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /dev/\nDisallow: /oauth/\nSitemap: https://danielcruze.com/sitemap.xml\n"
+    assert robots == expected_robots, 'robots.txt missing or incorrect'
     assert (OUT/'404.html').is_file();ET.parse(OUT/'sitemap.xml')
     print(f'PASS: all original routes and home sections, {len(images)} byte-preserved original images, static metadata, original Books, aliases, sitemap and secret/held-media checks.')
 if __name__=='__main__':main()
