@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Platform,
   Linking,
+  Pressable,
 } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
@@ -62,512 +63,483 @@ export default function HomeScreen() {
 
   return (
     <View style={{ flex: 1, backgroundColor: colors.background }}>
-      {/* Floating hamburger — appears after scroll */}
+      
+      {/* 1. FIXED BACKGROUND HERO BANNER (Stays completely still) */}
+      <View style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 520, zIndex: 1 }}>
+        <Image 
+          source={{ uri: 'https://danielcruze.com/images/hiHseYIRZnypehcZ.jpg' }} 
+          alt="Daniel Cruze - Sacred Masculinity and Luxury Intimacy Companion"
+          style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, width: '100%', height: '100%' }}
+          contentFit="contain"
+        />
+        {/* Dark Gradient Overlay */}
+        <View style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(10, 10, 10, 0.65)' }} />
+
+        {/* Transparent Frosted Text Box */}
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', zIndex: 2, paddingHorizontal: 24, paddingTop: 40 }}>
+          <View style={{
+            alignItems: 'center', paddingHorizontal: 24, paddingVertical: 32,
+            backgroundColor: 'rgba(20, 20, 20, 0.45)', borderWidth: 0.5, borderColor: 'rgba(245, 240, 232, 0.15)',
+            borderRadius: 8, maxWidth: 620, width: '100%'
+          }}>
+            <Text 
+              accessibilityRole="header" 
+              aria-level={1}
+              style={{ color: '#F5F0E8', fontSize: 28, fontWeight: '200', letterSpacing: 12, textAlign: 'center', marginBottom: 16 }}>
+              DANIEL CRUZE
+            </Text>
+            <Text style={{ color: 'rgba(245, 240, 232, 0.75)', fontSize: 14, fontWeight: '300', letterSpacing: 2, lineHeight: 24, textAlign: 'center', marginBottom: 32 }}>
+              Sacred Masculinity. Luxury Intimacy.{'\n'}The Art of Sensual Dominance.
+            </Text>
+            
+            {/* GLOWING BUTTON (Uses Pressable for hover effects) */}
+            <Pressable
+              accessibilityRole="button"
+              onPress={() => { scrollRef.current?.scrollTo({ y: 520, animated: true }); }}
+              style={({ hovered, pressed }) => [
+                { paddingVertical: 16, paddingHorizontal: 40, borderWidth: 0.5, borderColor: '#F5F0E8', backgroundColor: 'transparent' },
+                hovered && { backgroundColor: 'rgba(245, 240, 232, 0.1)', shadowColor: '#F5F0E8', shadowOffset: { width: 0, height: 0 }, shadowOpacity: 0.8, shadowRadius: 15 },
+                pressed && { opacity: 0.7 }
+              ]}
+            >
+              <Text style={{ color: '#F5F0E8', fontSize: 14, fontWeight: '300', letterSpacing: 3, textTransform: 'uppercase' }}>
+                Enter
+              </Text>
+            </Pressable>
+          </View>
+        </View>
+
+      </View>
+
+      {/* Floating hamburger — appears after scrolling down */}
       {scrolled && (
         <Animated.View
           entering={Platform.OS === "web" ? undefined : FadeIn.duration(300)}
           style={styles.floatingHeader}
         >
-          <Text
-            style={[styles.floatingTitle, { color: colors.foreground }]}
-          >
+          <Text style={[styles.floatingTitle, { color: colors.foreground }]}>
             DANIEL CRUZE
           </Text>
           <TouchableOpacity
             accessibilityRole="button"
-              accessibilityLabel="Open menu"
-              onPress={() => setDrawerOpen(true)}
+            accessibilityLabel="Open menu"
+            onPress={() => setDrawerOpen(true)}
             style={styles.hamburgerBtn}
           >
             <View style={{ gap: 5 }}>
-              <View
-                style={[
-                  styles.hamburgerLine,
-                  { backgroundColor: colors.foreground },
-                ]}
-              />
-              <View
-                style={[
-                  styles.hamburgerLineShort,
-                  { backgroundColor: colors.foreground },
-                ]}
-              />
+              <View style={[styles.hamburgerLine, { backgroundColor: colors.foreground }]} />
+              <View style={[styles.hamburgerLineShort, { backgroundColor: colors.foreground }]} />
             </View>
           </TouchableOpacity>
         </Animated.View>
       )}
 
+      {/* 2. SCROLLING CONTENT (Slides over the fixed banner) */}
       <ScrollView
+        style={{ flex: 1, zIndex: 10 }}
         ref={scrollRef}
         showsVerticalScrollIndicator={false}
         onScroll={(e) => {
-          setScrolled(e.nativeEvent.contentOffset.y > SCREEN_HEIGHT * 0.5);
+          setScrolled(e.nativeEvent.contentOffset.y > 200);
         }}
         scrollEventThrottle={16}
       >
-        {/* ===== SECTION 1: THE THRESHOLD (HERO) ===== */}
-        <View
-          style={[
-            styles.heroSection,
-            { minHeight: SCREEN_HEIGHT },
-          ]}
-        >
-          <Image
-            source={IMAGES.hero}
-            style={StyleSheet.absoluteFillObject}
-            contentFit="contain"
-            contentPosition="top"
-            transition={600}
-          />
-          <LinearGradient
-            colors={["rgba(10,10,10,0.15)", "rgba(10,10,10,0.6)", "rgba(10,10,10,0.95)", colors.background]}
-            locations={[0, 0.4, 0.75, 1]}
-            style={StyleSheet.absoluteFillObject}
-          />
-          <Animated.View
-            entering={Platform.OS === "web" ? undefined : FadeInDown.duration(800).delay(200)}
-            style={styles.heroContent}
-          >
-            <Text style={[styles.heroName, { color: "#F5F0E8" }]}>
-              DANIEL CRUZE
+        {/* Transparent Spacer: This pushes the page content down so you can see the fixed banner behind it */}
+        <View style={{ height: 520, backgroundColor: 'transparent' }} />
+
+        {/* Solid Background Wrapper: This hides the banner as the content slides over it */}
+        <View style={{ backgroundColor: colors.background, paddingBottom: 40 }}>
+          
+          {/* ===== SECTION 2: THE MAN ===== */}
+          <View style={styles.imageSection}>
+            <Image
+              source={IMAGES.theMan}
+              alt="Daniel Cruze - Author, Teacher, and Best Male Escort 2025"
+              style={styles.sectionImage}
+              contentFit="contain"
+              transition={400}
+            />
+            <LinearGradient
+              colors={["transparent", "rgba(10,10,10,0.7)", colors.background]}
+              locations={[0, 0.5, 1]}
+              style={styles.sectionImageOverlay}
+            />
+            <View style={styles.sectionImageContent}>
+              <Text style={[styles.sectionQuote, { color: "#F5F0E8" }]}>
+                He is not a service.{"\n"}He is a standard.
+              </Text>
+            </View>
+          </View>
+          <View style={styles.section}>
+            <Text style={[styles.bodyText, { color: colors.muted }]}>
+              Italian-Australian. {BRAND.awards.join(". ")}. Founder of The 33rd House. Published author.
             </Text>
-            <Text style={[styles.heroTagline, { color: "rgba(245,240,232,0.7)" }]}>
-              {BRAND.tagline}
-            </Text>
-            <View style={{ marginTop: 40 }}>
+            <View style={{ marginTop: 32 }}>
               <CTAButton
-                label="Enter"
-                onPress={() => {
-                  scrollRef.current?.scrollTo({ y: SCREEN_HEIGHT, animated: true });
-                }}
-                variant="outline"
-                size="lg"
+                label="About Daniel →"
+                onPress={() => router.push("/about" as any)}
+                variant="ghost"
               />
             </View>
-          </Animated.View>
+          </View>
 
-          {/* Subtle hamburger in top-right on hero */}
-          <TouchableOpacity
-            accessibilityRole="button"
-              accessibilityLabel="Open menu"
-              onPress={() => setDrawerOpen(true)}
-            style={styles.heroHamburger}
-          >
-            <View style={{ gap: 5 }}>
-              <View
-                style={[
-                  styles.hamburgerLine,
-                  { backgroundColor: "#F5F0E8", opacity: 0.6 },
-                ]}
-              />
-              <View
-                style={[
-                  styles.hamburgerLineShort,
-                  { backgroundColor: "#F5F0E8", opacity: 0.6 },
-                ]}
+          <SectionDivider />
+
+          {/* ===== SECTION 3: THE FIELD ===== */}
+          <View style={styles.imageSection}>
+            <Image
+              source={IMAGES.sacredMasculinity}
+              alt="Sacred Masculinity and embodied presence"
+              style={styles.sectionImageTall}
+              contentFit="contain"
+              transition={400}
+            />
+            <LinearGradient
+              colors={["rgba(10,10,10,0.3)", "rgba(10,10,10,0.8)", colors.background]}
+              locations={[0, 0.6, 1]}
+              style={styles.sectionImageOverlay}
+            />
+            <View style={styles.sectionImageContentBottom}>
+              <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: "#F5F0E8" }]}>
+                SACRED MASCULINITY
+              </Text>
+              <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.8)" }]}>
+                The intersection of erotic intelligence, embodied presence, and
+                initiated masculine depth.
+              </Text>
+            </View>
+          </View>
+          <View style={[styles.section, { paddingTop: 0 }]}>
+            <View style={{ marginTop: 16 }}>
+              <CTAButton
+                label="Enter the Field →"
+                onPress={() => router.push("/sacred-masculinity" as any)}
+                variant="ghost"
               />
             </View>
-          </TouchableOpacity>
-        </View>
+          </View>
 
-        {/* ===== SECTION 2: THE MAN ===== */}
-        <View style={styles.imageSection}>
-          <Image
-            source={IMAGES.theMan}
-            style={styles.sectionImage}
-            contentFit="contain"
-            transition={400}
-          />
-          <LinearGradient
-            colors={["transparent", "rgba(10,10,10,0.7)", colors.background]}
-            locations={[0, 0.5, 1]}
-            style={styles.sectionImageOverlay}
-          />
-          <View style={styles.sectionImageContent}>
-            <Text style={[styles.sectionQuote, { color: "#F5F0E8" }]}>
-              He is not a service.{"\n"}He is a standard.
+          <SectionDivider />
+
+          {/* ===== SECTION 4: THE EXPERIENCES ===== */}
+          <View style={styles.section}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
+              PRIVATE WORK
             </Text>
+            <View style={styles.tilesContainer}>
+              {audienceTiles.map((tile) => (
+                <TouchableOpacity
+                  key={tile.label}
+                  onPress={() => router.push(tile.route as any)}
+                  activeOpacity={0.7}
+                  style={styles.tileWithImage}
+                >
+                  <Image
+                    source={tile.image}
+                    alt={`${tile.label} - ${tile.sub}`}
+                    style={StyleSheet.absoluteFillObject}
+                    contentFit="contain"
+                    transition={300}
+                  />
+                  <LinearGradient
+                    colors={["rgba(10,10,10,0.2)", "rgba(10,10,10,0.75)"]}
+                    style={StyleSheet.absoluteFillObject}
+                  />
+                  <View style={styles.tileContent}>
+                    <Text style={styles.tileLabelWhite}>
+                      {tile.label}
+                    </Text>
+                    <Text style={styles.tileSubWhite}>
+                      {tile.sub}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
-        </View>
-        <View style={styles.section}>
-          <Text style={[styles.bodyText, { color: colors.muted }]}>
-            Italian-Australian. {BRAND.awards.join(". ")}. Founder of The 33rd House. Published author.
-          </Text>
-          <View style={{ marginTop: 32 }}>
-            <CTAButton
-              label="About Daniel →"
-              onPress={() => router.push("/about" as any)}
-              variant="ghost"
-            />
-          </View>
-        </View>
 
-        <SectionDivider />
+          <SectionDivider />
 
-        {/* ===== SECTION 3: THE FIELD ===== */}
-        <View style={styles.imageSection}>
-          <Image
-            source={IMAGES.sacredMasculinity}
-            style={styles.sectionImageTall}
-            contentFit="contain"
-            transition={400}
-          />
-          <LinearGradient
-            colors={["rgba(10,10,10,0.3)", "rgba(10,10,10,0.8)", colors.background]}
-            locations={[0, 0.6, 1]}
-            style={styles.sectionImageOverlay}
-          />
-          <View style={styles.sectionImageContentBottom}>
-            <Text
-              style={[styles.sectionHeader, { color: "#F5F0E8" }]}
-            >
-              SACRED MASCULINITY
+          {/* ===== SECTION 5: THE BOOKS ===== */}
+          <View style={styles.section}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
+              PUBLISHED WORKS
             </Text>
-            <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.8)" }]}>
-              The intersection of erotic intelligence, embodied presence, and
-              initiated masculine depth.
+            <Text style={[styles.bodyText, { color: colors.muted, marginBottom: 32 }]}>
+              Doctrine made portable. Wisdom distilled into language that can be lived, not merely read.
             </Text>
+            <View style={styles.booksRow}>
+              {BOOKS.map((book) => (
+                <TouchableOpacity
+                  key={book.id}
+                  onPress={() => router.push("/the-books" as any)}
+                  activeOpacity={0.8}
+                  style={styles.bookItem}
+                >
+                  <Image
+                    source={{ uri: book.coverImage }}
+                    alt={`Book Cover: ${book.title}`}
+                    style={styles.bookCover}
+                    contentFit="contain"
+                    transition={400}
+                  />
+                  <Text style={styles.bookTitle} numberOfLines={2}>
+                    {book.title}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+            <View style={{ marginTop: 24 }}>
+              <CTAButton
+                label="View All Books →"
+                onPress={() => router.push("/the-books" as any)}
+                variant="ghost"
+              />
+            </View>
           </View>
-        </View>
-        <View style={[styles.section, { paddingTop: 0 }]}>
-          <View style={{ marginTop: 16 }}>
-            <CTAButton
-              label="Enter the Field →"
-              onPress={() => router.push("/sacred-masculinity" as any)}
-              variant="ghost"
-            />
-          </View>
-        </View>
 
-        <SectionDivider />
+          <SectionDivider />
 
-        {/* ===== SECTION 4: THE EXPERIENCES ===== */}
-        <View style={styles.section}>
-          <Text
-            style={[styles.sectionHeader, { color: colors.foreground }]}
-          >
-            PRIVATE WORK
-          </Text>
-          <View style={styles.tilesContainer}>
-            {audienceTiles.map((tile) => (
-              <TouchableOpacity
-                key={tile.label}
-                onPress={() => router.push(tile.route as any)}
-                activeOpacity={0.7}
-                style={styles.tileWithImage}
+          {/* ===== SECTION 6: THE PROOF ===== */}
+          <View style={styles.section}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
+              TESTIMONIALS
+            </Text>
+            {TESTIMONIALS.map((t) => (
+              <View
+                key={t.id}
+                style={[
+                  styles.testimonialCard,
+                  {
+                    backgroundColor: colors.surface,
+                    borderColor: colors.border,
+                  },
+                ]}
               >
-                <Image
-                  source={tile.image}
-                  style={StyleSheet.absoluteFillObject}
-                  contentFit="contain"
-                  transition={300}
-                />
-                <LinearGradient
-                  colors={["rgba(10,10,10,0.2)", "rgba(10,10,10,0.75)"]}
-                  style={StyleSheet.absoluteFillObject}
-                />
-                <View style={styles.tileContent}>
-                  <Text style={styles.tileLabelWhite}>
-                    {tile.label}
-                  </Text>
-                  <Text style={styles.tileSubWhite}>
-                    {tile.sub}
-                  </Text>
-                </View>
-              </TouchableOpacity>
+                <Text
+                  style={[
+                    styles.testimonialQuote,
+                    { color: colors.foreground },
+                  ]}
+                >
+                  "{t.quote}"
+                </Text>
+                <Text style={[styles.testimonialAuthor, { color: colors.muted }]}>
+                  — {t.author} · {t.context}
+                </Text>
+              </View>
             ))}
           </View>
-        </View>
 
-        <SectionDivider />
+          <SectionDivider />
 
-        {/* ===== SECTION 5: THE BOOKS ===== */}
-        <View style={styles.section}>
-          <Text style={[styles.sectionHeader, { color: colors.foreground }]}>
-            PUBLISHED WORKS
-          </Text>
-          <Text style={[styles.bodyText, { color: colors.muted, marginBottom: 32 }]}>
-            Doctrine made portable. Wisdom distilled into language that can be lived, not merely read.
-          </Text>
-          <View style={styles.booksRow}>
-            {BOOKS.map((book) => (
+          {/* ===== SECTION 7: THE JOURNAL ===== */}
+          <View style={styles.section}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
+              FROM THE JOURNAL
+            </Text>
+            {ARTICLES.slice(0, 3).map((article) => (
               <TouchableOpacity
-                key={book.id}
-                onPress={() => router.push("/the-books" as any)}
-                activeOpacity={0.8}
-                style={styles.bookItem}
+                key={article.id}
+                onPress={() =>
+                  router.push({
+                    pathname: "/article/[id]" as any,
+                    params: { id: article.id },
+                  })
+                }
+                activeOpacity={0.7}
+                style={[
+                  styles.articleCard,
+                  {
+                    borderBottomColor: colors.border,
+                  },
+                ]}
               >
-                <Image
-                  source={{ uri: book.coverImage }}
-                  style={styles.bookCover}
-                  contentFit="contain"
-                  transition={400}
-                />
-                <Text style={styles.bookTitle} numberOfLines={2}>
-                  {book.title}
+                <Text style={[styles.articleCategory, { color: colors.primary }]}>
+                  {article.category}
+                </Text>
+                <Text style={[styles.articleTitle, { color: colors.foreground }]}>
+                  {article.title}
+                </Text>
+                <Text style={[styles.articleExcerpt, { color: colors.muted }]}>
+                  {article.excerpt}
                 </Text>
               </TouchableOpacity>
             ))}
+            <View style={{ marginTop: 24 }}>
+              <CTAButton
+                label="Read →"
+                onPress={() => router.push("/journal" as any)}
+                variant="ghost"
+              />
+            </View>
           </View>
-          <View style={{ marginTop: 24 }}>
-            <CTAButton
-              label="View All Books →"
-              onPress={() => router.push("/the-books" as any)}
-              variant="ghost"
+
+          <SectionDivider />
+
+          {/* ===== SECTION 8: THE TEMPLE ===== */}
+          <View style={styles.imageSection}>
+            <Image
+              source={IMAGES.temple}
+              alt="The 33rd House Temple - Initiation and Consciousness Evolution"
+              style={styles.sectionImage}
+              contentFit="contain"
+              transition={400}
             />
-          </View>
-        </View>
-
-        <SectionDivider />
-
-        {/* ===== SECTION 6: THE PROOF ===== */}
-        <View style={styles.section}>
-          <Text
-            style={[styles.sectionHeader, { color: colors.foreground }]}
-          >
-            TESTIMONIALS
-          </Text>
-          {TESTIMONIALS.map((t) => (
-            <View
-              key={t.id}
-              style={[
-                styles.testimonialCard,
-                {
-                  backgroundColor: colors.surface,
-                  borderColor: colors.border,
-                },
-              ]}
-            >
-              <Text
-                style={[
-                  styles.testimonialQuote,
-                  { color: colors.foreground },
-                ]}
-              >
-                "{t.quote}"
+            <LinearGradient
+              colors={["rgba(10,10,10,0.3)", "rgba(10,10,10,0.85)", colors.background]}
+              locations={[0, 0.55, 1]}
+              style={styles.sectionImageOverlay}
+            />
+            <View style={styles.sectionImageContentBottom}>
+              <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: "#F5F0E8" }]}>
+                THE 33RD HOUSE
               </Text>
-              <Text
-                style={[styles.testimonialAuthor, { color: colors.muted }]}
-              >
-                — {t.author} · {t.context}
+              <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.8)" }]}>
+                Beyond the private session is a larger initiatory world.{"\n"}A
+                system. A doctrine. A map of human consciousness evolution.
               </Text>
             </View>
-          ))}
-        </View>
+          </View>
+          <View style={[styles.section, { paddingTop: 0 }]}>
+            <View style={{ marginTop: 16 }}>
+              <CTAButton
+                label="Enter the Temple →"
+                onPress={() => router.push("/the-33rd-house" as any)}
+                variant="ghost"
+              />
+            </View>
+          </View>
 
-        <SectionDivider />
+          <SectionDivider />
 
-        {/* ===== SECTION 7: THE JOURNAL ===== */}
-        <View style={styles.section}>
-          <Text
-            style={[styles.sectionHeader, { color: colors.foreground }]}
-          >
-            FROM THE JOURNAL
-          </Text>
-          {ARTICLES.slice(0, 3).map((article) => (
-            <TouchableOpacity
-              key={article.id}
-              onPress={() =>
-                router.push({
-                  pathname: "/article/[id]" as any,
-                  params: { id: article.id },
-                })
-              }
-              activeOpacity={0.7}
-              style={[
-                styles.articleCard,
-                {
-                  borderBottomColor: colors.border,
-                },
-              ]}
-            >
-              <Text
-                style={[
-                  styles.articleCategory,
-                  { color: colors.primary },
-                ]}
+          {/* ===== SECTION 9: THE COMMUNITY ===== */}
+          <View style={styles.section}>
+            <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: colors.foreground }]}>
+              THE COMMUNITY
+            </Text>
+            <Text style={[styles.bodyText, { color: colors.muted, marginBottom: 32 }]}>
+              Join the conversation. Sacred Masculinity is not a solo path — it is forged in the presence of other initiated men and the women who hold them accountable.
+            </Text>
+            <View style={styles.communityLinks}>
+              <TouchableOpacity
+                onPress={() => Linking.openURL(SOCIALS.telegramChannel.url)}
+                activeOpacity={0.7}
+                style={styles.communityCard}
               >
-                {article.category}
-              </Text>
-              <Text
-                style={[
-                  styles.articleTitle,
-                  { color: colors.foreground },
-                ]}
+                <Text style={styles.communityLabel}>TELEGRAM CHANNEL</Text>
+                <Text style={styles.communityName}>Sacred Masculinity</Text>
+                <Text style={styles.communityDesc}>Doctrine, teachings, and transmissions</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => Linking.openURL(SOCIALS.telegramGroup.url)}
+                activeOpacity={0.7}
+                style={styles.communityCard}
               >
-                {article.title}
-              </Text>
-              <Text
-                style={[
-                  styles.articleExcerpt,
-                  { color: colors.muted },
-                ]}
+                <Text style={styles.communityLabel}>TELEGRAM GROUP</Text>
+                <Text style={styles.communityName}>Sacred Masculine</Text>
+                <Text style={styles.communityDesc}>Community discussion and brotherhood</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => Linking.openURL(SOCIALS.telegramPersonal.url)}
+                activeOpacity={0.7}
+                style={styles.communityCard}
               >
-                {article.excerpt}
+                <Text style={styles.communityLabel}>DIRECT MESSAGE</Text>
+                <Text style={styles.communityName}>Daniel Cruze</Text>
+                <Text style={styles.communityDesc}>Personal Telegram for private enquiries</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <SectionDivider />
+
+          {/* ===== SECTION 10: PRIVATE ENQUIRIES ===== */}
+          <View style={styles.imageSection}>
+            <Image
+              source={IMAGES.contact}
+              alt="Contact Daniel Cruze for Private Enquiries"
+              style={styles.sectionImageShort}
+              contentFit="contain"
+              contentPosition="top"
+              transition={400}
+            />
+            <LinearGradient
+              colors={["rgba(10,10,10,0.2)", "rgba(10,10,10,0.85)", colors.background]}
+              locations={[0, 0.6, 1]}
+              style={styles.sectionImageOverlay}
+            />
+            <View style={styles.sectionImageContentBottom}>
+              <Text accessibilityRole="header" aria-level={2} style={[styles.sectionHeader, { color: "#F5F0E8" }]}>
+                PRIVATE ENQUIRIES
               </Text>
-            </TouchableOpacity>
-          ))}
-          <View style={{ marginTop: 24 }}>
-            <CTAButton
-              label="Read →"
-              onPress={() => router.push("/journal" as any)}
-              variant="ghost"
-            />
+              <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.7)" }]}>
+                Bookings are by appointment.{"\n"}Pre-booking is preferred.{"\n"}
+                All enquiries are handled with complete discretion.
+              </Text>
+            </View>
           </View>
-        </View>
+          <View style={[styles.section, { paddingTop: 0 }]}>
+            <View style={{ marginTop: 16 }}>
+              <CTAButton
+                label="Make an Enquiry →"
+                onPress={() => router.push("/contact" as any)}
+                variant="outline"
+              />
+            </View>
+          </View>
 
-        <SectionDivider />
-
-        {/* ===== SECTION 8: THE TEMPLE ===== */}
-        <View style={styles.imageSection}>
-          <Image
-            source={IMAGES.temple}
-            style={styles.sectionImage}
-            contentFit="contain"
-            transition={400}
-          />
-          <LinearGradient
-            colors={["rgba(10,10,10,0.3)", "rgba(10,10,10,0.85)", colors.background]}
-            locations={[0, 0.55, 1]}
-            style={styles.sectionImageOverlay}
-          />
-          <View style={styles.sectionImageContentBottom}>
-            <Text
-              style={[styles.sectionHeader, { color: "#F5F0E8" }]}
-            >
-              THE 33RD HOUSE
+          {/* ===== FOOTER ===== */}
+          <View style={styles.footer}>
+            <Text style={styles.footerSeal}>{BRAND.seal}</Text>
+            <View style={{ height: 16 }} />
+            <View style={styles.footerSocialRow}>
+              <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.instagram.url)}>
+                <Text style={styles.footerLink}>Instagram</Text>
+              </TouchableOpacity>
+              <Text style={styles.footerDot}>·</Text>
+              <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.facebook.url)}>
+                <Text style={styles.footerLink}>Facebook</Text>
+              </TouchableOpacity>
+              <Text style={styles.footerDot}>·</Text>
+              <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.x.url)}>
+                <Text style={styles.footerLink}>X</Text>
+              </TouchableOpacity>
+              <Text style={styles.footerDot}>·</Text>
+              <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.telegramChannel.url)}>
+                <Text style={styles.footerLink}>Telegram</Text>
+              </TouchableOpacity>
+            </View>
+            <TouchableOpacity onPress={() => Linking.openURL(`mailto:${BRAND.email}`)}>
+              <Text style={styles.footerEmail}>{BRAND.email}</Text>
+            </TouchableOpacity>
+            <View style={{ height: 12 }} />
+            <Text style={styles.footerLocations}>
+              {BRAND.locations.join(" · ")}
             </Text>
-            <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.8)" }]}>
-              Beyond the private session is a larger initiatory world.{"\n"}A
-              system. A doctrine. A map of human consciousness evolution.
-            </Text>
-          </View>
-        </View>
-        <View style={[styles.section, { paddingTop: 0 }]}>
-          <View style={{ marginTop: 16 }}>
-            <CTAButton
-              label="Enter the Temple →"
-              onPress={() => router.push("/the-33rd-house" as any)}
-              variant="ghost"
-            />
-          </View>
-        </View>
-
-        <SectionDivider />
-
-        {/* ===== SECTION 9: THE COMMUNITY ===== */}
-        <View style={styles.section}>
-          <Text style={[styles.sectionHeader, { color: colors.foreground }]}>
-            THE COMMUNITY
-          </Text>
-          <Text style={[styles.bodyText, { color: colors.muted, marginBottom: 32 }]}>
-            Join the conversation. Sacred Masculinity is not a solo path — it is forged in the presence of other initiated men and the women who hold them accountable.
-          </Text>
-          <View style={styles.communityLinks}>
-            <TouchableOpacity
-              onPress={() => Linking.openURL(SOCIALS.telegramChannel.url)}
-              activeOpacity={0.7}
-              style={styles.communityCard}
-            >
-              <Text style={styles.communityLabel}>TELEGRAM CHANNEL</Text>
-              <Text style={styles.communityName}>Sacred Masculinity</Text>
-              <Text style={styles.communityDesc}>Doctrine, teachings, and transmissions</Text>
+            <TouchableOpacity onPress={() => router.push("/policies" as any)} activeOpacity={0.7}>
+              <Text style={[styles.footerLink, { marginBottom: 8 }]}>Terms & Policies</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => Linking.openURL(SOCIALS.telegramGroup.url)}
-              activeOpacity={0.7}
-              style={styles.communityCard}
-            >
-              <Text style={styles.communityLabel}>TELEGRAM GROUP</Text>
-              <Text style={styles.communityName}>Sacred Masculine</Text>
-              <Text style={styles.communityDesc}>Community discussion and brotherhood</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => Linking.openURL(SOCIALS.telegramPersonal.url)}
-              activeOpacity={0.7}
-              style={styles.communityCard}
-            >
-              <Text style={styles.communityLabel}>DIRECT MESSAGE</Text>
-              <Text style={styles.communityName}>Daniel Cruze</Text>
-              <Text style={styles.communityDesc}>Personal Telegram for private enquiries</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-
-        <SectionDivider />
-
-        {/* ===== SECTION 10: PRIVATE ENQUIRIES ===== */}
-        <View style={styles.imageSection}>
-          <Image
-            source={IMAGES.contact}
-            style={styles.sectionImageShort}
-            contentFit="contain"
-            contentPosition="top"
-            transition={400}
-          />
-          <LinearGradient
-            colors={["rgba(10,10,10,0.2)", "rgba(10,10,10,0.85)", colors.background]}
-            locations={[0, 0.6, 1]}
-            style={styles.sectionImageOverlay}
-          />
-          <View style={styles.sectionImageContentBottom}>
-            <Text
-              style={[styles.sectionHeader, { color: "#F5F0E8" }]}
-            >
-              PRIVATE ENQUIRIES
-            </Text>
-            <Text style={[styles.overlayBody, { color: "rgba(245,240,232,0.7)" }]}>
-              Bookings are by appointment.{"\n"}Pre-booking is preferred.{"\n"}
-              All enquiries are handled with complete discretion.
+            <Text style={styles.footerCopy}>
+              {BRAND.copyright}
             </Text>
           </View>
-        </View>
-        <View style={[styles.section, { paddingTop: 0 }]}>
-          <View style={{ marginTop: 16 }}>
-            <CTAButton
-              label="Make an Enquiry →"
-              onPress={() => router.push("/contact" as any)}
-              variant="outline"
-            />
-          </View>
-        </View>
-
-        {/* ===== FOOTER ===== */}
-        <View style={styles.footer}>
-          <Text style={styles.footerSeal}>{BRAND.seal}</Text>
-          <View style={{ height: 16 }} />
-          <View style={styles.footerSocialRow}>
-            <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.instagram.url)}>
-              <Text style={styles.footerLink}>Instagram</Text>
-            </TouchableOpacity>
-            <Text style={styles.footerDot}>·</Text>
-            <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.facebook.url)}>
-              <Text style={styles.footerLink}>Facebook</Text>
-            </TouchableOpacity>
-            <Text style={styles.footerDot}>·</Text>
-            <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.x.url)}>
-              <Text style={styles.footerLink}>X</Text>
-            </TouchableOpacity>
-            <Text style={styles.footerDot}>·</Text>
-            <TouchableOpacity onPress={() => Linking.openURL(SOCIALS.telegramChannel.url)}>
-              <Text style={styles.footerLink}>Telegram</Text>
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity onPress={() => Linking.openURL(`mailto:${BRAND.email}`)}>
-            <Text style={styles.footerEmail}>{BRAND.email}</Text>
-          </TouchableOpacity>
-          <View style={{ height: 12 }} />
-          <Text style={styles.footerLocations}>
-            {BRAND.locations.join(" · ")}
-          </Text>
-          <TouchableOpacity onPress={() => router.push("/policies" as any)} activeOpacity={0.7}>
-            <Text style={[styles.footerLink, { marginBottom: 8 }]}>Terms & Policies</Text>
-          </TouchableOpacity>
-          <Text style={styles.footerCopy}>
-            {BRAND.copyright}
-          </Text>
         </View>
       </ScrollView>
+
+      {!scrolled && (
+        <TouchableOpacity
+          accessibilityRole="button"
+          accessibilityLabel="Open menu"
+          onPress={() => setDrawerOpen(true)}
+          style={styles.heroHamburger}
+        >
+          <View style={{ gap: 5 }}>
+            <View style={[styles.hamburgerLine, { backgroundColor: "#F5F0E8", opacity: 0.6 }]} />
+            <View style={[styles.hamburgerLineShort, { backgroundColor: "#F5F0E8", opacity: 0.6 }]} />
+          </View>
+        </TouchableOpacity>
+      )}
 
       <DrawerMenu
         visible={drawerOpen}
@@ -606,7 +578,7 @@ const styles = StyleSheet.create({
     top: Platform.OS === "web" ? 20 : 54,
     right: 20,
     padding: 8,
-    zIndex: 3,
+    zIndex: 30,
   },
   floatingHeader: {
     position: "absolute",
