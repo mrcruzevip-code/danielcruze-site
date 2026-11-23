@@ -1,3 +1,5 @@
+import { answer } from '../../source/highest-rite/public/guide/knowledge.mjs';
+
 // The Highest Rite / Daniel Cruze Telegram bot — editable source of truth.
 // Keep secrets in Cloudflare. This file intentionally contains no token values.
 
@@ -113,7 +115,7 @@ async function handleSite(env, chatId) {
 async function handleUpdate(update, env) {
   if (!update.message?.text) return;
   const chatId = update.message.chat.id;
-  const command = update.message.text.trim().split('@')[0].toLowerCase();
+  const command = update.message.text.trim().split(/\s+/)[0].split('@')[0].toLowerCase();
   const firstName = update.message.from?.first_name;
 
   switch (command) {
@@ -126,6 +128,10 @@ async function handleUpdate(update, env) {
     default:
       if (command.startsWith('/')) {
         await sendMessage(env, chatId, `Use /books, /blueprint, /enquire, /journal or /site.\n\n<i>${BRAND.signature}</i>`);
+      } else if (update.message.chat.type === 'private') {
+        const result = answer(update.message.text);
+        const rows = result.links.map(link => [{ text: link.label, url: new URL(link.href, BRAND.website).href }]);
+        await sendMessage(env, chatId, `<b>The Gentleman’s Lion · Digital Guide</b>\n\n${escapeHtml(result.text)}`, rows.length ? buttons(rows) : {});
       }
   }
 }
