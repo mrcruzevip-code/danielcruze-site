@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" data-composition-variables='[{"id":"title","type":"string","label":"Title","default":"PRESENCE BEFORE PERFORMANCE"},{"id":"accent","type":"color","label":"Accent","default":"#D4B78F"}]'>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=1080,height=1920"><title>Daniel Cruze — Independent Reel</title>
+<style>
+:root{--accent:#D4B78F;--paper:#F1ECE1;--bg:#171819}
+*{box-sizing:border-box}body{background:#0b0c0d;color:var(--paper);margin:0;font-family:Georgia,serif}
+#root{height:1920px;width:1080px;position:relative;overflow:hidden;background:var(--bg)}
+.clip{position:absolute;inset:0}
+#portrait{position:absolute;left:0;top:252px;width:1080px;height:1388px;object-fit:contain;animation:breath 11s ease-in-out infinite alternate}
+#series{position:absolute;top:82px;left:70px;right:70px;text-align:center;font:bold 34px Arial,sans-serif;letter-spacing:.2em;color:var(--accent)}
+#scrim{position:absolute;bottom:0;left:0;right:0;height:595px;background:linear-gradient(0deg,#111 0%,#171819e8 68%,transparent)}
+#title{position:absolute;bottom:452px;left:75px;right:75px;font-size:77px;text-align:center;line-height:1.1}
+#captions{position:absolute;bottom:255px;left:84px;right:84px;text-align:center;font:700 45px/1.25 Arial,sans-serif}
+#footer{position:absolute;bottom:105px;left:65px;right:65px;color:var(--accent);font:500 27px Arial,sans-serif;letter-spacing:.25em;text-align:center}
+#audio{position:absolute;left:60px;bottom:15px;width:960px;z-index:9}
+@keyframes breath{from{transform:scale(1)}to{transform:scale(1.023)}}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-width="1080" data-height="1920" data-duration="44.202">
+  <section class="clip" data-start="0" data-duration="44.202" data-track-index="1">
+    <img id="portrait" src="assets/portrait.jpg" alt="User-supplied portrait">
+    <div id="series">THE GENTLEMANS SERIES</div><div id="scrim"></div>
+    <div id="title" data-var-text="title">PRESENCE BEFORE PERFORMANCE</div>
+    <div id="captions">Preview captions from a DRAFT SRT</div>
+    <div id="footer">DANIEL CRUZE · DANIELCRUZE.COM</div>
+  </section>
+  <audio id="audio" data-start="0" data-duration="44.202" data-track-index="10" data-volume="1" src="assets/voice.m4a" controls></audio>
+</div>
+<script>
+window.__timelines=window.__timelines||{};
+if(window.gsap){const tl=gsap.timeline({paused:true});tl.from("#title",{opacity:0,y:35,duration:.9},.2);window.__timelines.main=tl;}
+else{window.__timelines.main={seek(){},pause(){}};}
+if(!window.__hyperframes){const a=document.getElementById("audio"),c=document.getElementById("captions");fetch("assets/captions_DRAFT.srt").then(x=>x.text()).then(t=>{
+const ts=x=>{const z=x.trim().split(/[:,]/).map(Number);return z[0]*3600+z[1]*60+z[2]+z[3]/1000};
+const cues=t.trim().split(/\n\s*\n/).map(b=>{const x=b.split(/\n/),i=x.findIndex(z=>z.includes("-->"));if(i<0)return null;const [s,e]=x[i].split("-->");return {s:ts(s),e:ts(e),t:x.slice(i+1).join(" ")}}).filter(Boolean);
+a.addEventListener("timeupdate",()=>{c.textContent=cues.find(x=>a.currentTime>=x.s&&a.currentTime<x.e)?.t||""});}).catch(()=>{c.textContent="Draft subtitles not present";});}
+</script></body></html>
